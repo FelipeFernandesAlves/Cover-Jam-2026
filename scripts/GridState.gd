@@ -7,12 +7,15 @@ signal player_damaged(amount: int)
 
 enum CellType { EMPTY, WALL, MOVABLE, ENEMY, PLAYER }
 
-@export var grid_size: Vector2i = Vector2i(10, 10)
+static var CELL_SIZE : int = 32
+@export var tile_map_layer : TileMapLayer
+var grid_size : Vector2i = Vector2i.ZERO
 
 # Dicionário de estado: Vector2i -> GridEntityData
 var grid_data: Dictionary = {}
 
 func _ready() -> void:
+	grid_size = tile_map_layer.get_used_rect().size
 	_generate_border_walls()
 
 func _generate_border_walls() -> void:

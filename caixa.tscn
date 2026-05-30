@@ -4,6 +4,7 @@
 
 [node name="Caixa" type="Node2D" unique_id=217619424]
 script = ExtResource("1_htcy5")
+type = 2
 metadata/_custom_type_script = "uid://cg0dy2oypa07s"
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=709424243]
