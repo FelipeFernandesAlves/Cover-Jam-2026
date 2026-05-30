@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://6hfxkgkhecgv"]
+
+[ext_resource type="Script" uid="uid://do40uhc6geytv" path="res://scripts/LightBeam.gd" id="1_ymk82"]
+
+[node name="LightBeam" type="RayCast2D" unique_id=924739334]
+target_position = Vector2(0, 0)
+script = ExtResource("1_ymk82")
+
+[node name="Line" type="Line2D" parent="." unique_id=2120260499]
+points = PackedVector2Array(0, 0, 100, 0)

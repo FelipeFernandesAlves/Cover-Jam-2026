@@ -15,6 +15,10 @@ run/main_scene="uid://drsfvo67c721y"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[global_group]
+
+reflective="Reflects light beams"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
