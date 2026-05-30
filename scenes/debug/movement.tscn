@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bl83h6afkl2vn"]
+
+[ext_resource type="Script" uid="uid://blc8j7agny0vu" path="res://scripts/GridState.gd" id="1_3vd64"]
+[ext_resource type="PackedScene" uid="uid://c41gkkvu14v72" path="res://entities/player.tscn" id="1_4pmxj"]
+[ext_resource type="PackedScene" uid="uid://dc5g12px0gxfs" path="res://entities/caixa.tscn" id="2_3vd64"]
+
+[node name="Debug" type="Node2D" unique_id=1431038869]
+
+[node name="GridState" type="Node" parent="." unique_id=1958070232]
+script = ExtResource("1_3vd64")
+metadata/_custom_type_script = "uid://blc8j7agny0vu"
+
+[node name="Player" parent="." unique_id=1569317350 node_paths=PackedStringArray("grid_state") instance=ExtResource("1_4pmxj")]
+position = Vector2(142, 107)
+grid_state = NodePath("../GridState")
+initial_grid_pos = Vector2i(1, 1)
+type = 4
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1412773569]
+
+[node name="Caixa" parent="." unique_id=217619424 node_paths=PackedStringArray("grid_state") instance=ExtResource("2_3vd64")]
+position = Vector2(143, 181)
+grid_state = NodePath("../GridState")
+type = 2
