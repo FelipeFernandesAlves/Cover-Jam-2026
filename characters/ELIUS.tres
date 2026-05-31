@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogCharacterSheet" format=3 uid="uid://nbiei6x08b8t"]
+
+[ext_resource type="Script" uid="uid://bqan80yk8j1ig" path="res://scripts/Dialog/DialogCharacterSheet.gd" id="1_58dsj"]
+
+[resource]
+script = ExtResource("1_58dsj")
+name = "Elius"
+metadata/_custom_type_script = "uid://bqan80yk8j1ig"

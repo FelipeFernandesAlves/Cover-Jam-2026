@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://w847smqv0u6f"]
+
+[ext_resource type="Script" uid="uid://dypf8l2f2m2qf" path="res://scripts/Dialog/DialogUI.gd" id="1_sxq3l"]
+[ext_resource type="Texture2D" uid="uid://cc5r2688uk712" path="res://icon.svg" id="1_ukgro"]
+[ext_resource type="Texture2D" uid="uid://dmnb0r2gm76uq" path="res://assets/Pxiel Art UI borders.png" id="2_15oho"]
+[ext_resource type="Theme" uid="uid://dunn2cpcfghdh" path="res://assets/themes/label.tres" id="3_lbeus"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15oho"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvjhu"]
+atlas = ExtResource("2_15oho")
+region = Rect2(164, 276, 88, 88)
+
+[node name="DialogUi" type="PanelContainer" unique_id=282459021]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_15oho")
+script = ExtResource("1_sxq3l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1189339497]
+
+[node name="Container" type="PanelContainer" parent="CanvasLayer" unique_id=1239715829]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Container" unique_id=171533624]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DialogHBox" type="HBoxContainer" parent="CanvasLayer/Container/MarginContainer" unique_id=2016036074]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Container/MarginContainer/DialogHBox" unique_id=1854713847]
+layout_mode = 2
+
+[node name="DialogPortrait" type="TextureRect" parent="CanvasLayer/Container/MarginContainer/DialogHBox/VBoxContainer" unique_id=127388406]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("1_ukgro")
+stretch_mode = 2
+
+[node name="DialogTitle" type="Label" parent="CanvasLayer/Container/MarginContainer/DialogHBox/VBoxContainer" unique_id=1448968043]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_lbeus")
+text = "????"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Container/MarginContainer/DialogHBox" unique_id=1163995955]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="DialogContent" type="Label" parent="CanvasLayer/Container/MarginContainer/DialogHBox/HBoxContainer" unique_id=192738631]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("3_lbeus")
+text = "???"
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Container" unique_id=1329156321]
+layout_mode = 2
+texture = SubResource("AtlasTexture_mvjhu")
+region_rect = Rect2(0, 0, 88, 88)
+patch_margin_left = 35
+patch_margin_top = 35
+patch_margin_right = 35
+patch_margin_bottom = 35
