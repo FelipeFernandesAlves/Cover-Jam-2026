@@ -4,6 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cc5r2688uk712" path="res://icon.svg" id="1_ukgro"]
 [ext_resource type="Texture2D" uid="uid://ds76q6unxim00" path="res://assets/Pxiel Art UI borders.png" id="2_15oho"]
 [ext_resource type="Theme" uid="uid://dunn2cpcfghdh" path="res://assets/themes/label.tres" id="3_lbeus"]
+[ext_resource type="Script" uid="uid://dypf8l2f2m2qf" path="res://scripts/DialogUI.gd" id="1_sxq3l"]
+[ext_resource type="Texture2D" uid="uid://kryqoal7utq1" path="res://assets/dialog/emotes.png" id="2_15oho"]
+[ext_resource type="Script" uid="uid://blfckmup14tid" path="res://scripts/DialogContent.gd" id="3_qc0i0"]
+[ext_resource type="Texture2D" uid="uid://b02e2qlx3wu4n" path="res://assets/dialog/emote_box.png" id="4_mvjhu"]
+[ext_resource type="Texture2D" uid="uid://ctk8chq122dsn" path="res://assets/dialog/emotes_mage.png" id="4_xbbdg"]
+[ext_resource type="Script" uid="uid://dtdexp7bhf1i4" path="res://entities/float.gd" id="5_xbbdg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15oho"]
 content_margin_left = 0.0
@@ -33,6 +39,21 @@ script = ExtResource("1_sxq3l")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1189339497]
 
 [node name="Container" type="PanelContainer" parent="CanvasLayer" unique_id=1239715829]
+[sub_resource type="Resource" id="Resource_edd2l"]
+script = ExtResource("3_qc0i0")
+metadata/_custom_type_script = "uid://blfckmup14tid"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aasye"]
+atlas = ExtResource("2_15oho")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oosq"]
+atlas = ExtResource("4_xbbdg")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edd2l"]
+atlas = ExtResource("2_15oho")
+region = Rect2(0, 0, 48, 47)
+
+[node name="Control" type="PanelContainer" unique_id=1632972420]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -40,6 +61,11 @@ anchor_bottom = 1.0
 offset_top = -128.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ukgro")
+script = ExtResource("1_sxq3l")
+content = SubResource("Resource_edd2l")
+aprendiz_texture = SubResource("AtlasTexture_aasye")
+mestre_texture = SubResource("AtlasTexture_0oosq")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Container" unique_id=171533624]
 layout_mode = 2
@@ -62,9 +88,26 @@ layout_mode = 2
 [node name="DialogPortrait" type="TextureRect" parent="CanvasLayer/Container/MarginContainer/DialogHBox/VBoxContainer" unique_id=127388406]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 64)
+[node name="EmoteBox" type="TextureRect" parent="HBoxContainer" unique_id=2125912383]
 layout_mode = 2
-texture = ExtResource("1_ukgro")
-stretch_mode = 2
+texture = ExtResource("4_mvjhu")
+expand_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/EmoteBox" unique_id=127388406]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = -1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_edd2l")
+expand_mode = 2
+script = ExtResource("5_xbbdg")
+amplitude = 5.0
 
 [node name="DialogTitle" type="Label" parent="CanvasLayer/Container/MarginContainer/DialogHBox/VBoxContainer" unique_id=1448968043]
 unique_name_in_owner = true
