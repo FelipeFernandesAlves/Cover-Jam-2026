@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://w847smqv0u6f"]
+
+[ext_resource type="Script" uid="uid://dypf8l2f2m2qf" path="res://scripts/DialogUI.gd" id="1_sxq3l"]
+[ext_resource type="Texture2D" uid="uid://cc5r2688uk712" path="res://icon.svg" id="1_ukgro"]
+[ext_resource type="Script" uid="uid://blfckmup14tid" path="res://scripts/DialogContent.gd" id="3_qc0i0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukgro"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0.051459268, 0.109739356, 0.13025951, 1)
+
+[sub_resource type="Resource" id="Resource_d50np"]
+script = ExtResource("3_qc0i0")
+texto = "Era uma vez um elfo encantado que morava num pé de caqui. Em cima morava um duende safado que vivia fazendo pipi. Um dia o elfo se aborreceu e na porta do duende bateu. Foi nessa ocasião que eles então se casaaaaaarão."
+imagem = ExtResource("1_ukgro")
+image_direction = 1
+metadata/_custom_type_script = "uid://blfckmup14tid"
+
+[node name="Control" type="PanelContainer" unique_id=1632972420]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ukgro")
+script = ExtResource("1_sxq3l")
+content = SubResource("Resource_d50np")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2016036074]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=127388406]
+layout_mode = 2
+texture = ExtResource("1_ukgro")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=1163995955]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer" unique_id=192738631]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Mestre, por que você virou pó???? Mestre, por que você virou pó???? Mestre, por que você virou pó???? Mestre, por que você virou pó???? Mestre, por que você virou pó???? Mestre, por que você virou pó???? "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

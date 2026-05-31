@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dh4x8rmttthfc"]
+
+[ext_resource type="Script" uid="uid://ef5pyc1vtmu6" path="res://scripts/DialogScene.gd" id="1_umpai"]
+[ext_resource type="Script" uid="uid://blfckmup14tid" path="res://scripts/DialogContent.gd" id="2_hltkt"]
+[ext_resource type="Texture2D" uid="uid://cc5r2688uk712" path="res://icon.svg" id="3_rxcrq"]
+
+[sub_resource type="Resource" id="Resource_uoj86"]
+script = ExtResource("2_hltkt")
+texto = "Oiii, rsrs. Te vi danaçndo, vc é muito linde."
+imagem = ExtResource("3_rxcrq")
+metadata/_custom_type_script = "uid://blfckmup14tid"
+
+[sub_resource type="Resource" id="Resource_jshrh"]
+script = ExtResource("2_hltkt")
+texto = "O-oi, rsrs. É... obrigade. hihi :3"
+imagem = ExtResource("3_rxcrq")
+image_direction = 1
+metadata/_custom_type_script = "uid://blfckmup14tid"
+
+[sub_resource type="Resource" id="Resource_t23fx"]
+script = ExtResource("2_hltkt")
+texto = "Você quer dançar, linde?"
+imagem = ExtResource("3_rxcrq")
+metadata/_custom_type_script = "uid://blfckmup14tid"
+
+[sub_resource type="Resource" id="Resource_ypwn3"]
+script = ExtResource("2_hltkt")
+texto = "Nooossaa, mas eu nunca nem dancei antes. Eu sou burre vou acabar tropeçando batendo a cabeça e morrendo ou te matando"
+imagem = ExtResource("3_rxcrq")
+image_direction = 1
+metadata/_custom_type_script = "uid://blfckmup14tid"
+
+[sub_resource type="Resource" id="Resource_vgl56"]
+script = ExtResource("2_hltkt")
+texto = "Eu gosto assim, arriscadinhes, burrinhes, lindes. Vem sentir meu calor muá muá"
+imagem = ExtResource("3_rxcrq")
+metadata/_custom_type_script = "uid://blfckmup14tid"
+
+[node name="DialogScene" type="Control" unique_id=168299307]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_umpai")
+dialog_sequence = Array[ExtResource("2_hltkt")]([SubResource("Resource_uoj86"), SubResource("Resource_jshrh"), SubResource("Resource_t23fx"), SubResource("Resource_ypwn3"), SubResource("Resource_vgl56")])
