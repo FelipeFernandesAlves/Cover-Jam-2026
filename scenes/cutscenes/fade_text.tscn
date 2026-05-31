@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b2365qqrgewl"]
+
+[ext_resource type="Script" uid="uid://b3wmu38q6mvn6" path="res://scenes/cutscenes/fade_text.gd" id="1_g44s2"]
+
+[node name="FadeText" type="Control" unique_id=838745636]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g44s2")
+
+[node name="Label" type="Label" parent="." unique_id=1736878811]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_right = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "blá blá blá Eu morava numa vila pequena também e acabei me perdendo nesse bosque durante um festival. Um espírito me guiou pra essa torre, que pertenceu a um mago há muito desaparecido."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
