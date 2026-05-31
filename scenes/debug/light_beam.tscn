@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://buystehg6fofl"]
+
+[ext_resource type="Script" uid="uid://bcmhr7kpty2tm" path="res://scenes/debug/scripts/LightEmissor.gd" id="1_g8i4k"]
+[ext_resource type="Script" uid="uid://blc8j7agny0vu" path="res://scripts/GridState.gd" id="1_khvfo"]
+[ext_resource type="PackedScene" uid="uid://6hfxkgkhecgv" path="res://entities/light_beam.tscn" id="1_wom41"]
+[ext_resource type="PackedScene" uid="uid://b6mbqf0yo73kj" path="res://entities/mirror.tscn" id="2_gr6da"]
+[ext_resource type="PackedScene" uid="uid://dxq4biftakvx0" path="res://entities/light_emissor.tscn" id="3_khvfo"]
+
+[sub_resource type="Environment" id="Environment_gr6da"]
+background_mode = 3
+glow_enabled = true
+glow_levels/4 = 0.5
+glow_levels/5 = 0.3
+glow_hdr_threshold = 0.4
+glow_hdr_scale = 0.0
+adjustment_enabled = true
+
+[node name="LightBeam" type="Node2D" unique_id=2066099405]
+
+[node name="GridState" type="Node" parent="." unique_id=327491094]
+script = ExtResource("1_khvfo")
+metadata/_custom_type_script = "uid://blc8j7agny0vu"
+
+[node name="Mirror2" parent="." unique_id=413756081 node_paths=PackedStringArray("grid_state") instance=ExtResource("2_gr6da")]
+position = Vector2(-240, -4)
+reflect_dir = 2
+grid_state = NodePath("../GridState")
+initial_grid_pos = Vector2i(4, -6)
+type = 2
+
+[node name="Mirror" parent="." unique_id=1382782833 node_paths=PackedStringArray("grid_state") instance=ExtResource("2_gr6da")]
+position = Vector2(-120, -2)
+reflect_dir = 0
+grid_state = NodePath("../GridState")
+initial_grid_pos = Vector2i(4, 0)
+type = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1630159817]
+
+[node name="LightEmissor" parent="." unique_id=1046029252 node_paths=PackedStringArray("grid_state") instance=ExtResource("3_khvfo")]
+script = ExtResource("1_g8i4k")
+grid_state = NodePath("../GridState")
+initial_grid_pos = Vector2i(-2, 0)
+
+[node name="LightBeam" parent="LightEmissor" unique_id=924739334 instance=ExtResource("1_wom41")]
+cast_speed = 2000.0
+line_color = Color(0.99, 0.657525, 0.34650004, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1476308277]
+environment = SubResource("Environment_gr6da")

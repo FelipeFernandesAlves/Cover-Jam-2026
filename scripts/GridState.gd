@@ -7,22 +7,22 @@ signal player_damaged(amount: int)
 
 enum CellType { EMPTY, WALL, MOVABLE, ENEMY, PLAYER }
 
-@export var grid_size: Vector2i = Vector2i(10, 10)
+static var CELL_SIZE : int = 32
+@export var collision_tile : TileMapLayer
+var grid_size : Vector2i = Vector2i.ZERO
 
 # Dicionário de estado: Vector2i -> GridEntityData
 var grid_data: Dictionary = {}
 
 func _ready() -> void:
-	_generate_border_walls()
+	grid_size = collision_tile.get_used_rect().size
+	_generate_colision_cells()
 
-func _generate_border_walls() -> void:
-	for x in range(grid_size.x):
-		for y in range(grid_size.y):
-			# Verifica se a coordenada atual é uma das 4 bordas
-			if x == 0 or x == grid_size.x - 1 or y == 0 or y == grid_size.y - 1:
-				# Cria um dado de parede puro (sem nó visual associado por enquanto)
-				var wall_data = GridEntityData.new(CellType.WALL, null)
-				register_entity(Vector2i(x, y), wall_data)
+func _generate_colision_cells() -> void:
+	for cell in collision_tile.get_used_cells():		
+		var wall_data = GridEntityData.new(CellType.WALL, null)
+		register_entity(Vector2i(cell.x, cell.y), wall_data)
+		
 
 # Registra uma entidade na grid lógica (sobrescreve automaticamente se já houver algo)
 func register_entity(pos: Vector2i, entity: GridEntityData):

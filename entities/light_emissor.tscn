@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dxq4biftakvx0"]
+
+[ext_resource type="Script" uid="uid://cg0dy2oypa07s" path="res://scripts/GridVisual.gd" id="1_ipnov"]
+[ext_resource type="Texture2D" uid="uid://cc5r2688uk712" path="res://icon.svg" id="2_05srf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipnov"]
+size = Vector2(8, 8)
+
+[node name="LightEmissor" type="StaticBody2D" unique_id=1046029252]
+script = ExtResource("1_ipnov")
+metadata/_custom_type_script = "uid://cg0dy2oypa07s"
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=864095920]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_05srf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1466752015]
+shape = SubResource("RectangleShape2D_ipnov")
