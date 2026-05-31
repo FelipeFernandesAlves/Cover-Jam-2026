@@ -47,6 +47,7 @@ size = Vector2(19, 32)
 script = ExtResource("1_syy3b")
 reflect_point = NodePath("ReflectPoint")
 sprites = NodePath("Sprites")
+type = 2
 metadata/_custom_type_script = "uid://2kjd0y17t1uf"
 
 [node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=506396592]
