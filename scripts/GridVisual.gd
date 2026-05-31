@@ -1,4 +1,4 @@
-extends Node2D
+extends StaticBody2D
 class_name GridVisual
 
 @export_group("Configurações de Grid")

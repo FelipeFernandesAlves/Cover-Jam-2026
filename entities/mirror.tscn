@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b6mbqf0yo73kj"]
+
+[ext_resource type="Script" uid="uid://dew3cxmhk1k2b" path="res://scripts/Mirror.gd" id="1_syy3b"]
+[ext_resource type="Texture2D" uid="uid://q3ausaixsfls" path="res://assets/mirror.png" id="2_atfo5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6p3hd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_atfo5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yof1"]
+size = Vector2(32, 32)
+
+[node name="Mirror" type="StaticBody2D" unique_id=413756081 node_paths=PackedStringArray("reflect_point", "sprites")]
+script = ExtResource("1_syy3b")
+reflect_point = NodePath("ReflectPoint")
+sprites = NodePath("Sprites")
+metadata/_custom_type_script = "uid://cg0dy2oypa07s"
+
+[node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=506396592]
+sprite_frames = SubResource("SpriteFrames_6p3hd")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1476832076]
+shape = SubResource("RectangleShape2D_6yof1")
+
+[node name="ReflectPoint" type="Node2D" parent="." unique_id=1157567031]
