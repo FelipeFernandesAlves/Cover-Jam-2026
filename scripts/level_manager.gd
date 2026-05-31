@@ -25,8 +25,13 @@ extends Node
 var current_moves: int = 0
 var current_time: float
 
+# Sinais internos do level
 signal level_won()
 signal level_restart()
+
+# Sinais externos (Para o SceneManager ouvir)
+signal reload()
+signal scene_finished()
 
 func _ready() -> void:
 	label.text = title
@@ -78,17 +83,21 @@ func _on_start_level_timer():
 func on_restart_level():
 	Game.game_paused = true
 	var player: Player = get_tree().get_first_node_in_group("player")
-	player.die()
+	if player:
+		player.die()
 	await get_tree().create_timer(1.2).timeout
 	animation.play("level_restart")
 
 func on_level_won():
 	Game.game_paused = true
+	# Emite o sinal para o SceneManager carregar a próxima cena
+	scene_finished.emit()
 
 func _restart_level():
-	get_tree().reload_current_scene()
-	Game.skip_cutscenes = true
-	Game.game_paused = false
+	# Apenas avisa o SceneManager para começar o Fade.
+	# A cena antiga continuará pausada até ser deletada com segurança.
+	reload.emit()
 
 func _on_door_light_beam():
 	level_won.emit()
+	
