@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://od8k1dbglend"]
 
-[ext_resource type="Script" uid="uid://c1sqdl8dpxjfg" path="res://scripts/SceneManager.gd" id="1_3y4n5"]
-[ext_resource type="PackedScene" uid="uid://chr4qshcd5mf2" path="res://entities/node_2d.tscn" id="2_wf0b3"]
+[ext_resource type="Script" uid="uid://c1sqdl8dpxjfg" path="res://scripts/SceneManager.gd" id="1_4qdxe"]
 
 [node name="SceneManager" type="Node2D" unique_id=2042621061]
-script = ExtResource("1_3y4n5")
-scene_sequence = Array[PackedScene]([ExtResource("2_wf0b3"), ExtResource("2_wf0b3")])
+script = ExtResource("1_4qdxe")
 
 [node name="SceneContainer" type="Node" parent="." unique_id=769636943]
 
