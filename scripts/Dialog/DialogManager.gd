@@ -9,7 +9,7 @@ var current_dialog_index : int = 0
 var current_dialog_scene = null
 
 func _ready() -> void:
-	show_dialog()
+	show_dialog() 
 
 func show_dialog():
 	if current_dialog_index >= dialog_sequence.size():

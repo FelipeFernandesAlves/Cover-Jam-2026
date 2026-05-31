@@ -1,8 +1,46 @@
 [gd_scene format=3 uid="uid://due0bvix3wids"]
 
 [ext_resource type="PackedScene" uid="uid://cj8wm7mm8nr5p" path="res://scenes/interlude/template.tscn" id="1_ee0ew"]
+[ext_resource type="Script" uid="uid://blvjvf8o13iek" path="res://scripts/Dialog/DialogContent.gd" id="2_vh6ly"]
+
+[sub_resource type="Resource" id="Resource_ocyi6"]
+script = ExtResource("2_vh6ly")
+texto = "Viu? Você se saiu bem, mesmo sem minha ajuda."
+image_direction = 1
+personagem = 1
+emotion = 2
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_dy7yh"]
+script = ExtResource("2_vh6ly")
+texto = "É, acho que não foi tão difícil assim. Mas até que essa torre não parece ter muita coisa de especial…"
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_7cl7t"]
+script = ExtResource("2_vh6ly")
+texto = "Fico muito feliz que você tenha conseguido passar do primeiro andar, mas você precisa aprender que existe mais pra além do que se vê."
+image_direction = 1
+personagem = 1
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_wgkxs"]
+script = ExtResource("2_vh6ly")
+texto = "Nenhum lugar é “só um lugar”... Você verá."
+image_direction = 1
+personagem = 1
+emotion = 6
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_tkjhk"]
+script = ExtResource("2_vh6ly")
+texto = "Não fala assim que eu fico com medo…"
+emotion = 3
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
 
 [node name="Template" unique_id=456606217 instance=ExtResource("1_ee0ew")]
+
+[node name="DialogScene" parent="." index="0" unique_id=168299307]
+dialog_sequence = Array[ExtResource("2_vh6ly")]([SubResource("Resource_ocyi6"), SubResource("Resource_dy7yh"), SubResource("Resource_7cl7t"), SubResource("Resource_wgkxs"), SubResource("Resource_tkjhk")])
 
 [node name="AnimatedSprite2D" parent="CanvasLayer/Control" parent_id_path=PackedInt32Array(758594145) index="1" unique_id=1924473138]
 position = Vector2(110.00001, 7.0000005)
