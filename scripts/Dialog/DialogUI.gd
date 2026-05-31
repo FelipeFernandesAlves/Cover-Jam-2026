@@ -1,4 +1,4 @@
-extends PanelContainer
+extends MarginContainer
 
 signal dialog_finished()
 
@@ -7,9 +7,9 @@ signal dialog_finished()
 
 @export var letter_interval: float = 0.03
 
-@onready var main_hbox : HBoxContainer = $HBoxContainer
-@onready var texture_rect: TextureRect = $HBoxContainer/EmoteBox/TextureRect
-@onready var label: Label = $HBoxContainer/HBoxContainer/Label
+@onready var main_hbox : HBoxContainer = $MarginContainer/HBoxContainer
+@onready var texture_rect: TextureRect = $MarginContainer/HBoxContainer/CenterContainer/TextureRect
+@onready var label: Label = $MarginContainer/HBoxContainer/Label
 
 @export var aprendiz_texture : AtlasTexture
 @export var mestre_texture : AtlasTexture
@@ -58,7 +58,7 @@ func set_character_emotion(emotion: DialogContent.Emotion):
 	
 func _input(event: InputEvent) -> void:
 	# Se o jogador clicar com o botão esquerdo do mouse ou apertar "Espaço/Enter"
-	if event.is_action_pressed("ui_accept") or (event is InputEventMouseButton and event.pressed):
+	if event.is_action_pressed("dialog_interact"):
 		
 		# Verifica se a animação ainda está rodando
 		if text_tween and text_tween.is_running():

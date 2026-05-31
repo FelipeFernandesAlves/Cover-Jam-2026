@@ -2,76 +2,83 @@
 
 [ext_resource type="Script" uid="uid://b5aoojievktvx" path="res://scripts/Dialog/DialogUI.gd" id="1_sxq3l"]
 [ext_resource type="Texture2D" uid="uid://kryqoal7utq1" path="res://assets/dialog/emotes.png" id="2_15oho"]
+[ext_resource type="Theme" uid="uid://dunn2cpcfghdh" path="res://assets/themes/label.tres" id="3_lbeus"]
 [ext_resource type="Texture2D" uid="uid://b02e2qlx3wu4n" path="res://assets/dialog/emote_box.png" id="4_mvjhu"]
 [ext_resource type="Texture2D" uid="uid://ctk8chq122dsn" path="res://assets/dialog/emotes_mage.png" id="4_xbbdg"]
 [ext_resource type="Script" uid="uid://dtdexp7bhf1i4" path="res://entities/float.gd" id="5_xbbdg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukgro"]
-content_margin_left = 25.0
-content_margin_top = 25.0
-content_margin_right = 25.0
-content_margin_bottom = 25.0
-bg_color = Color(0.051459268, 0.109739356, 0.13025951, 1)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvjhu"]
 atlas = ExtResource("2_15oho")
+region = Rect2(164, 276, 88, 88)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xbbdg"]
 atlas = ExtResource("4_xbbdg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbbdg"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.05573332, 0.043999996, 0.22, 0.45882353)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_edd2l"]
 atlas = ExtResource("2_15oho")
 region = Rect2(0, 0, 48, 47)
 
-[node name="Control" type="PanelContainer" unique_id=1632972420]
+[node name="Control" type="MarginContainer" unique_id=218005423]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -168.0
+offset_top = -79.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ukgro")
 script = ExtResource("1_sxq3l")
 aprendiz_texture = SubResource("AtlasTexture_mvjhu")
 mestre_texture = SubResource("AtlasTexture_xbbdg")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2016036074]
+[node name="Panel" type="Panel" parent="." unique_id=1109386715]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbbdg")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2108872698]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2016036074]
 layout_direction = 2
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="EmoteBox" type="TextureRect" parent="HBoxContainer" unique_id=2125912383]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer" unique_id=738197918]
+layout_mode = 2
+
+[node name="EmoteBox" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer" unique_id=2125912383]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("4_mvjhu")
-expand_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/EmoteBox" unique_id=127388406]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -12.0
-offset_top = -14.0
-offset_right = 12.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_edd2l")
-expand_mode = 2
-script = ExtResource("5_xbbdg")
-amplitude = 5.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=1163995955]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer" unique_id=127388406]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
+texture = SubResource("AtlasTexture_edd2l")
+script = ExtResource("5_xbbdg")
 
-[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer" unique_id=192738631]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=192738631]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("3_lbeus")
+theme_override_font_sizes/font_size = 18
 text = "Mestre, por que você virou pó???? Mestre, por que você virou pó???? Mestre, por que você virou pó???? Mestre, por que você virou pó???? Mestre, por que você virou pó???? Mestre, por que você virou pó???? "
-horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
