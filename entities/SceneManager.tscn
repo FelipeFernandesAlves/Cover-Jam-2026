@@ -8,6 +8,7 @@ script = ExtResource("1_4qdxe")
 [node name="SceneContainer" type="Node" parent="." unique_id=769636943]
 
 [node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=490660186]
+layer = 2
 
 [node name="FadeRect" type="ColorRect" parent="TransitionLayer" unique_id=1641640236]
 anchors_preset = 15
