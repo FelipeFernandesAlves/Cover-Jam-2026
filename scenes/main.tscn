@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cq2qfok75froy" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://od8k1dbglend" path="res://entities/SceneManager.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://ms43sq6ac5tw" path="res://scenes/interlude/interlude_0.tscn" id="3_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://dkwc6dvtx084m" path="res://scenes/levels/level_1.tscn" id="3_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://due0bvix3wids" path="res://scenes/interlude/interlude_1.tscn" id="4_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://bw4i6qadyr5d1" path="res://scenes/levels/level_2.tscn" id="5_trceg"]
@@ -16,6 +17,6 @@
 script = ExtResource("1_o5qli")
 
 [node name="SceneManager" parent="." unique_id=2042621061 instance=ExtResource("2_0wfyh")]
-scene_sequence = Array[PackedScene]([ExtResource("3_ya4ey"), ExtResource("4_eb6dy"), ExtResource("5_trceg"), ExtResource("6_a8y0u"), ExtResource("7_jkv2x"), ExtResource("8_jbj1t"), ExtResource("9_muem4"), ExtResource("10_ya4ey"), ExtResource("10_dp3eg")])
+scene_sequence = Array[PackedScene]([ExtResource("3_eb6dy"), ExtResource("3_ya4ey"), ExtResource("4_eb6dy"), ExtResource("5_trceg"), ExtResource("6_a8y0u"), ExtResource("7_jkv2x"), ExtResource("8_jbj1t"), ExtResource("9_muem4"), ExtResource("10_ya4ey"), ExtResource("10_dp3eg")])
 fade_duration = 3.0
 tempo_tela_preta = 2.5

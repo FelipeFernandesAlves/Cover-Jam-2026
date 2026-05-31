@@ -29,11 +29,11 @@ position = Vector2(368, 240)
 reflect_dir = 1
 
 [node name="Mirror4" parent="Objects" parent_id_path=PackedInt32Array(1263056560) index="1" unique_id=1115054580 instance=ExtResource("5_fkk1g")]
-position = Vector2(304, 144)
+position = Vector2(368, 112)
 reflect_dir = 2
 
 [node name="Mirror5" parent="Objects" parent_id_path=PackedInt32Array(1263056560) index="2" unique_id=726563208 instance=ExtResource("5_fkk1g")]
-position = Vector2(560, 112)
+position = Vector2(463, 112)
 
 [node name="LightEmissor" parent="Objects" parent_id_path=PackedInt32Array(1263056560) index="3" unique_id=1046029252 instance=ExtResource("2_fmg3e")]
 y_sort_enabled = true

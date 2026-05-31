@@ -6,3 +6,4 @@ signal scene_finished()
 
 func _on_dialog_scene_dialog_scene_finished() -> void:
 	scene_finished.emit()
+ 
