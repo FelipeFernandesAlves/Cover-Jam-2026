@@ -3,7 +3,7 @@ extends Node
 const SCENE_MANAGER = preload("uid://od8k1dbglend")
 
 var game_paused: bool = false
-var skip_cutscenes: bool = false
+var skip_cutscenes: bool = true
 var grid_state: GridState = null
 var is_debug: bool = true
 

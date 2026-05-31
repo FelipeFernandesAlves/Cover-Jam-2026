@@ -44,6 +44,9 @@ func _physics_process(delta: float) -> void:
 	if (is_colliding()):
 		beam_end_position = to_local(get_collision_point())
 		var collider = get_collider()
+		if (collider is Door && !collider.filling):
+			collider.fill()
+		
 		if (collider is Reflective):
 			var new_dir = collider.get_reflect_direction(impact_dir)
 			beam_end_position = to_local(collider.reflect_point.global_position)
@@ -59,8 +62,9 @@ func _physics_process(delta: float) -> void:
 					add_child(next_beam)
 					next_beam.is_casting = true
 					next_beam.impact_dir = new_dir 
-			
-			next_beam.global_position = collider.reflect_point.global_position
+					next_beam.global_position = collider.reflect_point.global_position
+			else:
+				next_beam.global_position = collider.reflect_point.global_position
 		elif (next_beam):
 			next_beam.disappeared.disconnect(_disappear)
 			next_beam.queue_free()
@@ -84,7 +88,7 @@ func _appear() -> void:
 	line.visible = true
 	casting_particles.show()
 	collision_particles.show()
-	beam_particles.show()
+	#beam_particles.show()
 	tween = create_tween()
 	tween.tween_property(line, "width", line_width, line_growth_time * 2.0).from(0.0)
 

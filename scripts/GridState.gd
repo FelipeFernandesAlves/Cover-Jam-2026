@@ -8,7 +8,7 @@ signal player_damaged(amount: int)
 
 enum CellType { EMPTY, WALL, MOVABLE, ENEMY, PLAYER }
 
-static var CELL_SIZE : int = 16
+static var CELL_SIZE : int = 32
 @export var collision_tile : TileMapLayer
 @export var hide_col: bool
 var grid_size : Vector2i = Vector2i.ZERO

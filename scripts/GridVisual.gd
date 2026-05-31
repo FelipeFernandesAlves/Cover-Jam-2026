@@ -16,8 +16,8 @@ func _ready():
 	if (!grid_state):
 		grid_state = Game.grid_state
 	
-	z_index += 10
 	y_sort_enabled = true
+	z_index = 10
 	
 	# 1. Posicionamento Inicial
 	var initial_grid_pos = position / GridState.CELL_SIZE

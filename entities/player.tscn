@@ -420,7 +420,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_merdl"]
-size = Vector2(24, 24)
+size = Vector2(16, 24)
 
 [node name="Player" type="StaticBody2D" unique_id=982078070 groups=["player"]]
 script = ExtResource("1_4flbx")
@@ -431,7 +431,7 @@ metadata/_custom_type_script = "uid://dtn2i84s4hnsa"
 emitting = false
 amount = 32
 texture = ExtResource("2_b0kkn")
-lifetime = 1.4000000000000001
+lifetime = 1.4
 one_shot = true
 explosiveness = 1.0
 use_fixed_seed = true
@@ -446,11 +446,11 @@ texture = ExtResource("3_e4p34")
 texture_scale = 0.01
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=83587651]
-position = Vector2(-3, -7)
+position = Vector2(-1, -16)
 sprite_frames = SubResource("SpriteFrames_hj0ki")
-animation = &"idle_side"
+animation = &"idle_front"
 autoplay = "idle_front"
-frame_progress = 0.2026026
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=142968786]
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_merdl")

@@ -3,10 +3,14 @@ extends GridVisual
 
 enum REFLECT_DIRECTION { NW, NE, SE, SW }
 
-@export var reflect_dir: REFLECT_DIRECTION = REFLECT_DIRECTION.NE:
+@export var reflect_dir: REFLECT_DIRECTION = REFLECT_DIRECTION.NW:
 	set = _set_reflect_dir
 @export var reflect_point: Node2D
 @export var sprites: AnimatedSprite2D
+
+func _ready():
+	super()
+	_set_reflect_dir(reflect_dir)
 
 func get_reflect_direction(impact_dir: Vector2) -> Vector2:
 	var possible_directions = _get_possible_directions()
@@ -20,8 +24,8 @@ func _get_possible_directions() -> Array[Vector2]:
 	match reflect_dir:
 		REFLECT_DIRECTION.NW: return [Vector2.UP, Vector2.LEFT]
 		REFLECT_DIRECTION.NE: return [Vector2.UP, Vector2.RIGHT]
-		REFLECT_DIRECTION.SE: return [Vector2.DOWN, Vector2.LEFT]
-		REFLECT_DIRECTION.SW: return [Vector2.DOWN, Vector2.RIGHT]
+		REFLECT_DIRECTION.SE: return [Vector2.DOWN, Vector2.RIGHT]
+		REFLECT_DIRECTION.SW: return [Vector2.DOWN, Vector2.LEFT]
 	return []
 
 func _set_reflect_dir(value):
@@ -30,9 +34,13 @@ func _set_reflect_dir(value):
 		
 	reflect_dir = value
 	if (!sprites): return
-	var dir = REFLECT_DIRECTION.find_key(reflect_dir)
-	sprites.flip_v = "S" in dir
-	if ("S" in dir):
-		sprites.flip_h = "E" in dir
-	else:
-		sprites.flip_h = "W" in dir
+	
+	match reflect_dir:
+		REFLECT_DIRECTION.NW: 
+			sprites.frame = 0
+		REFLECT_DIRECTION.NE: 
+			sprites.frame = 1 
+		REFLECT_DIRECTION.SE: 
+			sprites.frame = 2
+		REFLECT_DIRECTION.SW: 
+			sprites.frame = 4

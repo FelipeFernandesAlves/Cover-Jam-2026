@@ -2,7 +2,7 @@ class_name Player
 extends GridVisual
 
 var is_animating: bool = false
-var facing_direction: Vector2i = Vector2i.DOWN # Guarda para onde o player está olhando
+@export var facing_direction: Vector2i = Vector2i.DOWN # Guarda para onde o player está olhando
 
 @onready var death_particles: GPUParticles2D = $DeathParticles
 @onready var death_light: PointLight2D = $DeathLight

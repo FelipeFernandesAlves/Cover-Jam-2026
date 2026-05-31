@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://brlmhu7hvvvsy"]
+
+[ext_resource type="Texture2D" uid="uid://ctes2ar3qkl18" path="res://assets/door.png" id="1_3fqlw"]
+[ext_resource type="Script" uid="uid://bhgbu1snqd30x" path="res://scripts/door.gd" id="1_k4wox"]
+
+[sub_resource type="Gradient" id="Gradient_k4wox"]
+offsets = PackedFloat32Array(0, 0.18118466, 1)
+colors = PackedColorArray(0.98039216, 0.69803923, 0.4117647, 1, 0.97908044, 0.6923004, 0.41045296, 1, 0.9490196, 0.56078434, 0.38039216, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ts0s0"]
+gradient = SubResource("Gradient_k4wox")
+width = 28
+height = 24
+fill_from = Vector2(0.51282054, 1)
+fill_to = Vector2(0.4957265, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4wox"]
+atlas = ExtResource("1_3fqlw")
+region = Rect2(0, 0, 40, 69)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ts0s0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4wox")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4wox"]
+size = Vector2(24, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts0s0"]
+size = Vector2(26, 27)
+
+[node name="Door" type="StaticBody2D" unique_id=1438962923]
+script = ExtResource("1_k4wox")
+type = 1
+metadata/_custom_type_script = "uid://bhgbu1snqd30x"
+
+[node name="DoorBack" type="Sprite2D" parent="." unique_id=1112915073]
+position = Vector2(0, -6)
+texture = SubResource("GradientTexture2D_ts0s0")
+offset = Vector2(0, -11.476191)
+
+[node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=1513377857]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_ts0s0")
+offset = Vector2(4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=811882595]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_k4wox")
+
+[node name="WinArea" type="Area2D" parent="." unique_id=1768806514]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea" unique_id=2068895598]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_ts0s0")
+debug_color = Color(0.9031143, 0.279024, 0.346963, 0.41960785)
+
+[connection signal="light_beam_touched" from="." to="." method="_on_light_beam_touched"]

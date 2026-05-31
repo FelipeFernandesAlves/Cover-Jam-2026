@@ -10,6 +10,16 @@ extends Node
 
 @onready var grid_state: GridState = $"../GridState"
 
+@export var winning_door: Door:
+	set(value):
+		if (winning_door):
+			winning_door.light_beam_touched.disconnect(_on_door_light_beam)
+		
+		winning_door = value
+		if (!winning_door): return
+		
+		winning_door.light_beam_touched.connect(_on_door_light_beam)
+
 @export var title: String
 @export var max_moves: int = 4
 var current_moves: int = 0
@@ -79,3 +89,6 @@ func _restart_level():
 	get_tree().reload_current_scene()
 	Game.skip_cutscenes = true
 	Game.game_paused = false
+
+func _on_door_light_beam():
+	level_won.emit()
