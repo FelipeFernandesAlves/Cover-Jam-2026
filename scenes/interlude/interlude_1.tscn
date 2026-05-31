@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://due0bvix3wids"]
 
-[node name="Interlude1" type="Node2D" unique_id=1756298839]
+[ext_resource type="PackedScene" uid="uid://cj8wm7mm8nr5p" path="res://scenes/interlude/template.tscn" id="1_ee0ew"]
+
+[node name="Template" unique_id=456606217 instance=ExtResource("1_ee0ew")]
+
+[node name="AnimatedSprite2D" parent="CanvasLayer/Control" parent_id_path=PackedInt32Array(758594145) index="1" unique_id=1924473138]
+position = Vector2(110.00001, 7.0000005)
