@@ -2,19 +2,19 @@ extends StaticBody2D
 class_name GridVisual
 
 @export_group("Configurações de Grid")
-@export var grid_state: GridState # Arraste o nó lógico aqui
-@export var initial_grid_pos: Vector2i
+@export var grid_state: GridState
 @export var type: GridState.CellType
 
 @export_group("Animação")
 @export var move_duration: float = 0.15
-@export var cell_size: int = 32 # Deve ser o mesmo do seu TileMap
 
 var current_grid_pos: Vector2i
 var entity_data: GridEntityData
+var cell_size = GridState.CELL_SIZE
 
 func _ready():
 	# 1. Posicionamento Inicial
+	var initial_grid_pos = position / GridState.CELL_SIZE
 	current_grid_pos = initial_grid_pos
 	position = get_centered_pixel_position(current_grid_pos)	
 	# 2. Registrar na Lógica
