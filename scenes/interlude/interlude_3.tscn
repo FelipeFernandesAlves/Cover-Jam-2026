@@ -1,5 +1,59 @@
 [gd_scene format=3 uid="uid://deojam4n3lv0q"]
 
 [ext_resource type="PackedScene" uid="uid://cj8wm7mm8nr5p" path="res://scenes/interlude/template.tscn" id="1_s2csf"]
+[ext_resource type="Script" uid="uid://blvjvf8o13iek" path="res://scripts/Dialog/DialogContent.gd" id="2_7su5e"]
+
+[sub_resource type="Resource" id="Resource_se1ka"]
+script = ExtResource("2_7su5e")
+texto = "Você já aprendeu muito. Tenho muito orgulho de você, sabia?"
+image_direction = 1
+personagem = 1
+emotion = 2
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_wb80f"]
+script = ExtResource("2_7su5e")
+texto = "É sério?"
+emotion = 1
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_qtr5d"]
+script = ExtResource("2_7su5e")
+texto = "Mas é claro!"
+image_direction = 1
+personagem = 1
+emotion = 2
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_ba2a8"]
+script = ExtResource("2_7su5e")
+texto = "Eu sei lá… é que eu… Eu acho que eu nunca vou ser tão bom quanto você, mestre Elius. Eu sempre fui diferente das outras pessoas, e não acho que no bom sentido. Eu tô tentando, mestre. Estou mesmo."
+emotion = 4
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_6hocs"]
+script = ExtResource("2_7su5e")
+texto = "Sabe, Dris? Quando eu estava passando pela sua pequena vila, eu notei que você era diferente. Como você conseguia sentir mais das pessoas, quase como um sexto sentido te guiando por sentimentos. Isso é magia, Dris. Magia da forma mais pura. Você é especial."
+image_direction = 1
+personagem = 1
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_bf6rd"]
+script = ExtResource("2_7su5e")
+texto = "E você ainda tem uma longa jornada adiante, então não se compare com um velhote como eu.
+"
+image_direction = 1
+personagem = 1
+emotion = 2
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_l4mu5"]
+script = ExtResource("2_7su5e")
+texto = "Eu… nunca tinha pensado dessa forma. Obrigado, mestre. Suas palavras são sempre muito importantes pra mim."
+emotion = 4
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
 
 [node name="Template" unique_id=456606217 instance=ExtResource("1_s2csf")]
+
+[node name="DialogScene" parent="CanvasLayer" parent_id_path=PackedInt32Array(679581945) index="1" unique_id=168299307]
+dialog_sequence = Array[ExtResource("2_7su5e")]([SubResource("Resource_se1ka"), SubResource("Resource_wb80f"), SubResource("Resource_qtr5d"), SubResource("Resource_ba2a8"), SubResource("Resource_6hocs"), SubResource("Resource_bf6rd"), SubResource("Resource_l4mu5")])
