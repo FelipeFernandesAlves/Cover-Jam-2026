@@ -1,4 +1,4 @@
-extends Node2D
+extends GridVisual
 
 @onready var light_beam: LightBeam = $LightBeam
 
