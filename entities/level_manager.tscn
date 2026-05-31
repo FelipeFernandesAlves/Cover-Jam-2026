@@ -137,6 +137,7 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_ne37n"]
 font = ExtResource("2_a82jy")
 font_size = 40
+font_color = Color(0.98039216, 0.69803923, 0.4117647, 1)
 
 [node name="LevelManager" type="Node" unique_id=1137920702]
 script = ExtResource("1_55dg3")
