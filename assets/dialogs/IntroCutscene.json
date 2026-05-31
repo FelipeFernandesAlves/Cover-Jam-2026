@@ -1,0 +1,22 @@
+{
+	"intro": [
+		{
+			"character": [
+				"ELIUS",
+				"neutral",
+				"LEFT"
+			],
+			"text": "Chegamos."
+		}
+	],
+	"intro_2": [
+		{
+			"character": [
+				"DRIS",
+				"neutral",
+				"LEFT"
+			],
+			"text": ""
+		}
+	]
+}

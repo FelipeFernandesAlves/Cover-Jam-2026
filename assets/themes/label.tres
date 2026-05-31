@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dunn2cpcfghdh"]
+
+[ext_resource type="FontFile" uid="uid://cuaxkqqwaxf02" path="res://assets/fonts/Silver.ttf" id="1_m7p4p"]
+
+[resource]
+default_font = ExtResource("1_m7p4p")
+default_font_size = 24
