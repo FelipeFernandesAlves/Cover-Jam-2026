@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://wj161f2tuew4"]
+
+[ext_resource type="Script" uid="uid://der61o7u155e5" path="res://scripts/level_manager.gd" id="1_55dg3"]
+[ext_resource type="FontFile" uid="uid://dc6m117mswpe7" path="res://assets/fonts/DungeonFont.ttf" id="2_a82jy"]
+[ext_resource type="LabelSettings" uid="uid://cgpvuvy5nr1p5" path="res://assets/themes/level_ui_label.tres" id="3_ne37n"]
+
+[sub_resource type="Animation" id="Animation_a82jy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Transition/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Transition/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Transition/ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ne37n"]
+resource_name = "level_intro"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Transition/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.7333333, 4, 5.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Transition/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6.5, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_intro_finished"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Transition/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wwlqv"]
+resource_name = "level_restart"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Transition/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_restart_level"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wwlqv"]
+_data = {
+&"RESET": SubResource("Animation_a82jy"),
+&"level_intro": SubResource("Animation_ne37n"),
+&"level_restart": SubResource("Animation_wwlqv")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_ne37n"]
+font = ExtResource("2_a82jy")
+font_size = 40
+
+[node name="LevelManager" type="Node" unique_id=1137920702]
+script = ExtResource("1_55dg3")
+metadata/_custom_type_script = "uid://der61o7u155e5"
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=948189037]
+libraries/ = SubResource("AnimationLibrary_wwlqv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2143986799]
+
+[node name="Transition" type="Control" parent="CanvasLayer" unique_id=58001547]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Transition" unique_id=720177505]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Transition" unique_id=990937092]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 37.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Teste"
+label_settings = SubResource("LabelSettings_ne37n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelUI" type="Control" parent="CanvasLayer" unique_id=479876452]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LevelUI" unique_id=1833382380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VFlowContainer" type="VFlowContainer" parent="CanvasLayer/LevelUI/MarginContainer" unique_id=691636692]
+layout_mode = 2
+
+[node name="LevelMoves" type="Label" parent="CanvasLayer/LevelUI/MarginContainer/VFlowContainer" unique_id=277655381]
+layout_mode = 2
+size_flags_vertical = 3
+text = "0/4"
+label_settings = ExtResource("3_ne37n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LevelUI/MarginContainer/VFlowContainer" unique_id=1775071038]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="LevelTime" type="Label" parent="CanvasLayer/LevelUI/MarginContainer/VFlowContainer/VBoxContainer" unique_id=1574082411]
+layout_mode = 2
+text = "0:00"
+label_settings = ExtResource("3_ne37n")
+
+[node name="LevelTitle" type="Label" parent="CanvasLayer/LevelUI/MarginContainer/VFlowContainer/VBoxContainer" unique_id=1749040330]
+layout_mode = 2
+text = "Teste"
+label_settings = ExtResource("3_ne37n")
+
+[node name="StartLevelTimer" type="Timer" parent="." unique_id=2140822510]
+wait_time = 0.25
+one_shot = true

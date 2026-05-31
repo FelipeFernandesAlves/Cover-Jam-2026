@@ -13,10 +13,16 @@ var entity_data: GridEntityData
 var cell_size = GridState.CELL_SIZE
 
 func _ready():
+	if (!grid_state):
+		grid_state = Game.grid_state
+	
+	z_index += 10
+	y_sort_enabled = true
+	
 	# 1. Posicionamento Inicial
 	var initial_grid_pos = position / GridState.CELL_SIZE
 	current_grid_pos = initial_grid_pos
-	position = get_centered_pixel_position(current_grid_pos)	
+	position = get_centered_pixel_position(current_grid_pos)
 	# 2. Registrar na Lógica
 	entity_data = GridEntityData.new(type, self)
 	grid_state.register_entity(current_grid_pos, entity_data)

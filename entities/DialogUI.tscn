@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dypf8l2f2m2qf" path="res://scripts/Dialog/DialogUI.gd" id="1_sxq3l"]
 [ext_resource type="Texture2D" uid="uid://cc5r2688uk712" path="res://icon.svg" id="1_ukgro"]
-[ext_resource type="Texture2D" uid="uid://dmnb0r2gm76uq" path="res://assets/Pxiel Art UI borders.png" id="2_15oho"]
+[ext_resource type="Texture2D" uid="uid://ds76q6unxim00" path="res://assets/Pxiel Art UI borders.png" id="2_15oho"]
 [ext_resource type="Theme" uid="uid://dunn2cpcfghdh" path="res://assets/themes/label.tres" id="3_lbeus"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15oho"]

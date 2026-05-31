@@ -11,7 +11,7 @@ script = ExtResource("1_ipnov")
 metadata/_custom_type_script = "uid://cg0dy2oypa07s"
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=864095920]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_05srf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1466752015]

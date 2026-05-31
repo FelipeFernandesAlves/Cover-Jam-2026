@@ -59,8 +59,12 @@ func _physics_process(delta: float) -> void:
 					add_child(next_beam)
 					next_beam.is_casting = true
 					next_beam.impact_dir = new_dir 
-					next_beam.global_position = collider.reflect_point.global_position
-		
+			
+			next_beam.global_position = collider.reflect_point.global_position
+		elif (next_beam):
+			next_beam.disappeared.disconnect(_disappear)
+			next_beam.queue_free()
+			next_beam = null
 	elif (next_beam):
 		next_beam.disappeared.disconnect(_disappear)
 		next_beam.queue_free()

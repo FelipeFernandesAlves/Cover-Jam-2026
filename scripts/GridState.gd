@@ -1,29 +1,36 @@
 extends Node
 class_name GridState
 
-# Sinais que a parte visual vai escutar para rodar as animações
+const WALL = preload("uid://cuquyr68wyckr")
+
 signal entity_moved(entity: GridEntityData, from_pos: Vector2i, to_pos: Vector2i)
 signal player_damaged(amount: int)
 
 enum CellType { EMPTY, WALL, MOVABLE, ENEMY, PLAYER }
 
-static var CELL_SIZE : int = 32
+static var CELL_SIZE : int = 16
 @export var collision_tile : TileMapLayer
+@export var hide_col: bool
 var grid_size : Vector2i = Vector2i.ZERO
 
 # Dicionário de estado: Vector2i -> GridEntityData
 var grid_data: Dictionary = {}
 
 func _ready() -> void:
+	Game.grid_state = self
 	grid_size = collision_tile.get_used_rect().size
 	_generate_colision_cells()
+	collision_tile.visible = !hide_col
 
 func _generate_colision_cells() -> void:
-	for cell in collision_tile.get_used_cells():		
+	for cell in collision_tile.get_used_cells():
+		var wall: GridVisual = WALL.instantiate()
 		var wall_data = GridEntityData.new(CellType.WALL, null)
+		wall.entity_data = wall_data
+		wall.global_position = Vector2(cell.x, cell.y) * CELL_SIZE
 		register_entity(Vector2i(cell.x, cell.y), wall_data)
+		add_child(wall)
 		
-
 # Registra uma entidade na grid lógica (sobrescreve automaticamente se já houver algo)
 func register_entity(pos: Vector2i, entity: GridEntityData):
 	grid_data[pos] = entity

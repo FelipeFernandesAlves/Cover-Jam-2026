@@ -37,8 +37,8 @@ curve = SubResource("Curve_s40b7")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2qmul"]
 particle_flag_disable_z = true
 spread = 70.0
-initial_velocity_min = -150.0
-initial_velocity_max = -150.0
+initial_velocity_min = -80.0
+initial_velocity_max = -80.0
 scale_min = 0.5
 scale_max = 0.79999995
 scale_curve = SubResource("CurveTexture_wq3uv")
@@ -53,21 +53,25 @@ curve = SubResource("Curve_2qmul")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5gakn"]
 particle_flag_disable_z = true
 spread = 70.0
-initial_velocity_min = 80.0
-initial_velocity_max = 100.0
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
 scale_min = 0.5
 scale_max = 0.79999995
 scale_curve = SubResource("CurveTexture_s40b7")
 
 [node name="LightBeam" type="RayCast2D" unique_id=924739334]
+z_index = -1
 target_position = Vector2(0, 0)
 script = ExtResource("1_ymk82")
 cast_speed = 800.0
+line_color = Color(0.98039216, 0.69803923, 0.4117647, 1)
 
 [node name="Line" type="Line2D" parent="." unique_id=2120260499]
 points = PackedVector2Array(0, 0, 100, 0)
+width = 8.0
 joint_mode = 2
-end_cap_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 1
 
 [node name="BeamParticles" type="GPUParticles2D" parent="." unique_id=784009739]
 visible = false
@@ -82,7 +86,6 @@ lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_2qmul")
 
 [node name="CastingParticles" type="GPUParticles2D" parent="." unique_id=895552913]
-visible = false
 texture = ExtResource("2_5gakn")
 lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_5gakn")

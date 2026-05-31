@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cuquyr68wyckr"]
+
+[ext_resource type="Script" uid="uid://cg0dy2oypa07s" path="res://scripts/GridVisual.gd" id="1_301k8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_301k8"]
+size = Vector2(16, 16)
+
+[node name="Wall" type="StaticBody2D" unique_id=1197374855]
+script = ExtResource("1_301k8")
+type = 1
+metadata/_custom_type_script = "uid://cg0dy2oypa07s"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=773680917]
+shape = SubResource("RectangleShape2D_301k8")

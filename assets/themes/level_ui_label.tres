@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://cgpvuvy5nr1p5"]
+
+[ext_resource type="FontFile" uid="uid://dc6m117mswpe7" path="res://assets/fonts/DungeonFont.ttf" id="1_w24r1"]
+
+[resource]
+font = ExtResource("1_w24r1")
+font_size = 24
+font_color = Color(0.9490196, 0.56078434, 0.38039216, 1)

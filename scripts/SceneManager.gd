@@ -1,3 +1,4 @@
+class_name SceneManager
 extends Node
 
 @export var scene_sequence: Array[PackedScene]
@@ -12,12 +13,15 @@ var active_scene: Node = null
 
 func _ready() -> void:
 	# Start with the screen completely black
-	fade_rect.color.a = 1.0
+	fade_rect.color.a = 0.0
 	
 	if scene_sequence.size() > 0:
 		load_scene(current_index)
 	else:
 		push_warning("Scene Manager has no scenes in its array!")
+
+func load_next():
+	load_scene(current_index + 1)
 
 func load_scene(index: int) -> void:
 	if index >= scene_sequence.size():
