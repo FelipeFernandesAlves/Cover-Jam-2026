@@ -1,5 +1,31 @@
 [gd_scene format=3 uid="uid://ceglgm2d4isdq"]
 
 [ext_resource type="PackedScene" uid="uid://cj8wm7mm8nr5p" path="res://scenes/interlude/template.tscn" id="1_67h4c"]
+[ext_resource type="Script" uid="uid://blvjvf8o13iek" path="res://scripts/Dialog/DialogContent.gd" id="2_xc2qs"]
+
+[sub_resource type="Resource" id="Resource_b04op"]
+script = ExtResource("2_xc2qs")
+texto = "Confesso que estou com um pouco de medo, Dris."
+image_direction = 1
+personagem = 1
+emotion = 6
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_mjugc"]
+script = ExtResource("2_xc2qs")
+texto = "Mestre? Por quê?"
+emotion = 4
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_gyr1q"]
+script = ExtResource("2_xc2qs")
+texto = "Fazia tempo que eu não vinha aqui. Estamos chegando no topo. Venha."
+image_direction = 1
+personagem = 1
+emotion = 6
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
 
 [node name="Template" unique_id=456606217 instance=ExtResource("1_67h4c")]
+
+[node name="DialogScene" parent="CanvasLayer" parent_id_path=PackedInt32Array(679581945) index="1" unique_id=168299307]
+dialog_sequence = Array[ExtResource("2_xc2qs")]([SubResource("Resource_b04op"), SubResource("Resource_mjugc"), SubResource("Resource_gyr1q")])
