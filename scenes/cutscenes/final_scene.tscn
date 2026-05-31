@@ -1,0 +1,346 @@
+[gd_scene format=3 uid="uid://clxo2lqd2h4xd"]
+
+[ext_resource type="Script" uid="uid://k1kyf1b4anio" path="res://scenes/cutscenes/final_scene.gd" id="1_71i4h"]
+[ext_resource type="PackedScene" uid="uid://b6cjbxpl85ner" path="res://entities/FadeTextScene.tscn" id="2_vj3s6"]
+[ext_resource type="Script" uid="uid://bamcw2fe0m25s" path="res://scripts/fade_text_content.gd" id="3_wyln5"]
+[ext_resource type="Texture2D" uid="uid://c73y8b1y6ybne" path="res://assets/cutscenes/star_mage.png" id="4_6yhv2"]
+[ext_resource type="Texture2D" uid="uid://cc4t45oy8tlt4" path="res://assets/cutscenes/stars animation.png" id="4_wyln5"]
+[ext_resource type="Texture2D" uid="uid://ssgrbto00n8n" path="res://assets/cutscenes/star_lamb.png" id="5_t5phy"]
+[ext_resource type="Texture2D" uid="uid://b0he0608v8iuy" path="res://assets/cutscenes/stars_no_sky.png" id="7_8vje6"]
+[ext_resource type="Texture2D" uid="uid://desh200i5jmi4" path="res://assets/cutscenes/cloudes.png" id="8_05ofj"]
+
+[sub_resource type="Resource" id="Resource_jr7aq"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Dris, é aqui."
+duration = 2
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_rcveo"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Lembre-se que foi você que conseguiu chegar até aqui por conta própria, você merece. Agora aproveite."
+duration = 3
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_oyud0"]
+script = ExtResource("3_wyln5")
+label = "[Dris]
+Uaaaaau"
+duration = 2
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_3kuf0"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Pois é..."
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_sf6vg"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Eu vim aqui pela primeira vez quando eu era uma criança."
+duration = 2
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_quxu3"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Eu morava numa vila pequena também e acabei me perdendo nesse bosque durante um festival. Um espírito me guiou pra essa torre, que pertenceu a um mago há muito desaparecido."
+duration = 5
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_6yhv2"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Eu era uma criança, então só consegui explorar a torre superficialmente. Depois disso, o espirito me guiou de volta para o festival, em segurança."
+duration = 8
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_rtx8a"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+De tempos em tempos eu voltava pra cá, explorando pouco a pouco. Eu encontrei pergaminhos que me introduziram ao mundo da magia e aos desafios que eu pra sempre lembraria."
+duration = 8
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_t5phy"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Quando eu cheguei no topo pela primeira vez… foi aí que eu entendi tudo. Depois de um tempo eu te encontrei e soube na hora que fiz a escolha certa de quem iria receber meus conhecimentos."
+duration = 10
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_8vje6"]
+script = ExtResource("3_wyln5")
+label = "[Dris]
+É tão… magnífico. Parece que elas estão olhando diretamente pra mim."
+duration = 4
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_05ofj"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Sempre que você se sentir perdido, olhe pras estrelas e elas vãão te contar pra onde ir."
+duration = 4
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_skg62"]
+script = ExtResource("3_wyln5")
+label = "[Dris]
+Mas e se estiver de dia?? Dói olhar pro Sol…"
+duration = 4
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_5ia1h"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Não é pra olhar pro Sol, vai machucar. Mas mesmo quando é dia, as estrelas continuam lá."
+duration = 5
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_5d07y"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Não é fácil, Dris. A vida não é fácil. As coisas são complicadas e muitas vezes tudo vai estar tão confuso, tão dolorido. Como tintas numa tela, as memórias se misturam, as boas, as ruins, as que você queria esquecer e fingir que nunca aconteceram… quando tudo parece um caos, respire fundo, Dris."
+duration = 15
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_35m47"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+As estrelas estão pra você, te olhando e prontas pra guiar você até que você entenda: vai ficar tudo bem."
+duration = 7
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_j6ikp"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Minha jornada acaba aqui. Boa sorte, você consegue. Obrigado por ter sido meu aprendiz."
+duration = 7
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4fqy"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(0, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yhv2"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(160, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5phy"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(320, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vje6"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(480, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05ofj"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(640, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyud0"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(800, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kuf0"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(960, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sf6vg"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(1120, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quxu3"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(1280, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skg62"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(1440, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ia1h"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(1600, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d07y"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(1760, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35m47"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(1920, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6ikp"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(2080, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtx8a"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(2240, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42epg"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(2400, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxocl"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(2560, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3wqu"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(2720, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuyun"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(2880, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13gb7"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(3040, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78so6"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(3200, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtevd"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(3360, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2heaq"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(3520, 0, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybbyu"]
+atlas = ExtResource("4_wyln5")
+region = Rect2(3680, 0, 160, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qnyly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4fqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yhv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5phy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vje6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05ofj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyud0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kuf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sf6vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quxu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skg62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ia1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d07y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35m47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6ikp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtx8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42epg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxocl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3wqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuyun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13gb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78so6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtevd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2heaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybbyu")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="FinalScene" type="Node2D" unique_id=16831639]
+script = ExtResource("1_71i4h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2010743173]
+
+[node name="falas1" parent="CanvasLayer" unique_id=127967852 instance=ExtResource("2_vj3s6")]
+sequence = Array[ExtResource("3_wyln5")]([SubResource("Resource_jr7aq"), SubResource("Resource_rcveo")])
+
+[node name="falas2" parent="CanvasLayer" unique_id=498458909 instance=ExtResource("2_vj3s6")]
+sequence = Array[ExtResource("3_wyln5")]([SubResource("Resource_oyud0")])
+
+[node name="falas3" parent="CanvasLayer" unique_id=226887577 instance=ExtResource("2_vj3s6")]
+sequence = Array[ExtResource("3_wyln5")]([SubResource("Resource_3kuf0")])
+
+[node name="falas4" parent="CanvasLayer" unique_id=86023268 instance=ExtResource("2_vj3s6")]
+sequence = Array[ExtResource("3_wyln5")]([SubResource("Resource_sf6vg"), SubResource("Resource_quxu3"), SubResource("Resource_6yhv2"), SubResource("Resource_rtx8a"), SubResource("Resource_t5phy"), SubResource("Resource_8vje6"), SubResource("Resource_05ofj"), SubResource("Resource_skg62"), SubResource("Resource_5ia1h"), SubResource("Resource_5d07y"), SubResource("Resource_35m47"), SubResource("Resource_j6ikp")])
+
+[node name="StarMage" type="Sprite2D" parent="." unique_id=60733107]
+visible = false
+position = Vector2(324, 160.99998)
+scale = Vector2(3.175, 3.175)
+texture = ExtResource("4_6yhv2")
+
+[node name="StarLamb" type="Sprite2D" parent="." unique_id=148702303]
+visible = false
+position = Vector2(324, 167)
+scale = Vector2(2.95, 2.95)
+texture = ExtResource("5_t5phy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1991580540]
+visible = false
+position = Vector2(319, 186)
+scale = Vector2(3.6646705, 3.6)
+sprite_frames = SubResource("SpriteFrames_qnyly")
+frame = 23
+frame_progress = 1.0
+
+[node name="StarsNoSky" type="Sprite2D" parent="." unique_id=1481607854]
+visible = false
+position = Vector2(323, 158)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("7_8vje6")
+
+[node name="Cloudes" type="Sprite2D" parent="." unique_id=325220468]
+visible = false
+position = Vector2(320, 159)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("8_05ofj")

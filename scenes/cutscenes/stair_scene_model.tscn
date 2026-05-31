@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cu8vnr65t7nrp"]
+
+[ext_resource type="PackedScene" uid="uid://dh4x8rmttthfc" path="res://entities/DialogScene.tscn" id="1_eaihr"]
+
+[node name="StairSceneModel" type="Node2D" unique_id=515018231]
+
+[node name="DialogScene" parent="." unique_id=168299307 instance=ExtResource("1_eaihr")]
