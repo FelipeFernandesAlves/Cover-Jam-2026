@@ -1,5 +1,64 @@
 [gd_scene format=3 uid="uid://b8g1se8n8un3w"]
 
 [ext_resource type="PackedScene" uid="uid://cj8wm7mm8nr5p" path="res://scenes/interlude/template.tscn" id="1_ui8ws"]
+[ext_resource type="Script" uid="uid://blvjvf8o13iek" path="res://scripts/Dialog/DialogContent.gd" id="3_pdcew"]
+
+[sub_resource type="Resource" id="Resource_pev38"]
+script = ExtResource("3_pdcew")
+texto = "Acho que eu tô ficando bom nisso!"
+emotion = 1
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_rdoaq"]
+script = ExtResource("3_pdcew")
+texto = "É, parabéns!"
+image_direction = 1
+personagem = 1
+emotion = 2
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_yqlp0"]
+script = ExtResource("3_pdcew")
+texto = "Mas eu gostaria muito mais se a gente tivesse vindo de dia, a noite só deixa mais amedrontador."
+emotion = 4
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_180bn"]
+script = ExtResource("3_pdcew")
+texto = "Fique calmo, jovem aprendiz. Você vai entender tudo."
+image_direction = 1
+personagem = 1
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_pdcew"]
+script = ExtResource("3_pdcew")
+texto = "Mestre, afinal, o que essa torre guarda lá no topo? Um grande tesouro? Conhecimentos profundos de magia? Um grande canhão de laser???"
+emotion = 1
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_wwwaa"]
+script = ExtResource("3_pdcew")
+texto = "O que tem lá em cima não dá pra descrever em palavras, você vai ter que ver com os próprios olhos."
+image_direction = 1
+personagem = 1
+emotion = 1
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_dkuvu"]
+script = ExtResource("3_pdcew")
+texto = "Uai, sô! Você sabe o que tem lá em cima?!!"
+emotion = 3
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
+
+[sub_resource type="Resource" id="Resource_2oha2"]
+script = ExtResource("3_pdcew")
+texto = "Pois é, não é minha primeira vez aqui, Dris…"
+image_direction = 1
+personagem = 1
+emotion = 6
+metadata/_custom_type_script = "uid://blvjvf8o13iek"
 
 [node name="Template" unique_id=456606217 instance=ExtResource("1_ui8ws")]
+
+[node name="DialogScene" parent="CanvasLayer" parent_id_path=PackedInt32Array(679581945) index="1" unique_id=168299307]
+dialog_sequence = Array[ExtResource("3_pdcew")]([SubResource("Resource_pev38"), SubResource("Resource_rdoaq"), SubResource("Resource_yqlp0"), SubResource("Resource_180bn"), SubResource("Resource_pdcew"), SubResource("Resource_wwwaa"), SubResource("Resource_dkuvu"), SubResource("Resource_2oha2")])
