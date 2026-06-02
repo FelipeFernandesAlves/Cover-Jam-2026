@@ -9,137 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://b0he0608v8iuy" path="res://assets/cutscenes/stars_no_sky.png" id="7_8vje6"]
 [ext_resource type="Texture2D" uid="uid://desh200i5jmi4" path="res://assets/cutscenes/cloudes.png" id="8_05ofj"]
 
-[sub_resource type="Resource" id="Resource_jr7aq"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Dris, é aqui."
-duration = 2
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+[sub_resource type="Gradient" id="Gradient_6yhv2"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.023529412, 0.015686275, 0.13725491, 1)
 
-[sub_resource type="Resource" id="Resource_rcveo"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Lembre-se que foi você que conseguiu chegar até aqui por conta própria, você merece. Agora aproveite."
-duration = 3
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_oyud0"]
-script = ExtResource("3_wyln5")
-label = "[Dris]
-Uaaaaau"
-duration = 2
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_3kuf0"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Pois é..."
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_sf6vg"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Eu vim aqui pela primeira vez quando eu era uma criança."
-duration = 2
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_quxu3"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Eu me perdi e um espírito me guioi pra cá."
-duration = 5
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_6yhv2"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Foi aqui que eu aprendi tudo de magia, aos poucos."
-duration = 5
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_8vje6"]
-script = ExtResource("3_wyln5")
-label = "[Dris]
-É tão… magnífico. Parece que elas estão olhando diretamente pra mim."
-duration = 4
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_t5phy"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Eu aprendi algo mais poderoso que a magia aqui."
-duration = 4
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_05ofj"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Sempre que você se sentir perdido, olhe pras estrelas e elas vãão te contar pra onde ir."
-duration = 4
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_skg62"]
-script = ExtResource("3_wyln5")
-label = "[Dris]
-Mas e se estiver de dia?? Dói olhar pro Sol…"
-duration = 4
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_5ia1h"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Não é pra olhar pro Sol, vai machucar!!
-Mas mesmo quando é dia, as estrelas continuam lá."
-duration = 5
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_5d07y"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Não é fácil, Dris. A vida não é fácil. As coisas são complicadas e muitas vezes tudo vai estar tão confuso, tão dolorido."
-duration = 8
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_rtx8a"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Como tintas numa tela, as memórias se misturam, as boas, as ruins, as que você queria esquecer e fingir que nunca aconteceram… quando tudo parece um caos, respire fundo, Dris."
-duration = 8
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_35m47"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-As estrelas estão lá pra você, te olhando e prontas pra te guiar até que você entenda: vai ficar tudo bem."
-duration = 7
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_j6ikp"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Minha jornada acaba aqui. Boa sorte, você consegue."
-duration = 7
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_42epg"]
-script = ExtResource("3_wyln5")
-label = "[Elius]
-Obrigado por ter sido meu aprendiz."
-duration = 8
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
-
-[sub_resource type="Resource" id="Resource_sxocl"]
-script = ExtResource("3_wyln5")
-label = "[Créditos]
-Programação:
-Felipe Fernandes
-Grabalos
-
-Arte:
-Bernardo Goyanna"
-duration = 15
-fade_duration = 3
-metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t5phy"]
+gradient = SubResource("Gradient_6yhv2")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4fqy"]
 atlas = ExtResource("4_wyln5")
@@ -317,10 +192,185 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Resource" id="Resource_jr7aq"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Dris, é aqui."
+duration = 2
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_rcveo"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Lembre-se que foi você que conseguiu chegar até aqui por conta própria, você merece. Agora aproveite."
+duration = 3
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_oyud0"]
+script = ExtResource("3_wyln5")
+label = "[Dris]
+Uaaaaau
+"
+duration = 2
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_3kuf0"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Pois é..."
+duration = 2
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_sf6vg"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Eu vim aqui pela primeira vez quando eu era uma criança."
+duration = 2
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_quxu3"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Eu me perdi e um espírito me guiou pra cá."
+duration = 5
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_6yhv2"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Foi aqui que eu aprendi tudo de magia, aos poucos."
+duration = 5
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_8vje6"]
+script = ExtResource("3_wyln5")
+label = "[Dris]
+É tão… magnífico. Parece que elas estão olhando diretamente pra mim."
+duration = 4
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_t5phy"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Eu aprendi algo mais poderoso que a magia aqui."
+duration = 4
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_05ofj"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Sempre que você se sentir perdido, olhe pras estrelas e elas vão te guiar."
+duration = 4
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_skg62"]
+script = ExtResource("3_wyln5")
+label = "[Dris]
+Mas e se estiver de dia? Dói olhar pro Sol…"
+duration = 4
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_5ia1h"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Não é pra olhar pro Sol, vai machucar!
+Mas mesmo quando é dia, as estrelas continuam lá."
+duration = 5
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_5d07y"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Não é fácil, Dris. A vida não é fácil. As coisas são complicadas e muitas vezes tudo vai estar tão confuso, tão dolorido."
+duration = 8
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_rtx8a"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Como tintas numa tela, as memórias se misturam, as boas, as ruins, as que você queria esquecer e fingir que nunca aconteceram… quando tudo parece um caos, respire fundo, Dris."
+duration = 8
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_35m47"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+As estrelas estão lá pra você, te olhando e prontas pra te guiar até que você entenda: vai ficar tudo bem."
+duration = 7
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_j6ikp"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Minha jornada acaba aqui. Boa sorte, você consegue."
+duration = 7
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_42epg"]
+script = ExtResource("3_wyln5")
+label = "[Elius]
+Obrigado por ter sido meu aprendiz."
+duration = 8
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
+[sub_resource type="Resource" id="Resource_sxocl"]
+script = ExtResource("3_wyln5")
+label = "[Créditos]
+Programação:
+Felipe Fernandes
+Grabalos
+
+Arte:
+Bernardo Goyanna"
+duration = 15
+fade_duration = 3
+metadata/_custom_type_script = "uid://bamcw2fe0m25s"
+
 [node name="FinalScene" type="Node2D" unique_id=16831639]
 script = ExtResource("1_71i4h")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2010743173]
+
+[node name="bg" type="TextureRect" parent="CanvasLayer" unique_id=888242540]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_t5phy")
+
+[node name="StarMage" type="Sprite2D" parent="CanvasLayer" unique_id=60733107]
+visible = false
+position = Vector2(324, 160.99998)
+scale = Vector2(3.175, 3.175)
+texture = ExtResource("4_6yhv2")
+
+[node name="StarLamb" type="Sprite2D" parent="CanvasLayer" unique_id=148702303]
+visible = false
+position = Vector2(324, 167)
+scale = Vector2(2.95, 2.95)
+texture = ExtResource("5_t5phy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1991580540]
+visible = false
+position = Vector2(319, 186)
+scale = Vector2(3.6646705, 3.6)
+sprite_frames = SubResource("SpriteFrames_qnyly")
+autoplay = "default"
+frame = 23
+frame_progress = 1.0
+
+[node name="StarsNoSky" type="Sprite2D" parent="CanvasLayer" unique_id=1481607854]
+visible = false
+position = Vector2(323, 158)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("7_8vje6")
+
+[node name="Cloudes" type="Sprite2D" parent="CanvasLayer" unique_id=325220468]
+visible = false
+position = Vector2(320, 159)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("8_05ofj")
 
 [node name="falas1" parent="CanvasLayer" unique_id=127967852 instance=ExtResource("2_vj3s6")]
 sequence = Array[ExtResource("3_wyln5")]([SubResource("Resource_jr7aq"), SubResource("Resource_rcveo")])
@@ -333,35 +383,3 @@ sequence = Array[ExtResource("3_wyln5")]([SubResource("Resource_3kuf0")])
 
 [node name="falas4" parent="CanvasLayer" unique_id=86023268 instance=ExtResource("2_vj3s6")]
 sequence = Array[ExtResource("3_wyln5")]([SubResource("Resource_sf6vg"), SubResource("Resource_quxu3"), SubResource("Resource_6yhv2"), SubResource("Resource_8vje6"), SubResource("Resource_t5phy"), SubResource("Resource_05ofj"), SubResource("Resource_skg62"), SubResource("Resource_5ia1h"), SubResource("Resource_5d07y"), SubResource("Resource_rtx8a"), SubResource("Resource_35m47"), SubResource("Resource_j6ikp"), SubResource("Resource_42epg"), SubResource("Resource_sxocl")])
-
-[node name="StarMage" type="Sprite2D" parent="." unique_id=60733107]
-visible = false
-position = Vector2(324, 160.99998)
-scale = Vector2(3.175, 3.175)
-texture = ExtResource("4_6yhv2")
-
-[node name="StarLamb" type="Sprite2D" parent="." unique_id=148702303]
-visible = false
-position = Vector2(324, 167)
-scale = Vector2(2.95, 2.95)
-texture = ExtResource("5_t5phy")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1991580540]
-visible = false
-position = Vector2(319, 186)
-scale = Vector2(3.6646705, 3.6)
-sprite_frames = SubResource("SpriteFrames_qnyly")
-frame = 23
-frame_progress = 1.0
-
-[node name="StarsNoSky" type="Sprite2D" parent="." unique_id=1481607854]
-visible = false
-position = Vector2(323, 158)
-scale = Vector2(3.2, 3.2)
-texture = ExtResource("7_8vje6")
-
-[node name="Cloudes" type="Sprite2D" parent="." unique_id=325220468]
-visible = false
-position = Vector2(320, 159)
-scale = Vector2(3.2, 3.2)
-texture = ExtResource("8_05ofj")

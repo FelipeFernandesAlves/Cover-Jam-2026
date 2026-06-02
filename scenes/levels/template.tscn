@@ -13,12 +13,13 @@ glow_enabled = true
 glow_levels/4 = 0.5
 glow_levels/5 = 0.3
 glow_intensity = 0.4
+glow_strength = 1.1
 glow_hdr_threshold = 0.4
 glow_hdr_scale = 0.0
 adjustment_enabled = true
 adjustment_brightness = 1.05
-adjustment_contrast = 1.1
-adjustment_saturation = 1.25
+adjustment_contrast = 1.2
+adjustment_saturation = 1.2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bwkgl"]
 texture = ExtResource("3_ceqky")

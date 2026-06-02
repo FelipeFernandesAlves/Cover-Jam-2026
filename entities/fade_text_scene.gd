@@ -1,8 +1,9 @@
-extends Node
+extends Control
 class_name FadeTextManager
 
 signal all_finished
 
+@export var text_box: Control
 @export var sequence : Array[FadeTextContent]
 var fade_ui_scene = preload("res://scenes/cutscenes/fade_text.tscn")
 

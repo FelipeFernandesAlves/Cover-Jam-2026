@@ -33,5 +33,8 @@ metadata/_custom_type_script = "uid://blvjvf8o13iek"
 
 [node name="Template" unique_id=456606217 instance=ExtResource("1_le3rw")]
 
+[node name="AnimatedSprite2D" parent="CanvasLayer/Control/CenterContainer" parent_id_path=PackedInt32Array(704581804) index="0" unique_id=1924473138]
+visible = false
+
 [node name="DialogScene" parent="CanvasLayer" parent_id_path=PackedInt32Array(679581945) index="1" unique_id=168299307]
 dialog_sequence = Array[ExtResource("2_tn21x")]([SubResource("Resource_v0or8"), SubResource("Resource_4rc21"), SubResource("Resource_qosdh"), SubResource("Resource_x5oj0")])

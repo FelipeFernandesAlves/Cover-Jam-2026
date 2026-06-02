@@ -5,11 +5,11 @@ extends Node2D
 @onready var falas3 = $CanvasLayer/falas3
 @onready var falas4 = $CanvasLayer/falas4
 
-@onready var estrelas_animation : AnimatedSprite2D = $AnimatedSprite2D
-@onready var star_lamb = $StarLamb
-@onready var star_mage = $StarMage
-@onready var cloudes = $Cloudes
-@onready var stars_no_sky = $StarsNoSky
+@onready var estrelas_animation : AnimatedSprite2D = $CanvasLayer/AnimatedSprite2D
+@onready var star_lamb = $CanvasLayer/StarLamb
+@onready var star_mage = $CanvasLayer/StarMage
+@onready var cloudes = $CanvasLayer/Cloudes
+@onready var stars_no_sky = $CanvasLayer/StarsNoSky
 
 func _ready() -> void:
 	# 1. Esconde todos os elementos visuais no começo

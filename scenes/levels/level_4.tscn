@@ -24,6 +24,10 @@ tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAA
 [node name="Camera" parent="." index="5" unique_id=749714240]
 anchor_mode = 0
 
+[node name="Mirror" parent="." index="6" unique_id=1952436548 instance=ExtResource("6_5vn0v")]
+position = Vector2(592, 80)
+reflect_dir = 3
+
 [node name="LightEmissor" parent="Objects" parent_id_path=PackedInt32Array(1263056560) index="0" unique_id=1046029252 instance=ExtResource("2_anwe6")]
 y_sort_enabled = true
 position = Vector2(592, 272)
@@ -61,11 +65,11 @@ position = Vector2(464, 112)
 reflect_dir = 1
 
 [node name="Mirror4" parent="Objects" parent_id_path=PackedInt32Array(1263056560) index="9" unique_id=1810499608 instance=ExtResource("6_5vn0v")]
-position = Vector2(16, 336)
+position = Vector2(48, 336)
 reflect_dir = 1
 
 [node name="Mirror5" parent="Objects" parent_id_path=PackedInt32Array(1263056560) index="10" unique_id=880455433 instance=ExtResource("6_5vn0v")]
-position = Vector2(16, 80)
+position = Vector2(48, 80)
 reflect_dir = 2
 
 [node name="Mirror6" parent="Objects" parent_id_path=PackedInt32Array(1263056560) index="11" unique_id=1939563177 instance=ExtResource("6_5vn0v")]
@@ -78,7 +82,3 @@ reflect_dir = 2
 
 [node name="Box3" parent="Objects" parent_id_path=PackedInt32Array(1263056560) index="13" unique_id=841388310 instance=ExtResource("7_ts8eg")]
 position = Vector2(624, 80)
-
-[node name="Mirror" parent="." index="7" unique_id=1952436548 instance=ExtResource("6_5vn0v")]
-position = Vector2(592, 80)
-reflect_dir = 3

@@ -91,7 +91,7 @@ grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control/CenterContainer" unique_id=1924473138]
 z_index = 1
-position = Vector2(346, 99)
+position = Vector2(352, 110.00001)
 scale = Vector2(2.6999998, 2.6999998)
 sprite_frames = SubResource("SpriteFrames_f2k0k")
 autoplay = "default"

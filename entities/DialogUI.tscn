@@ -35,7 +35,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -79.0
+offset_top = -114.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_sxq3l")
@@ -48,7 +48,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xbbdg")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2108872698]
 layout_mode = 2
-size_flags_vertical = 8
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
