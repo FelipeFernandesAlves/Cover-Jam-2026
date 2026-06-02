@@ -68,7 +68,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Template" type="Node2D" unique_id=456606217]
+[node name="Template2" type="Node2D" unique_id=456606217]
 script = ExtResource("1_62ocb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=679581945]
@@ -81,6 +81,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control" unique_id=704581804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control/CenterContainer" unique_id=1924473138]
+z_index = 1
+position = Vector2(346, 99)
+scale = Vector2(2.6999998, 2.6999998)
+sprite_frames = SubResource("SpriteFrames_f2k0k")
+autoplay = "default"
+frame_progress = 0.8827781
+offset = Vector2(-2.592598, 3.3333359)
+
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=779935886]
 layout_mode = 1
 anchors_preset = 15
@@ -89,14 +106,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.05490196, 0.043137256, 0.21960784, 1)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=1924473138]
-position = Vector2(123, 0)
-scale = Vector2(2.6999998, 2.6999998)
-sprite_frames = SubResource("SpriteFrames_f2k0k")
-autoplay = "default"
-frame_progress = 0.61937344
-offset = Vector2(80.00001, 40.000008)
 
 [node name="DialogScene" parent="CanvasLayer" unique_id=168299307 instance=ExtResource("2_vqh3f")]
 
