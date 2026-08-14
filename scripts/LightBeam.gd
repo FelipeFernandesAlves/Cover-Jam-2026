@@ -74,8 +74,8 @@ func _physics_process(delta: float) -> void:
 		next_beam.queue_free()
 		next_beam = null
 	
-	line.points[1] = beam_end_position
-	var beam_start_position := line.points[0]
+	line.set_point_position(1, beam_end_position)
+	var beam_start_position := line.get_point_position(0)
 	beam_particles.position = beam_start_position + (beam_end_position - beam_start_position) * 0.5
 	beam_particles.process_material.emission_box_extents.x = beam_end_position.distance_to(beam_start_position) * 0.1
 	casting_particles.position = beam_start_position
