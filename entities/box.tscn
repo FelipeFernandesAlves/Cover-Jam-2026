@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bwbyv2n6qqkva"]
 
 [ext_resource type="Script" uid="uid://cg0dy2oypa07s" path="res://scripts/GridVisual.gd" id="1_ls4fa"]
-[ext_resource type="Texture2D" uid="uid://csso74yluq663" path="res://assets/box.png" id="2_ls4fa"]
+[ext_resource type="Texture2D" uid="uid://dkg1px1uqtufi" path="res://assets/textures/box_texture.tres" id="2_ls4fa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_squh8"]
-size = Vector2(31, 41)
+size = Vector2(31, 26)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ls4fa"]
+polygon = PackedVector2Array(-16, -20.5, -16, 22.5, 16, 22.5, 16, -20.5)
 
 [node name="Box" type="StaticBody2D" unique_id=418327843]
 script = ExtResource("1_ls4fa")
@@ -16,5 +19,10 @@ position = Vector2(0, -6)
 texture = ExtResource("2_ls4fa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2122244342]
-position = Vector2(0.5, -5)
+position = Vector2(0.5, -4)
 shape = SubResource("RectangleShape2D_squh8")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=963694111]
+position = Vector2(0, -6)
+occluder = SubResource("OccluderPolygon2D_ls4fa")
+occluder_light_mask = 3

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://br40n3x3b67qq"]
 
-[ext_resource type="Texture2D" uid="uid://cxixtpqujqsk1" path="res://assets/light.png" id="1_dharu"]
 [ext_resource type="Script" uid="uid://btjlmkqiweiyq" path="res://menus/main/scripts/character_light.gd" id="1_x7iae"]
 [ext_resource type="Script" uid="uid://dnoulfvm77udd" path="res://addons/noise/noise.gd" id="2_7c3ar"]
 [ext_resource type="Script" uid="uid://dbn8pk1sopbxe" path="res://addons/sin/sine.gd" id="2_diefr"]
+[ext_resource type="Texture2D" uid="uid://douplj320q7vh" path="res://assets/textures/light.png" id="5_1mfjd"]
 
 [node name="CharacterLight" type="Node2D" unique_id=1065965914 node_paths=PackedStringArray("light_parent", "noise")]
 script = ExtResource("1_x7iae")
@@ -24,20 +24,8 @@ metadata/_custom_type_script = "uid://dbn8pk1sopbxe"
 
 [node name="Lights" type="Node2D" parent="." unique_id=445578023]
 
-[node name="PointLight2D3" type="PointLight2D" parent="Lights" unique_id=482577457]
-visible = false
-modulate = Color(1, 1, 1, 0.2)
-energy = 0.5
-blend_mode = 2
-texture = ExtResource("1_dharu")
-texture_scale = 1.5
-
 [node name="PointLight2D2" type="PointLight2D" parent="Lights" unique_id=1162220902]
-energy = 0.85
-blend_mode = 2
-texture = ExtResource("1_dharu")
-
-[node name="PointLight2D" type="PointLight2D" parent="Lights" unique_id=997659016]
-visible = false
-blend_mode = 2
-texture = ExtResource("1_dharu")
+shadow_enabled = true
+texture = ExtResource("5_1mfjd")
+texture_scale = 2.8
+height = 190.0

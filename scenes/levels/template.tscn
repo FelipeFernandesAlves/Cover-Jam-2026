@@ -36,7 +36,7 @@ sources/0 = SubResource("TileSetAtlasSource_v24h5")
 [sub_resource type="Gradient" id="Gradient_v24h5"]
 colors = PackedColorArray(0.98039216, 0.69803923, 0.4117647, 1, 0.9490196, 0.56078434, 0.38039216, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_x3f8h"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v24h5"]
 gradient = SubResource("Gradient_v24h5")
 
 [sub_resource type="Curve" id="Curve_bwkgl"]
@@ -60,8 +60,8 @@ damping_max = 0.1
 scale_min = 2.0
 scale_max = 4.0
 scale_curve = SubResource("CurveTexture_bwkgl")
-color = Color(1, 1, 1, 0.3137255)
-color_initial_ramp = SubResource("GradientTexture1D_x3f8h")
+color = Color(1, 1, 1, 0.49019608)
+color_initial_ramp = SubResource("GradientTexture1D_v24h5")
 
 [node name="Template" type="Node2D" unique_id=1271090678]
 y_sort_enabled = true
@@ -89,8 +89,10 @@ tile_set = SubResource("TileSet_bwkgl")
 navigation_enabled = false
 
 [node name="Camera" parent="." unique_id=749714240 instance=ExtResource("4_cgfde")]
+anchor_mode = 0
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Camera" unique_id=524081500]
+position = Vector2(320, 180)
 amount = 28
 lifetime = 6.0
 preprocess = 1.0
@@ -98,3 +100,6 @@ process_material = SubResource("ParticleProcessMaterial_g4v7s")
 
 [node name="Objects" type="Node2D" parent="." unique_id=1263056560]
 y_sort_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1165183278]
+color = Color(0.91663986, 0.91663986, 0.9166397, 1)

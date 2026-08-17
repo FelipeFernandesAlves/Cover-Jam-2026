@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://dcc18rm058whu"]
+
+[ext_resource type="Texture2D" uid="uid://cv6i5vfh4lk0r" path="res://assets/characters/elius/difuse/idle_magic.png" id="1_sjpsr"]
+[ext_resource type="Texture2D" uid="uid://dopgj7e7hah5d" path="res://assets/characters/elius/normal/idle_magic_n.png" id="2_qf1fm"]
+
+[resource]
+diffuse_texture = ExtResource("1_sjpsr")
+normal_texture = ExtResource("2_qf1fm")

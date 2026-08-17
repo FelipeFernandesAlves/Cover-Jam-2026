@@ -33,14 +33,4 @@ func _set_reflect_dir(value):
 		return
 		
 	reflect_dir = value
-	if (!sprites): return
-	
-	match reflect_dir:
-		REFLECT_DIRECTION.NW: 
-			sprites.frame = 0
-		REFLECT_DIRECTION.NE: 
-			sprites.frame = 1 
-		REFLECT_DIRECTION.SE: 
-			sprites.frame = 2
-		REFLECT_DIRECTION.SW: 
-			sprites.frame = 4
+

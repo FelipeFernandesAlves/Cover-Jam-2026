@@ -1,7 +1,5 @@
 [gd_scene format=4 uid="uid://d2e8d865ri4nv"]
 
-[ext_resource type="Texture2D" uid="uid://58fh6w4ee2sl" path="res://assets/characters/elius/walking_side_mage.png" id="1_4gake"]
-[ext_resource type="Texture2D" uid="uid://dq602ql6jdbxr" path="res://assets/characters/dris/walking_side.png" id="1_bgcf5"]
 [ext_resource type="PackedScene" uid="uid://q56vxwhxriqv" path="res://menus/main/components/MainMenuButton.tscn" id="1_dkf2c"]
 [ext_resource type="Texture2D" uid="uid://cuutsb3gfrvs5" path="res://assets/tilemaps/tileset_01.png" id="1_hin7v"]
 [ext_resource type="Script" uid="uid://dc7jdmtfjvxwd" path="res://menus/main/main_menu.gd" id="1_krk3i"]
@@ -9,22 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://drsfvo67c721y" path="res://scenes/main.tscn" id="2_cwvfg"]
 [ext_resource type="AudioStream" uid="uid://dor4q6u6a0n8e" path="res://assets/sfx/game_start.wav" id="3_1o3ol"]
 [ext_resource type="PackedScene" uid="uid://br40n3x3b67qq" path="res://menus/main/components/CharacterLight.tscn" id="3_t8k4h"]
+[ext_resource type="Texture2D" uid="uid://douplj320q7vh" path="res://assets/textures/light.png" id="4_ketcr"]
+[ext_resource type="Texture2D" uid="uid://dk22abi05j52n" path="res://assets/characters/dris/dris_walking_side.tres" id="5_1o3ol"]
 [ext_resource type="Texture2D" uid="uid://1r47ve5jsn43" path="res://menus/main/assets/titulo.png" id="5_7481o"]
+[ext_resource type="Texture2D" uid="uid://idj7tojq8bcv" path="res://assets/characters/elius/walking.tres" id="8_ketcr"]
 [ext_resource type="Script" uid="uid://dxcjb7vt0ooib" path="res://menus/common/button_box/button_box.gd" id="9_c1ld8"]
-
-[sub_resource type="Environment" id="Environment_t8k4h"]
-background_mode = 3
-glow_enabled = true
-glow_levels/4 = 0.5
-glow_levels/5 = 0.3
-glow_intensity = 0.4
-glow_strength = 1.1
-glow_hdr_threshold = 0.4
-glow_hdr_scale = 0.0
-adjustment_enabled = true
-adjustment_brightness = 1.05
-adjustment_contrast = 1.2
-adjustment_saturation = 1.2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tgl6g"]
 texture = ExtResource("1_hin7v")
@@ -69,100 +56,116 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_tgl6g")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4gake"]
-atlas = ExtResource("1_bgcf5")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1o3ol"]
+load_path = "res://.godot/imported/light.png-2b16efcf6574bbab11e1208e20c37002.ctex"
+
+[sub_resource type="Environment" id="Environment_t8k4h"]
+background_mode = 3
+glow_enabled = true
+glow_levels/4 = 0.5
+glow_levels/5 = 0.3
+glow_intensity = 1.02
+glow_strength = 1.1
+glow_hdr_threshold = 0.1
+adjustment_enabled = true
+adjustment_brightness = 1.05
+adjustment_contrast = 1.2
+adjustment_saturation = 1.2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4f06"]
+atlas = ExtResource("8_ketcr")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dkf2c"]
-atlas = ExtResource("1_bgcf5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca25e"]
+atlas = ExtResource("8_ketcr")
 region = Rect2(48, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hin7v"]
-atlas = ExtResource("1_bgcf5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b311"]
+atlas = ExtResource("8_ketcr")
 region = Rect2(96, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t8k4h"]
-atlas = ExtResource("1_bgcf5")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7481o"]
-atlas = ExtResource("1_bgcf5")
-region = Rect2(192, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_krk3i"]
-atlas = ExtResource("1_bgcf5")
-region = Rect2(240, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b5ymf"]
-atlas = ExtResource("1_bgcf5")
-region = Rect2(288, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cwvfg"]
-atlas = ExtResource("1_bgcf5")
-region = Rect2(336, 0, 48, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4gake")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dkf2c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hin7v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t8k4h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7481o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_krk3i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b5ymf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cwvfg")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 6.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0y275"]
-atlas = ExtResource("1_4gake")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gc6rr"]
-atlas = ExtResource("1_4gake")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gnxwc"]
-atlas = ExtResource("1_4gake")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bucjd"]
-atlas = ExtResource("1_4gake")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lqs2"]
+atlas = ExtResource("8_ketcr")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0y275")
+"texture": SubResource("AtlasTexture_h4f06")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gc6rr")
+"texture": SubResource("AtlasTexture_ca25e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gnxwc")
+"texture": SubResource("AtlasTexture_5b311")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bucjd")
+"texture": SubResource("AtlasTexture_4lqs2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ketcr"]
+atlas = ExtResource("5_1o3ol")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p24gd"]
+atlas = ExtResource("5_1o3ol")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k533n"]
+atlas = ExtResource("5_1o3ol")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3ejx"]
+atlas = ExtResource("5_1o3ol")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgayh"]
+atlas = ExtResource("5_1o3ol")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egvoh"]
+atlas = ExtResource("5_1o3ol")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0rch"]
+atlas = ExtResource("5_1o3ol")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0548j"]
+atlas = ExtResource("5_1o3ol")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ketcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p24gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k533n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3ejx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgayh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egvoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0rch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0548j")
 }],
 "loop": 1,
 "name": &"default",
@@ -196,30 +199,25 @@ damping_max = 0.1
 scale_min = 2.0
 scale_max = 4.0
 scale_curve = SubResource("CurveTexture_bwkgl")
-color = Color(1, 1, 1, 0.3137255)
 color_initial_ramp = SubResource("GradientTexture1D_x3f8h")
 
 [node name="MainMenu" type="Node2D" unique_id=1433660992 node_paths=PackedStringArray("characters_parent", "start_button", "exit_button", "transition_rect", "game_start_sound")]
 script = ExtResource("1_krk3i")
 main_scene = ExtResource("2_cwvfg")
-characters_parent = NodePath("Characters")
-start_button = NodePath("CanvasLayer/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox/Start")
-exit_button = NodePath("CanvasLayer/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox/Exit")
-transition_rect = NodePath("CanvasLayer/TransitionRect")
+characters_parent = NodePath("Characters/Characters")
+start_button = NodePath("UI/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox/Start")
+exit_button = NodePath("UI/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox/Exit")
+transition_rect = NodePath("UI/TransitionRect")
 game_start_sound = NodePath("AudioStreamPlayer")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1619251957]
-stream = ExtResource("3_1o3ol")
-volume_db = -6.0
-bus = &"SFX"
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1493816908]
-environment = SubResource("Environment_t8k4h")
-
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1904613429]
+light_mask = 3
+visibility_layer = 3
 color = Color(0, 0, 0, 1)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=2100331857]
+light_mask = 2
+visibility_layer = 2
 scroll_offset = Vector2(-309, -44)
 repeat_size = Vector2(320, 0)
 autoscroll = Vector2(-100, 0)
@@ -231,37 +229,69 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAOAAQAAQADAAMAAAANAAQAAQADAAMAAAAMAAQAAQADAAMAAAALAAQAAQADAAMAAAAKAAQAAQADAAMAAAAKAAUAAQADAAMAAAAJAAUAAQADAAMAAAAIAAUAAQADAAMAAAAHAAUAAQADAAMAAAAGAAUAAQADAAMAAAAFAAUAAQADAAMAAAAFAAQAAQADAAMAAAAGAAQAAQADAAMAAAAHAAQAAQADAAMAAAAIAAQAAQADAAMAAAAJAAQAAQADAAMAAAALAAUAAQADAAMAAAAMAAUAAQADAAMAAAANAAUAAQADAAMAAAAOAAUAAQADAAMAAAAEAAQAAQADAAMAAAAEAAUAAQADAAMAAAAEAAYAAQADAAMAAAAFAAYAAQADAAMAAAAGAAYAAQADAAMAAAAHAAYAAQADAAMAAAAIAAYAAQADAAMAAAAJAAYAAQADAAMAAAAKAAYAAQADAAMAAAALAAYAAQADAAMAAAAMAAYAAQADAAMAAAANAAYAAQADAAMAAAAOAAYAAQADAAMAAAAPAAQAAQADAAMAAAAPAAUAAQADAAMAAAAPAAYAAQADAAMAAAAQAAQAAQADAAMAAAAQAAUAAQADAAMAAAAQAAYAAQADAAMAAAADAAIAAQADAAEAAAADAAMAAQADAAEAAAAEAAIAAQADAAEAAAAEAAMAAQADAAEAAAAFAAIAAQADAAEAAAAFAAMAAQADAAEAAAAGAAIAAQADAAEAAAAGAAMAAQADAAEAAAAHAAIAAQADAAEAAAAHAAMAAQADAAEAAAAIAAIAAQADAAEAAAAIAAMAAQADAAEAAAAJAAIAAQADAAEAAAAJAAMAAQADAAEAAAAKAAIAAQADAAEAAAAKAAMAAQADAAEAAAALAAIAAQADAAEAAAALAAMAAQADAAEAAAAMAAIAAQADAAEAAAAMAAMAAQADAAEAAAANAAIAAQADAAEAAAANAAMAAQADAAEAAAAOAAIAAQADAAEAAAAOAAMAAQADAAEAAAAPAAIAAQADAAEAAAAPAAMAAQADAAEAAAAQAAIAAQADAAEAAAAQAAMAAQADAAEAAAA=")
 tile_set = SubResource("TileSet_g4v7s")
 
-[node name="Characters" type="Node2D" parent="." unique_id=1830928825]
+[node name="Lights" type="Node2D" parent="." unique_id=2093320041]
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights" unique_id=185329313]
+visible = false
+position = Vector2(647, 106)
+energy = 2.02
+blend_mode = 2
+range_item_cull_mask = 3
+shadow_enabled = true
+texture = ExtResource("4_ketcr")
+texture_scale = 4.55
+height = 145.0
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights" unique_id=1268373416]
+visible = false
+light_mask = 2
+visibility_layer = 2
+position = Vector2(379, 205)
+blend_mode = 2
+range_item_cull_mask = 2
+texture = SubResource("CompressedTexture2D_1o3ol")
+texture_scale = 2.4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1493816908]
+environment = SubResource("Environment_t8k4h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1619251957]
+stream = ExtResource("3_1o3ol")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="Characters" type="CanvasLayer" parent="." unique_id=39835338]
+layer = 0
+
+[node name="Characters" type="Node2D" parent="Characters" unique_id=1830928825]
 position = Vector2(379, 204)
 
-[node name="Dris" type="AnimatedSprite2D" parent="Characters" unique_id=1466793810]
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_g4v7s")
-autoplay = "default"
-frame_progress = 0.33675158
-
-[node name="CharacterLight" parent="Characters/Dris" unique_id=1458812647 instance=ExtResource("3_t8k4h")]
-size_scale = 0.8
-
-[node name="Elius" type="AnimatedSprite2D" parent="Characters" unique_id=2001788606]
+[node name="Elius" type="AnimatedSprite2D" parent="Characters/Characters" unique_id=2001788606]
+modulate = Color(0.7, 0.7, 0.7, 1)
 position = Vector2(65, 0)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 autoplay = "default"
-frame_progress = 0.29724842
+frame_progress = 0.449519
 
-[node name="CharacterLight" parent="Characters/Elius" unique_id=1911450213 instance=ExtResource("3_t8k4h")]
+[node name="CharacterLight" parent="Characters/Characters/Elius" unique_id=1911450213 instance=ExtResource("3_t8k4h")]
+position = Vector2(8.5, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1101032243]
+[node name="Dris" type="AnimatedSprite2D" parent="Characters/Characters" unique_id=814490882]
+modulate = Color(0.7, 0.7, 0.7, 1)
+position = Vector2(-11, 6)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+frame_progress = 0.5034245
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer" unique_id=573064583]
-position = Vector2(320, 180)
-amount = 28
-lifetime = 6.0
-preprocess = 1.0
-process_material = SubResource("ParticleProcessMaterial_p24gd")
+[node name="CharacterLight" parent="Characters/Characters/Dris" unique_id=1065965914 instance=ExtResource("3_t8k4h")]
+position = Vector2(0.5, 0.5)
+size_scale = 0.9
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=855070298]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1101032243]
+
+[node name="Control" type="Control" parent="UI" unique_id=855070298]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -269,7 +299,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Buttons" type="Control" parent="CanvasLayer/Control" unique_id=452311391]
+[node name="Buttons" type="Control" parent="UI/Control" unique_id=452311391]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -277,7 +307,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Buttons" unique_id=1846357134]
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control/Buttons" unique_id=1846357134]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -287,41 +317,41 @@ grow_vertical = 2
 theme_override_constants/margin_left = 80
 theme_override_constants/margin_bottom = 40
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Buttons/MarginContainer" unique_id=593607300]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/Buttons/MarginContainer" unique_id=593607300]
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Buttons/MarginContainer/VBoxContainer" unique_id=1091825688]
+[node name="TextureRect" type="TextureRect" parent="UI/Control/Buttons/MarginContainer/VBoxContainer" unique_id=1091825688]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 texture = ExtResource("5_7481o")
 stretch_mode = 4
 
-[node name="Control" type="Control" parent="CanvasLayer/Control/Buttons/MarginContainer/VBoxContainer" unique_id=221065282]
+[node name="Control" type="Control" parent="UI/Control/Buttons/MarginContainer/VBoxContainer" unique_id=221065282]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
-[node name="ButtonBox" type="VBoxContainer" parent="CanvasLayer/Control/Buttons/MarginContainer/VBoxContainer" unique_id=906499207]
+[node name="ButtonBox" type="VBoxContainer" parent="UI/Control/Buttons/MarginContainer/VBoxContainer" unique_id=906499207]
 layout_mode = 2
 script = ExtResource("9_c1ld8")
 button_icon = ExtResource("2_b5ymf")
 metadata/_custom_type_script = "uid://dxcjb7vt0ooib"
 
-[node name="Start" parent="CanvasLayer/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox" unique_id=604741072 instance=ExtResource("1_dkf2c")]
+[node name="Start" parent="UI/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox" unique_id=604741072 instance=ExtResource("1_dkf2c")]
 layout_mode = 2
 size_flags_horizontal = 0
 focus_next = NodePath("../Exit")
 focus_previous = NodePath("../Exit")
 text = "Start"
 
-[node name="Exit" parent="CanvasLayer/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox" unique_id=55315400 instance=ExtResource("1_dkf2c")]
+[node name="Exit" parent="UI/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox" unique_id=55315400 instance=ExtResource("1_dkf2c")]
 layout_mode = 2
 size_flags_horizontal = 0
 focus_next = NodePath("../Start")
 focus_previous = NodePath("../Start")
 text = "Exit"
 
-[node name="TransitionRect" type="ColorRect" parent="CanvasLayer" unique_id=2129587402]
+[node name="TransitionRect" type="ColorRect" parent="UI" unique_id=2129587402]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -330,5 +360,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[connection signal="pressed" from="CanvasLayer/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox/Exit" to="." method="_on_exit_pressed"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=573064583]
+position = Vector2(320, 180)
+amount = 40
+lifetime = 6.0
+preprocess = 1.0
+process_material = SubResource("ParticleProcessMaterial_p24gd")
+
+[connection signal="pressed" from="UI/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="UI/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox/Exit" to="." method="_on_exit_pressed"]

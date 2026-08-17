@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dxq4biftakvx0"]
 
 [ext_resource type="Script" uid="uid://cg0dy2oypa07s" path="res://scripts/GridVisual.gd" id="1_ipnov"]
-[ext_resource type="Texture2D" uid="uid://cv6i5vfh4lk0r" path="res://assets/idle_magic.png" id="2_ipnov"]
+[ext_resource type="Texture2D" uid="uid://dcc18rm058whu" path="res://assets/characters/elius/idle.tres" id="2_ipnov"]
+[ext_resource type="Texture2D" uid="uid://douplj320q7vh" path="res://assets/textures/light.png" id="3_05srf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_05srf"]
 atlas = ExtResource("2_ipnov")
@@ -132,7 +133,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4okv5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 9.0
 }]
@@ -145,12 +146,18 @@ script = ExtResource("1_ipnov")
 metadata/_custom_type_script = "uid://cg0dy2oypa07s"
 
 [node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=680615932]
-position = Vector2(-4, -4)
+position = Vector2(-4, -10)
 sprite_frames = SubResource("SpriteFrames_hokx2")
 autoplay = "default"
 frame_progress = 0.40893936
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1466752015]
-position = Vector2(4, 6)
+position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_ipnov")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=320905647]
+position = Vector2(-13, -5)
+color = Color(0.98039216, 0.69803923, 0.4117647, 1)
+energy = 2.0
+texture = ExtResource("3_05srf")

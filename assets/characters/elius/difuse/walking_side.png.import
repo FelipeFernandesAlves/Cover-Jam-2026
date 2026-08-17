@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://58fh6w4ee2sl"
-path="res://.godot/imported/walking_side_mage.png-6d7a84b36ed790405658e216a7ec907a.ctex"
+path="res://.godot/imported/walking_side.png-07136a89c703a7bf89113e7141d1b5cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/elius/walking_side_mage.png"
-dest_files=["res://.godot/imported/walking_side_mage.png-6d7a84b36ed790405658e216a7ec907a.ctex"]
+source_file="res://assets/characters/elius/difuse/walking_side.png"
+dest_files=["res://.godot/imported/walking_side.png-07136a89c703a7bf89113e7141d1b5cd.ctex"]
 
 [params]
 

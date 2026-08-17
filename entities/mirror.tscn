@@ -2,57 +2,94 @@
 
 [ext_resource type="Script" uid="uid://dew3cxmhk1k2b" path="res://scripts/Mirror.gd" id="1_6yof1"]
 [ext_resource type="AudioStream" uid="uid://dsh266bprvb68" path="res://assets/sfx/mirror.wav" id="2_6yof1"]
-[ext_resource type="Texture2D" uid="uid://bfvyul5domcob" path="res://assets/mirrors.png" id="2_syy3b"]
-[ext_resource type="Texture2D" uid="uid://deqy45mvsrto6" path="res://assets/mirror_reversed.png" id="3_atfo5"]
+[ext_resource type="Texture2D" uid="uid://ce6rpvy8vt07w" path="res://assets/textures/mirror/mirror.tres" id="3_6yof1"]
+[ext_resource type="Texture2D" uid="uid://d0tv0ex0mmbof" path="res://assets/textures/mirror/mirror_light.tres" id="4_daf0o"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_daf0o"]
 random_pitch = 1.122462
 streams_count = 1
 stream_0/stream = ExtResource("2_6yof1")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_daf0o"]
-atlas = ExtResource("3_atfo5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh5ig"]
+atlas = ExtResource("3_6yof1")
 region = Rect2(0, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6yof1"]
-atlas = ExtResource("2_syy3b")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qh23"]
+atlas = ExtResource("3_6yof1")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7ay4"]
+atlas = ExtResource("3_6yof1")
 region = Rect2(64, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dh5ig"]
-atlas = ExtResource("3_atfo5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih3l6"]
+atlas = ExtResource("3_6yof1")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7smp"]
+atlas = ExtResource("4_daf0o")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1h84"]
+atlas = ExtResource("4_daf0o")
 region = Rect2(32, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_atfo5"]
-atlas = ExtResource("2_syy3b")
-region = Rect2(32, 0, 32, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_k68ac"]
+atlas = ExtResource("4_daf0o")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6a2f"]
+atlas = ExtResource("4_daf0o")
+region = Rect2(96, 0, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6p3hd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_daf0o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6yof1")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_dh5ig")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_atfo5")
+"texture": SubResource("AtlasTexture_7qh23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7ay4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih3l6")
 }],
 "loop": 1,
 "name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7smp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1h84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k68ac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6a2f")
+}],
+"loop": 1,
+"name": &"light",
 "speed": 0.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yof1"]
 size = Vector2(19, 32)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_g4v7s"]
+polygon = PackedVector2Array(-6, -27, 12, -25, 7, 2, 9, 4, 8, 6, 10, 9, 5, 12, 2, 7, -7, 12, -10, 12, -14, 9, -14, 6, -12, 5)
+
 [node name="Mirror" type="StaticBody2D" unique_id=1117091629 node_paths=PackedStringArray("move_audio", "reflect_point", "sprites")]
+z_as_relative = false
 script = ExtResource("1_6yof1")
 move_audio = NodePath("AudioStreamPlayer")
-reflect_point = NodePath("ReflectPoint")
+reflect_point = NodePath("ReflectionPoints/ReflectPoint")
 sprites = NodePath("Sprites")
 type = 2
 metadata/_custom_type_script = "uid://2kjd0y17t1uf"
@@ -63,11 +100,20 @@ volume_db = -10.0
 bus = &"SFX"
 
 [node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=506396592]
-position = Vector2(2, -11)
+position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_6p3hd")
+autoplay = "default"
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1476832076]
 position = Vector2(1, -12)
 shape = SubResource("RectangleShape2D_6yof1")
 
-[node name="ReflectPoint" type="Node2D" parent="." unique_id=1157567031]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1942422965]
+y_sort_enabled = true
+occluder = SubResource("OccluderPolygon2D_g4v7s")
+occluder_light_mask = 3
+
+[node name="ReflectionPoints" type="Node2D" parent="." unique_id=1853438872]
+
+[node name="ReflectPoint" type="Node2D" parent="ReflectionPoints" unique_id=1157567031]
+position = Vector2(1, -3)

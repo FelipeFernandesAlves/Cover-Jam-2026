@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv6i5vfh4lk0r"
-path="res://.godot/imported/idle_magic.png-d94548f359cc43f74e37c91d78a81e2f.ctex"
+uid="uid://166cldgp0frp"
+path="res://.godot/imported/walking_side_n.png-7d859eb2e3afdce2592391c043b4e956.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/idle_magic.png"
-dest_files=["res://.godot/imported/idle_magic.png-d94548f359cc43f74e37c91d78a81e2f.ctex"]
+source_file="res://assets/characters/elius/normal/walking_side_n.png"
+dest_files=["res://.godot/imported/walking_side_n.png-7d859eb2e3afdce2592391c043b4e956.ctex"]
 
 [params]
 

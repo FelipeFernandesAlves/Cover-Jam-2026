@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://d0tv0ex0mmbof"]
+
+[ext_resource type="Texture2D" uid="uid://b2rbf1prdky3j" path="res://assets/textures/mirror/diffuse/mirror_light.png" id="1_0t0nu"]
+[ext_resource type="Texture2D" uid="uid://dmfjng37dbjko" path="res://assets/textures/mirror/normal/mirror_n.png" id="2_rxwn2"]
+
+[resource]
+diffuse_texture = ExtResource("1_0t0nu")
+normal_texture = ExtResource("2_rxwn2")

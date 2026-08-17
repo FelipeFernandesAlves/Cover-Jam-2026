@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://do40uhc6geytv" path="res://scripts/LightBeam.gd" id="1_ymk82"]
 [ext_resource type="AudioStream" uid="uid://ceeutwwsafq3s" path="res://assets/sfx/light_beam.wav" id="2_2qmul"]
 [ext_resource type="Texture2D" uid="uid://bx18p042htc4p" path="res://assets/light_particle.png" id="2_5gakn"]
+[ext_resource type="Texture2D" uid="uid://douplj320q7vh" path="res://assets/textures/light.png" id="4_s40b7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ayagq"]
+light_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_2qmul"]
 offsets = PackedFloat32Array(0.2881356, 1)
@@ -60,11 +64,12 @@ scale_min = 0.5
 scale_max = 0.79999995
 scale_curve = SubResource("CurveTexture_s40b7")
 
-[node name="LightBeam" type="RayCast2D" unique_id=924739334 node_paths=PackedStringArray("impact_audio")]
-z_index = -1
-y_sort_enabled = true
+[node name="LightBeam" type="RayCast2D" unique_id=924739334 node_paths=PackedStringArray("light", "impact_audio")]
+z_index = 1
+z_as_relative = false
 target_position = Vector2(0, 0)
 script = ExtResource("1_ymk82")
+light = NodePath("Light")
 cast_speed = 800.0
 line_color = Color(0.98039216, 0.69803923, 0.4117647, 1)
 impact_audio = NodePath("AudioStreamPlayer")
@@ -75,11 +80,18 @@ volume_db = -3.0
 bus = &"SFX"
 
 [node name="Line" type="Line2D" parent="." unique_id=2120260499]
+material = SubResource("CanvasItemMaterial_ayagq")
 points = PackedVector2Array(0, 0, 100, 0)
 width = 6.0
 joint_mode = 2
-begin_cap_mode = 2
 end_cap_mode = 1
+
+[node name="Light" type="PointLight2D" parent="." unique_id=1051440205]
+color = Color(0.98039216, 0.69803923, 0.4117647, 1)
+energy = 0.5
+range_item_cull_mask = 3
+texture = ExtResource("4_s40b7")
+texture_scale = 2.0
 
 [node name="BeamParticles" type="GPUParticles2D" parent="." unique_id=784009739]
 visible = false

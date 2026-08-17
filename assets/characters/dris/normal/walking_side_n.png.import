@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dogk6fnvithwi"
-path="res://.godot/imported/idle_back.png-7a7dac7a8c03abe5bc7df8edd9f73915.ctex"
+uid="uid://dvptx2bng2gun"
+path="res://.godot/imported/walking_side_n.png-178a13dd6f2c1987d5882cb1d8df781d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/dris/idle_back.png"
-dest_files=["res://.godot/imported/idle_back.png-7a7dac7a8c03abe5bc7df8edd9f73915.ctex"]
+source_file="res://assets/characters/dris/normal/walking_side_n.png"
+dest_files=["res://.godot/imported/walking_side_n.png-178a13dd6f2c1987d5882cb1d8df781d.ctex"]
 
 [params]
 

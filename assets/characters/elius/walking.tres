@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://idj7tojq8bcv"]
+
+[ext_resource type="Texture2D" uid="uid://58fh6w4ee2sl" path="res://assets/characters/elius/difuse/walking_side.png" id="1_012j2"]
+[ext_resource type="Texture2D" uid="uid://166cldgp0frp" path="res://assets/characters/elius/normal/walking_side_n.png" id="2_0y4k6"]
+
+[resource]
+diffuse_texture = ExtResource("1_012j2")
+normal_texture = ExtResource("2_0y4k6")

@@ -69,6 +69,8 @@ func _handle_animation():
 	if (facing_name == "left" || facing_name == "right"):
 		sprite.flip_h = facing_name == "left"
 		facing_name = "side"
+	else:
+		sprite.flip_h = false
 	
 	var animation_name = str(move_state, "_", facing_name)
 	sprite.animation = animation_name

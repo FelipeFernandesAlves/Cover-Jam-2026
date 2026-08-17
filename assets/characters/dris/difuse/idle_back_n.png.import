@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deqy45mvsrto6"
-path="res://.godot/imported/mirror_reversed.png-43009dda934ec15d8a80743630b5d1e1.ctex"
+uid="uid://dtnb6ajvee4ya"
+path="res://.godot/imported/idle_back_n.png-82c847874238672e232b18edef059181.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mirror_reversed.png"
-dest_files=["res://.godot/imported/mirror_reversed.png-43009dda934ec15d8a80743630b5d1e1.ctex"]
+source_file="res://assets/characters/dris/difuse/idle_back_n.png"
+dest_files=["res://.godot/imported/idle_back_n.png-82c847874238672e232b18edef059181.ctex"]
 
 [params]
 

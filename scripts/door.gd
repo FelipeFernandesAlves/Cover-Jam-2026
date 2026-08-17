@@ -23,7 +23,7 @@ func fill():
 
 func game_won():
 	tween = create_tween()
-	tween.tween_property(door_back, "scale:y", 1.0, 2.0).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(door_back, "scale:y", 1.0, 1.0).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
 
 	filling_audio.reparent(get_tree().root)
 	filling_audio.play()

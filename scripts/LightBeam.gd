@@ -3,6 +3,7 @@ extends RayCast2D
 
 const LIGHT_BEAM = preload("uid://6hfxkgkhecgv")
 
+@export var light: PointLight2D
 @export var cast_speed := 1000.0
 @export var max_length := 1400.0
 @export var is_casting := false:
@@ -87,6 +88,7 @@ func _physics_process(delta: float) -> void:
 	beam_particles.process_material.emission_box_extents.x = beam_end_position.distance_to(beam_start_position) * 0.1
 	casting_particles.position = beam_start_position
 	collision_particles.position = beam_end_position
+	light.position = beam_end_position
 
 func _appear() -> void:
 	if (tween && tween.is_running()): 
