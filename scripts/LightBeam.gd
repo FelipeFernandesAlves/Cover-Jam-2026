@@ -14,6 +14,7 @@ const LIGHT_BEAM = preload("uid://6hfxkgkhecgv")
 
 @export var impact_dir := Vector2.RIGHT:
 	set = _set_impact_dir
+@export var impact_audio: AudioStreamPlayer
 
 @onready var line: Line2D = $Line
 @onready var line_width := line.width
@@ -23,6 +24,7 @@ const LIGHT_BEAM = preload("uid://6hfxkgkhecgv")
 
 var tween: Tween = null
 var next_beam: LightBeam = null
+var index := 0
 
 signal disappeared()
 
@@ -53,11 +55,14 @@ func _physics_process(delta: float) -> void:
 			if (!next_beam):
 				if (new_dir != Vector2.ZERO):
 					next_beam = LIGHT_BEAM.instantiate()
+					next_beam.index = self.index + 1
 					next_beam.disappeared.connect(func():
 						next_beam.queue_free()
 						next_beam = null
 						_disappear()
 						)
+					impact_audio.pitch_scale = pow(2.0, index / 12.0)
+					impact_audio.play()
 					next_beam.line_color = line_color
 					add_child(next_beam)
 					next_beam.is_casting = true
@@ -66,11 +71,13 @@ func _physics_process(delta: float) -> void:
 			else:
 				next_beam.global_position = collider.reflect_point.global_position
 		elif (next_beam):
-			next_beam.disappeared.disconnect(_disappear)
+			if (next_beam.disappeared.is_connected(_disappear)):
+				next_beam.disappeared.disconnect(_disappear)
 			next_beam.queue_free()
 			next_beam = null
 	elif (next_beam):
-		next_beam.disappeared.disconnect(_disappear)
+		if (next_beam.disappeared.is_connected(_disappear)):
+			next_beam.disappeared.disconnect(_disappear)
 		next_beam.queue_free()
 		next_beam = null
 	

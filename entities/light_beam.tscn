@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6hfxkgkhecgv"]
 
 [ext_resource type="Script" uid="uid://do40uhc6geytv" path="res://scripts/LightBeam.gd" id="1_ymk82"]
+[ext_resource type="AudioStream" uid="uid://ceeutwwsafq3s" path="res://assets/sfx/light_beam.wav" id="2_2qmul"]
 [ext_resource type="Texture2D" uid="uid://bx18p042htc4p" path="res://assets/light_particle.png" id="2_5gakn"]
 
 [sub_resource type="Gradient" id="Gradient_2qmul"]
@@ -59,13 +60,19 @@ scale_min = 0.5
 scale_max = 0.79999995
 scale_curve = SubResource("CurveTexture_s40b7")
 
-[node name="LightBeam" type="RayCast2D" unique_id=924739334]
+[node name="LightBeam" type="RayCast2D" unique_id=924739334 node_paths=PackedStringArray("impact_audio")]
 z_index = -1
 y_sort_enabled = true
 target_position = Vector2(0, 0)
 script = ExtResource("1_ymk82")
 cast_speed = 800.0
 line_color = Color(0.98039216, 0.69803923, 0.4117647, 1)
+impact_audio = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1592640999]
+stream = ExtResource("2_2qmul")
+volume_db = -3.0
+bus = &"SFX"
 
 [node name="Line" type="Line2D" parent="." unique_id=2120260499]
 points = PackedVector2Array(0, 0, 100, 0)

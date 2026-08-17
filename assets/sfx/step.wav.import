@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ca6r1epr5tc8g"
-path="res://.godot/imported/step_starlit-tower.wav-5c2bd615f18ec483d051abe3c857f803.sample"
+path="res://.godot/imported/step.wav-d21be29b105ea10aa9f20a4155219ffc.sample"
 
 [deps]
 
-source_file="res://assets/sfx/step_starlit-tower.wav"
-dest_files=["res://.godot/imported/step_starlit-tower.wav-5c2bd615f18ec483d051abe3c857f803.sample"]
+source_file="res://assets/sfx/step.wav"
+dest_files=["res://.godot/imported/step.wav-d21be29b105ea10aa9f20a4155219ffc.sample"]
 
 [params]
 

@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://b6mbqf0yo73kj"]
 
-[ext_resource type="Script" uid="uid://2kjd0y17t1uf" path="res://scripts/Reflective.gd" id="1_syy3b"]
+[ext_resource type="Script" uid="uid://dew3cxmhk1k2b" path="res://scripts/Mirror.gd" id="1_6yof1"]
+[ext_resource type="AudioStream" uid="uid://dsh266bprvb68" path="res://assets/sfx/mirror.wav" id="2_6yof1"]
 [ext_resource type="Texture2D" uid="uid://bfvyul5domcob" path="res://assets/mirrors.png" id="2_syy3b"]
 [ext_resource type="Texture2D" uid="uid://deqy45mvsrto6" path="res://assets/mirror_reversed.png" id="3_atfo5"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_daf0o"]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("2_6yof1")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_daf0o"]
 atlas = ExtResource("3_atfo5")
@@ -35,7 +41,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_atfo5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 0.0
 }]
@@ -43,12 +49,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yof1"]
 size = Vector2(19, 32)
 
-[node name="Mirror" type="StaticBody2D" unique_id=1117091629 node_paths=PackedStringArray("reflect_point", "sprites")]
-script = ExtResource("1_syy3b")
+[node name="Mirror" type="StaticBody2D" unique_id=1117091629 node_paths=PackedStringArray("move_audio", "reflect_point", "sprites")]
+script = ExtResource("1_6yof1")
+move_audio = NodePath("AudioStreamPlayer")
 reflect_point = NodePath("ReflectPoint")
 sprites = NodePath("Sprites")
 type = 2
 metadata/_custom_type_script = "uid://2kjd0y17t1uf"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=921765280]
+stream = SubResource("AudioStreamRandomizer_daf0o")
+volume_db = -10.0
+bus = &"SFX"
 
 [node name="Sprites" type="AnimatedSprite2D" parent="." unique_id=506396592]
 position = Vector2(2, -11)

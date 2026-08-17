@@ -12,6 +12,8 @@ var current_grid_pos: Vector2i
 var entity_data: GridEntityData
 var cell_size = GridState.CELL_SIZE
 
+signal entity_moved()
+
 func _ready():
 	if (!grid_state):
 		grid_state = Game.grid_state
@@ -35,6 +37,7 @@ func _on_entity_moved(entity: GridEntityData, _from: Vector2i, to: Vector2i):
 	if entity == entity_data:
 		current_grid_pos = to
 		animate_to_position(get_centered_pixel_position(to))
+		entity_moved.emit()
 
 func get_centered_pixel_position(grid_pos: Vector2i) -> Vector2:
 	# Multiplica pela posição da grid e soma metade do tamanho da célula nos eixos X e Y

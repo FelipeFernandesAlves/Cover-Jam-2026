@@ -1,15 +1,21 @@
 [gd_scene format=3 uid="uid://c41gkkvu14v72"]
 
 [ext_resource type="Script" uid="uid://dtn2i84s4hnsa" path="res://scripts/Player.gd" id="1_4flbx"]
-[ext_resource type="AudioStream" uid="uid://ca6r1epr5tc8g" path="res://assets/sfx/step_starlit-tower.wav" id="2_6nm46"]
+[ext_resource type="AudioStream" uid="uid://ca6r1epr5tc8g" path="res://assets/sfx/step.wav" id="2_6nm46"]
 [ext_resource type="Texture2D" uid="uid://bx18p042htc4p" path="res://assets/light_particle.png" id="2_b0kkn"]
+[ext_resource type="AudioStream" uid="uid://2io4oybfwlka" path="res://assets/sfx/death.wav" id="2_i623q"]
 [ext_resource type="Texture2D" uid="uid://rhwkgtp80tk3" path="res://assets/32x32.png" id="3_e4p34"]
 [ext_resource type="Texture2D" uid="uid://dogk6fnvithwi" path="res://assets/characters/dris/idle_back.png" id="4_qsoyl"]
 [ext_resource type="Texture2D" uid="uid://oob01cue54fu" path="res://assets/characters/dris/idle_front.png" id="4_rfe5m"]
 [ext_resource type="Texture2D" uid="uid://uo6rdg6j50wg" path="res://assets/characters/dris/idle_side.png" id="6_6nm46"]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g4v7s"]
+random_pitch = 1.0594631
+streams_count = 1
+stream_0/stream = ExtResource("2_i623q")
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6nm46"]
-random_pitch = 1.122462
+random_pitch = 1.1892071
 random_volume_offset_db = 1.0
 streams_count = 1
 stream_0/stream = ExtResource("2_6nm46")
@@ -429,15 +435,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_merdl"]
 size = Vector2(16, 24)
 
-[node name="Player" type="StaticBody2D" unique_id=982078070 node_paths=PackedStringArray("step_sound") groups=["player"]]
+[node name="Player" type="StaticBody2D" unique_id=982078070 node_paths=PackedStringArray("step_audio", "death_audio") groups=["player"]]
 script = ExtResource("1_4flbx")
-step_sound = NodePath("AudioStreamPlayer")
+step_audio = NodePath("StepAudio")
+death_audio = NodePath("DeathAudio")
 type = 4
 metadata/_custom_type_script = "uid://dtn2i84s4hnsa"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1692319571]
+[node name="DeathAudio" type="AudioStreamPlayer" parent="." unique_id=1272780787]
+stream = SubResource("AudioStreamRandomizer_g4v7s")
+bus = &"SFX"
+
+[node name="StepAudio" type="AudioStreamPlayer" parent="." unique_id=1692319571]
 stream = SubResource("AudioStreamRandomizer_6nm46")
-volume_db = -3.0
 bus = &"SFX"
 
 [node name="DeathParticles" type="GPUParticles2D" parent="." unique_id=979995435]

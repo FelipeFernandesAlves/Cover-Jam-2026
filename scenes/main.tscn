@@ -38,5 +38,6 @@ process_mode = 3
 layer = 2
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1877973 instance=ExtResource("13_trceg")]
+visible = false
 
 [connection signal="on_pause" from="." to="." method="_on_on_pause"]

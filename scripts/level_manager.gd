@@ -35,6 +35,8 @@ signal reload()
 signal scene_finished()
 
 func _ready() -> void:
+	var bus_index = AudioServer.get_bus_index("SFX")
+	AudioServer.set_bus_mute(bus_index, true)
 	label.text = title
 	level_title.text = title
 	level_time.text = "0:00.0"
@@ -45,6 +47,8 @@ func _ready() -> void:
 	if (!Game.skip_cutscenes):
 		animation.play("level_intro")
 		Game.game_paused = true
+	else:
+		_on_intro_finished()
 
 func _exit_tree() -> void:
 	start_level_timer.timeout.disconnect(_on_start_level_timer)
@@ -77,6 +81,8 @@ func _on_entity_moved(entity: GridEntityData, _from_pos: Vector2i, _to_pos: Vect
 
 func _on_intro_finished():
 	start_level_timer.start()
+	var bus_index = AudioServer.get_bus_index("SFX")
+	AudioServer.set_bus_mute(bus_index, false)
 
 func _on_start_level_timer():
 	Game.game_paused = false
@@ -96,8 +102,10 @@ func on_level_won():
 
 	Game.game_paused = true
 	# Emite o sinal para o SceneManager carregar a próxima cena
+	winning_door.game_won()
 	Input.start_joy_vibration(0, 0.5, 0.8, 1.0)
 	camera.screen_shake(3, 1.5)
+	await get_tree().create_timer(0.5).timeout
 	scene_finished.emit()
 
 func _restart_level():

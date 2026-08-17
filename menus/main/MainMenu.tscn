@@ -169,6 +169,36 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_1o3ol"]
+colors = PackedColorArray(0.98039216, 0.69803923, 0.4117647, 1, 0.9490196, 0.56078434, 0.38039216, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x3f8h"]
+gradient = SubResource("Gradient_1o3ol")
+
+[sub_resource type="Curve" id="Curve_ketcr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5014493, 1), 0.0, 0.0, 0, 0, Vector2(0.75362325, 0.97777784), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_bwkgl"]
+curve = SubResource("Curve_ketcr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p24gd"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(320, 180, 0)
+gravity = Vector3(0, -1, 0)
+radial_accel_min = 0.99999774
+radial_accel_max = 1.9999977
+tangential_accel_min = -1.1000022
+tangential_accel_max = -1.1000022
+damping_min = 0.1
+damping_max = 0.1
+scale_min = 2.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_bwkgl")
+color = Color(1, 1, 1, 0.3137255)
+color_initial_ramp = SubResource("GradientTexture1D_x3f8h")
+
 [node name="MainMenu" type="Node2D" unique_id=1433660992 node_paths=PackedStringArray("characters_parent", "start_button", "exit_button", "transition_rect", "game_start_sound")]
 script = ExtResource("1_krk3i")
 main_scene = ExtResource("2_cwvfg")
@@ -223,6 +253,13 @@ frame_progress = 0.29724842
 [node name="CharacterLight" parent="Characters/Elius" unique_id=1911450213 instance=ExtResource("3_t8k4h")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1101032243]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer" unique_id=573064583]
+position = Vector2(320, 180)
+amount = 28
+lifetime = 6.0
+preprocess = 1.0
+process_material = SubResource("ParticleProcessMaterial_p24gd")
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=855070298]
 layout_mode = 3

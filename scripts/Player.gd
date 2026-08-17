@@ -3,7 +3,9 @@ extends GridVisual
 
 var is_animating: bool = false
 @export var facing_direction: Vector2i = Vector2i.DOWN # Guarda para onde o player está olhando
-@export var step_sound: AudioStreamPlayer
+
+@export var step_audio: AudioStreamPlayer
+@export var death_audio: AudioStreamPlayer
 
 @onready var death_particles: GPUParticles2D = $DeathParticles
 @onready var death_light: PointLight2D = $DeathLight
@@ -15,6 +17,9 @@ var move_state: String = "idle"
 func _ready():
 	super()
 	death_light.texture_scale = 0.0
+	entity_moved.connect(func():
+		step_audio.play()
+	)
 
 func _process(_delta):
 	if is_animating: return
@@ -39,9 +44,6 @@ func _process(_delta):
 		if not is_grabbing:
 			facing_direction = move_dir
 		
-		step_sound.pitch_scale
-		step_sound.play()
-
 		# Envia o pedido apropriado para o GridState
 		if is_grabbing:
 			if grid_state.try_pull_entity(current_grid_pos, move_dir, facing_direction):
@@ -79,6 +81,11 @@ func _travar_input_temporariamente():
 func die():
 	collision.set_deferred("disabled", true)
 	sprite.hide()
+	
+	death_audio.reparent(get_tree().root)
+	death_audio.play()
+	death_audio.finished.connect(death_audio.queue_free)
+
 	var tween = create_tween()
 	tween.tween_property(death_light, "texture_scale", 1.0, 0.6).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN_OUT)
 	death_particles.restart()

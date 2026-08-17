@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ctes2ar3qkl18" path="res://assets/door.png" id="1_3fqlw"]
 [ext_resource type="Script" uid="uid://bhgbu1snqd30x" path="res://scripts/door.gd" id="1_k4wox"]
+[ext_resource type="AudioStream" uid="uid://ba3u3bq4wua5h" path="res://assets/sfx/door.wav" id="3_ts0s0"]
 
 [sub_resource type="Gradient" id="Gradient_k4wox"]
 offsets = PackedFloat32Array(0, 0.18118466, 1)
@@ -24,7 +25,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k4wox")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -35,10 +36,15 @@ size = Vector2(24, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ts0s0"]
 size = Vector2(26, 27)
 
-[node name="Door" type="StaticBody2D" unique_id=1438962923]
+[node name="Door" type="StaticBody2D" unique_id=1438962923 node_paths=PackedStringArray("filling_audio")]
 script = ExtResource("1_k4wox")
+filling_audio = NodePath("AudioStreamPlayer")
 type = 1
 metadata/_custom_type_script = "uid://bhgbu1snqd30x"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1603867913]
+stream = ExtResource("3_ts0s0")
+bus = &"SFX"
 
 [node name="DoorBack" type="Sprite2D" parent="." unique_id=1112915073]
 position = Vector2(0, -6)
