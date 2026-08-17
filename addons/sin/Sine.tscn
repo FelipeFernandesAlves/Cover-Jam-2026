@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dspd70rutuvyu"]
+
+[ext_resource type="Script" uid="uid://k87jdgmme7sr" path="res://addons/sin/sine.gd" id="1_228hl"]
+
+[node name="Sine" type="Node" unique_id=496799456]
+script = ExtResource("1_228hl")

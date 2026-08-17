@@ -22,6 +22,7 @@ extends Node
 
 @export var title: String
 @export var max_moves: int = 4
+@export var camera: Camera
 var current_moves: int = 0
 var current_time: float
 
@@ -84,13 +85,19 @@ func on_restart_level():
 	Game.game_paused = true
 	var player: Player = get_tree().get_first_node_in_group("player")
 	if player:
+		camera.screen_shake(3, 1.5)
 		player.die()
 	await get_tree().create_timer(1.2).timeout
 	animation.play("level_restart")
 
 func on_level_won():
+	if (current_moves > max_moves):
+		return
+
 	Game.game_paused = true
 	# Emite o sinal para o SceneManager carregar a próxima cena
+	Input.start_joy_vibration(0, 0.5, 0.8, 1.0)
+	camera.screen_shake(3, 1.5)
 	scene_finished.emit()
 
 func _restart_level():

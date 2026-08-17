@@ -56,7 +56,7 @@ func set_character_emotion(emotion: DialogContent.Emotion):
 		# Atualizamos a região para mostrar o rosto correto
 		atlas_tex.region = Rect2(new_x_position, 0, FACE_WIDTH, FACE_HEIGHT)
 	
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	# Se o jogador clicar com o botão esquerdo do mouse ou apertar "Espaço/Enter"
 	if event.is_action_pressed("dialog_interact"):
 		

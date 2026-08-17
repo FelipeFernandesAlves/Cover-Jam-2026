@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://2fjv6eer71ey"]
+
+[ext_resource type="Script" uid="uid://cofcggfjgs7ye" path="res://menus/common/menu_page/menu_page.gd" id="1_0odt4"]
+
+[node name="MenuPage" type="Control" unique_id=226564747]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 1.0
+script = ExtResource("1_0odt4")

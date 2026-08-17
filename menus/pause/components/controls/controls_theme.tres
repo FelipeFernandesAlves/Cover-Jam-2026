@@ -1,0 +1,16 @@
+[gd_resource type="Theme" format=3 uid="uid://cv5scohpmvv"]
+
+[ext_resource type="FontFile" uid="uid://dc6m117mswpe7" path="res://assets/fonts/DungeonFont.ttf" id="1_mdb5o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
+
+[resource]
+HBoxContainer/constants/separation = 10
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_mdb5o")
+MarginContainer/constants/margin_bottom = 40
+MarginContainer/constants/margin_left = 70
+MarginContainer/constants/margin_right = 70
+MarginContainer/constants/margin_top = 43
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_g4v7s")
+VBoxContainer/constants/separation = 12

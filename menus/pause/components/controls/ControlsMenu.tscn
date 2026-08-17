@@ -1,0 +1,378 @@
+[gd_scene format=3 uid="uid://ba82nlov0bp5v"]
+
+[ext_resource type="Theme" uid="uid://cv5scohpmvv" path="res://menus/pause/components/controls/controls_theme.tres" id="1_k3tfk"]
+[ext_resource type="PackedScene" uid="uid://q56vxwhxriqv" path="res://menus/main/components/MainMenuButton.tscn" id="1_qvulh"]
+[ext_resource type="Script" uid="uid://nyyt4pa5qjya" path="res://menus/pause/components/controls/controls_menu.gd" id="1_xngq6"]
+[ext_resource type="Script" uid="uid://dxcjb7vt0ooib" path="res://menus/common/button_box/button_box.gd" id="2_5ppml"]
+[ext_resource type="Script" uid="uid://blagl4otce7mn" path="res://menus/pause/components/controls/components/control_box.gd" id="3_qpeha"]
+[ext_resource type="Texture2D" uid="uid://ch1t41prmx6ca" path="res://menus/pause/assets/Keyboard.png" id="3_yu2ut"]
+[ext_resource type="Texture2D" uid="uid://d4c344oo2a0ea" path="res://menus/pause/assets/Ps4.png" id="5_qpeha"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yu2ut"]
+load_path = "res://.godot/imported/Keyboard.png-ef3c4c2c4e2c824389fa0ac030b03dc9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn6rq"]
+atlas = SubResource("CompressedTexture2D_yu2ut")
+region = Rect2(64, 33, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6f51"]
+atlas = ExtResource("5_qpeha")
+region = Rect2(80, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu2ut"]
+atlas = ExtResource("3_yu2ut")
+region = Rect2(64, 49, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3n3p"]
+atlas = ExtResource("5_qpeha")
+region = Rect2(112, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpeha"]
+atlas = ExtResource("3_yu2ut")
+region = Rect2(48, 49, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycuyl"]
+atlas = ExtResource("5_qpeha")
+region = Rect2(64, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8epfs"]
+atlas = ExtResource("3_yu2ut")
+region = Rect2(80, 49, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcym6"]
+atlas = ExtResource("5_qpeha")
+region = Rect2(96, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aaq4"]
+atlas = ExtResource("3_yu2ut")
+region = Rect2(79, 81, 81, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56idh"]
+atlas = ExtResource("5_qpeha")
+region = Rect2(0, 17, 16, 15)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qpeha"]
+load_path = "res://.godot/imported/Keyboard.png-ef3c4c2c4e2c824389fa0ac030b03dc9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrxqx"]
+atlas = SubResource("CompressedTexture2D_qpeha")
+region = Rect2(96, 33, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2mxv"]
+atlas = ExtResource("5_qpeha")
+region = Rect2(0, 81, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4vgg"]
+atlas = ExtResource("3_yu2ut")
+region = Rect2(176, 65, 48, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rj16"]
+atlas = ExtResource("5_qpeha")
+region = Rect2(145, 96, 14, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pamox"]
+atlas = ExtResource("3_yu2ut")
+region = Rect2(27, 1, 21, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx2ol"]
+atlas = ExtResource("5_qpeha")
+region = Rect2(48, 144, 16, 16)
+
+[node name="ControlsMenu" type="Control" unique_id=974553588 node_paths=PackedStringArray("back_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_k3tfk")
+script = ExtResource("1_xngq6")
+back_button = NodePath("MarginContainer/ScrollContainer/VBoxContainer/ButtonBox/Back")
+page_name = "controls"
+metadata/_custom_type_script = "uid://cofcggfjgs7ye"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1807628416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=487688218]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=1391003965]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1362936041]
+layout_mode = 2
+columns = 3
+
+[node name="ControlsLeft" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer" unique_id=1350732772]
+layout_mode = 2
+
+[node name="Up" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft" unique_id=1842536052 node_paths=PackedStringArray("keyboard_rect", "gamepad_rect")]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_k3tfk")
+script = ExtResource("3_qpeha")
+keyboard_rect = NodePath("PanelContainer/KeyboardRect")
+gamepad_rect = NodePath("PanelContainer/GamepadRect")
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Up" unique_id=1844757096]
+layout_mode = 2
+text = "Cima:"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Up" unique_id=1987438239]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="KeyboardRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Up/PanelContainer" unique_id=1860541937]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_pn6rq")
+stretch_mode = 5
+
+[node name="GamepadRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Up/PanelContainer" unique_id=1992215434]
+layout_mode = 2
+texture = SubResource("AtlasTexture_o6f51")
+stretch_mode = 5
+
+[node name="Down" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft" unique_id=939875722 node_paths=PackedStringArray("keyboard_rect", "gamepad_rect")]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_k3tfk")
+script = ExtResource("3_qpeha")
+keyboard_rect = NodePath("PanelContainer/KeyboardRect")
+gamepad_rect = NodePath("PanelContainer/GamepadRect")
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Down" unique_id=103297275]
+layout_mode = 2
+text = "Baixo:"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Down" unique_id=2119150064]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="KeyboardRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Down/PanelContainer" unique_id=2136212326]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_yu2ut")
+stretch_mode = 5
+
+[node name="GamepadRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Down/PanelContainer" unique_id=424966656]
+layout_mode = 2
+texture = SubResource("AtlasTexture_v3n3p")
+stretch_mode = 5
+
+[node name="Left" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft" unique_id=2133453026 node_paths=PackedStringArray("keyboard_rect", "gamepad_rect")]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_k3tfk")
+script = ExtResource("3_qpeha")
+keyboard_rect = NodePath("PanelContainer/KeyboardRect")
+gamepad_rect = NodePath("PanelContainer/GamepadRect")
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Left" unique_id=407345451]
+layout_mode = 2
+text = "Esquerda:"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Left" unique_id=963282238]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="KeyboardRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Left/PanelContainer" unique_id=1266032572]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_qpeha")
+stretch_mode = 5
+
+[node name="GamepadRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Left/PanelContainer" unique_id=703375995]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ycuyl")
+stretch_mode = 5
+
+[node name="Right" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft" unique_id=1591105520 node_paths=PackedStringArray("keyboard_rect", "gamepad_rect")]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_k3tfk")
+script = ExtResource("3_qpeha")
+keyboard_rect = NodePath("PanelContainer/KeyboardRect")
+gamepad_rect = NodePath("PanelContainer/GamepadRect")
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Right" unique_id=881617441]
+layout_mode = 2
+text = "Direita:"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Right" unique_id=484429487]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="KeyboardRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Right/PanelContainer" unique_id=2052172891]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_8epfs")
+stretch_mode = 5
+
+[node name="GamepadRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Right/PanelContainer" unique_id=1534161973]
+layout_mode = 2
+texture = SubResource("AtlasTexture_qcym6")
+stretch_mode = 5
+
+[node name="Pull" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft" unique_id=734259300 node_paths=PackedStringArray("keyboard_rect", "gamepad_rect")]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_k3tfk")
+script = ExtResource("3_qpeha")
+keyboard_rect = NodePath("PanelContainer/KeyboardRect")
+gamepad_rect = NodePath("PanelContainer/GamepadRect")
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Pull" unique_id=478623253]
+layout_mode = 2
+text = "Puxar (segure):"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Pull" unique_id=741842928]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="KeyboardRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Pull/PanelContainer" unique_id=1711242255]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_1aaq4")
+stretch_mode = 5
+
+[node name="GamepadRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsLeft/Pull/PanelContainer" unique_id=1046333513]
+layout_mode = 2
+texture = SubResource("AtlasTexture_56idh")
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer" unique_id=1350062938]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlsRight" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer" unique_id=293677786]
+layout_mode = 2
+
+[node name="Restart" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight" unique_id=824306291 node_paths=PackedStringArray("keyboard_rect", "gamepad_rect")]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("1_k3tfk")
+alignment = 2
+script = ExtResource("3_qpeha")
+keyboard_rect = NodePath("PanelContainer/KeyboardRect")
+gamepad_rect = NodePath("PanelContainer/GamepadRect")
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Restart" unique_id=1006623815]
+layout_mode = 2
+text = "Reiniciar:"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Restart" unique_id=1123002962]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="KeyboardRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Restart/PanelContainer" unique_id=1467226819]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_qrxqx")
+stretch_mode = 5
+
+[node name="GamepadRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Restart/PanelContainer" unique_id=1184773129]
+layout_mode = 2
+texture = SubResource("AtlasTexture_a2mxv")
+stretch_mode = 5
+
+[node name="Look" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight" unique_id=1835395668 node_paths=PackedStringArray("keyboard_rect", "gamepad_rect")]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("1_k3tfk")
+alignment = 2
+script = ExtResource("3_qpeha")
+keyboard_rect = NodePath("PanelContainer/KeyboardRect")
+gamepad_rect = NodePath("PanelContainer/GamepadRect")
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Look" unique_id=1808551108]
+layout_mode = 2
+text = "Olhar:"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Look" unique_id=814985770]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="KeyboardRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Look/PanelContainer" unique_id=266614459]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_s4vgg")
+stretch_mode = 5
+
+[node name="GamepadRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Look/PanelContainer" unique_id=1239638619]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0rj16")
+stretch_mode = 5
+
+[node name="Pause" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight" unique_id=187981832 node_paths=PackedStringArray("keyboard_rect", "gamepad_rect")]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("1_k3tfk")
+script = ExtResource("3_qpeha")
+keyboard_rect = NodePath("PanelContainer/KeyboardRect")
+gamepad_rect = NodePath("PanelContainer/GamepadRect")
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Pause" unique_id=513539117]
+layout_mode = 2
+text = "Pausar:"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Pause" unique_id=13841418]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="KeyboardRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Pause/PanelContainer" unique_id=1941384284]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_pamox")
+stretch_mode = 5
+
+[node name="GamepadRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/GridContainer/ControlsRight/Pause/PanelContainer" unique_id=2085564185]
+layout_mode = 2
+texture = SubResource("AtlasTexture_lx2ol")
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=591415128]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ButtonBox" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=122139236]
+propagate_maximum_size = false
+layout_mode = 2
+mouse_filter = 0
+script = ExtResource("2_5ppml")
+metadata/_custom_type_script = "uid://dxcjb7vt0ooib"
+
+[node name="Back" parent="MarginContainer/ScrollContainer/VBoxContainer/ButtonBox" unique_id=604741072 instance=ExtResource("1_qvulh")]
+layout_mode = 2
+text = "Voltar"
+alignment = 1
+
+[connection signal="page_entered" from="." to="." method="_on_page_entered"]
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/ButtonBox/Back" to="." method="_on_back_pressed"]

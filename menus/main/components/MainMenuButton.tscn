@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://q56vxwhxriqv"]
+
+[ext_resource type="Theme" uid="uid://8pbip8eacvof" path="res://menus/main/assets/main_menu_button.tres" id="1_2fnbt"]
+[ext_resource type="Script" uid="uid://5paabfbtxia1" path="res://menus/main/scripts/main_menu_button.gd" id="2_d00ig"]
+
+[node name="MainMenuButton" type="Button" unique_id=604741072]
+offset_right = 103.0
+offset_bottom = 37.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 1
+theme = ExtResource("1_2fnbt")
+text = "lorem ipsum"
+alignment = 0
+script = ExtResource("2_d00ig")

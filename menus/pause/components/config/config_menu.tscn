@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://ko6jfyj85or3"]
+
+[ext_resource type="Script" uid="uid://cyww3u7dwoi4w" path="res://menus/pause/components/config/config_menu.gd" id="1_okaxb"]
+[ext_resource type="Theme" uid="uid://crfc6eormcssn" path="res://menus/pause/assets/config_menu_theme.tres" id="1_s8xps"]
+[ext_resource type="PackedScene" uid="uid://q56vxwhxriqv" path="res://menus/main/components/MainMenuButton.tscn" id="3_pvmai"]
+
+[node name="ConfigMenu" type="Control" unique_id=494852504 node_paths=PackedStringArray("music_slider", "sound_slider", "back_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s8xps")
+script = ExtResource("1_okaxb")
+music_slider = NodePath("MarginContainer/VBoxContainer/VBoxContainer/MusicSlider")
+sound_slider = NodePath("MarginContainer/VBoxContainer/VBoxContainer2/SoundSlider")
+back_button = NodePath("MarginContainer/VBoxContainer/BackButton")
+page_name = "config"
+metadata/_custom_type_script = "uid://cofcggfjgs7ye"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1932509051]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2128321583]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=651466404]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1921602316]
+layout_mode = 2
+text = "Musica"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1409060740]
+layout_mode = 2
+step = 5.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1082610544]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1956304699]
+layout_mode = 2
+text = "Sons"
+horizontal_alignment = 1
+
+[node name="SoundSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1217185883]
+layout_mode = 2
+step = 5.0
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=806460223]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="BackButton" parent="MarginContainer/VBoxContainer" unique_id=604741072 instance=ExtResource("3_pvmai")]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Voltar"
+alignment = 1
+
+[connection signal="page_entered" from="." to="." method="_on_page_entered"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer2/SoundSlider" to="." method="_on_sound_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

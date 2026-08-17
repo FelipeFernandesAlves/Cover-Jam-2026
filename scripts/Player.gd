@@ -3,6 +3,7 @@ extends GridVisual
 
 var is_animating: bool = false
 @export var facing_direction: Vector2i = Vector2i.DOWN # Guarda para onde o player está olhando
+@export var step_sound: AudioStreamPlayer
 
 @onready var death_particles: GPUParticles2D = $DeathParticles
 @onready var death_light: PointLight2D = $DeathLight
@@ -37,7 +38,10 @@ func _process(_delta):
 		# Se estiver segurando, o olhar fica "travado" no objeto.
 		if not is_grabbing:
 			facing_direction = move_dir
-			
+		
+		step_sound.pitch_scale
+		step_sound.play()
+
 		# Envia o pedido apropriado para o GridState
 		if is_grabbing:
 			if grid_state.try_pull_entity(current_grid_pos, move_dir, facing_direction):

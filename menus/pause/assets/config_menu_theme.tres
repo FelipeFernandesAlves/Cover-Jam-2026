@@ -1,0 +1,26 @@
+[gd_resource type="Theme" format=3 uid="uid://crfc6eormcssn"]
+
+[ext_resource type="FontFile" uid="uid://dc6m117mswpe7" path="res://assets/fonts/DungeonFont.ttf" id="1_rlsse"]
+[ext_resource type="Texture2D" uid="uid://2u4psjwqefyh" path="res://menus/pause/assets/config_grabber.png" id="2_ln4xh"]
+[ext_resource type="Texture2D" uid="uid://y8ad8plwcbv3" path="res://menus/pause/assets/config_grabber_disabledt.png" id="3_hjvwn"]
+[ext_resource type="Texture2D" uid="uid://cc1kdfmkrjiff" path="res://menus/pause/assets/config_grabber_highlight.png" id="3_qlusu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjvwn"]
+bg_color = Color(0.16862746, 0.050980393, 0.27450982, 1)
+border_color = Color(0.98039216, 0.69803923, 0.4117647, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlsse"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ln4xh"]
+
+[resource]
+Button/fonts/font = ExtResource("1_rlsse")
+HSlider/icons/grabber = ExtResource("2_ln4xh")
+HSlider/icons/grabber_disabled = ExtResource("3_hjvwn")
+HSlider/icons/grabber_highlight = ExtResource("3_qlusu")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_hjvwn")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_hjvwn")
+Label/font_sizes/font_size = 28
+Label/fonts/font = ExtResource("1_rlsse")
+Label/styles/focus = SubResource("StyleBoxEmpty_rlsse")
+Label/styles/normal = SubResource("StyleBoxEmpty_ln4xh")

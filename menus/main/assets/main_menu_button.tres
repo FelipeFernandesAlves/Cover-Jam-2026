@@ -1,0 +1,26 @@
+[gd_resource type="Theme" format=3 uid="uid://8pbip8eacvof"]
+
+[ext_resource type="FontFile" uid="uid://dc6m117mswpe7" path="res://assets/fonts/DungeonFont.ttf" id="1_tlwtp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xbbdg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_krk3i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5ymf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlwtp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwvfg"]
+
+[resource]
+Button/colors/font_focus_color = Color(0.98039216, 0.69803923, 0.4117647, 1)
+Button/colors/font_hover_color = Color(0.98039216, 0.69803923, 0.4117647, 1)
+Button/colors/font_hover_pressed_color = Color(0.98039216, 0.69803923, 0.4117647, 1)
+Button/colors/font_pressed_color = Color(0.9490196, 0.56078434, 0.38039216, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_tlwtp")
+Button/styles/disabled = SubResource("StyleBoxEmpty_xbbdg")
+Button/styles/focus = SubResource("StyleBoxEmpty_krk3i")
+Button/styles/hover = SubResource("StyleBoxEmpty_b5ymf")
+Button/styles/normal = SubResource("StyleBoxEmpty_tlwtp")
+Button/styles/pressed = SubResource("StyleBoxTexture_cwvfg")

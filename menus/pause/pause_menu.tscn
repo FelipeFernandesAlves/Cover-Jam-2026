@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://nmfpoeobew5d"]
+
+[ext_resource type="Script" uid="uid://dau1mdekgxn0l" path="res://menus/pause/scripts/pause_menu.gd" id="1_8vgpe"]
+[ext_resource type="Script" uid="uid://bor6t12utwmi6" path="res://menus/common/menu_page_box/menu_page_box.gd" id="2_ip3kt"]
+[ext_resource type="PackedScene" uid="uid://q56vxwhxriqv" path="res://menus/main/components/MainMenuButton.tscn" id="2_n5dtg"]
+[ext_resource type="Script" uid="uid://cofcggfjgs7ye" path="res://menus/common/menu_page/menu_page.gd" id="3_omid1"]
+[ext_resource type="Script" uid="uid://dxcjb7vt0ooib" path="res://menus/common/button_box/button_box.gd" id="3_vh0r7"]
+[ext_resource type="PackedScene" uid="uid://ko6jfyj85or3" path="res://menus/pause/components/config/config_menu.tscn" id="7_5cdtd"]
+[ext_resource type="PackedScene" uid="uid://ba82nlov0bp5v" path="res://menus/pause/components/controls/ControlsMenu.tscn" id="7_omid1"]
+
+[node name="PauseMenu" type="Control" unique_id=1877973 node_paths=PackedStringArray("continue_button", "page_box", "main_page", "main_page_button_box")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8vgpe")
+continue_button = NodePath("MenuPageBox/Main/MarginContainer/VBoxContainer/Continue")
+page_box = NodePath("MenuPageBox")
+main_page = NodePath("MenuPageBox/Main")
+main_page_button_box = NodePath("MenuPageBox/Main/MarginContainer/VBoxContainer")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=850996927]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8627451)
+
+[node name="MenuPageBox" type="Control" parent="." unique_id=246412763 node_paths=PackedStringArray("first_page")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ip3kt")
+first_page = NodePath("Main")
+metadata/_custom_type_script = "uid://bor6t12utwmi6"
+
+[node name="Main" type="Control" parent="MenuPageBox" unique_id=372685412]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_omid1")
+page_name = "main"
+metadata/_custom_type_script = "uid://cofcggfjgs7ye"
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuPageBox/Main" unique_id=1101920883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPageBox/Main/MarginContainer" unique_id=1500289299]
+layout_mode = 2
+alignment = 1
+script = ExtResource("3_vh0r7")
+metadata/_custom_type_script = "uid://dxcjb7vt0ooib"
+
+[node name="Continue" parent="MenuPageBox/Main/MarginContainer/VBoxContainer" unique_id=604741072 instance=ExtResource("2_n5dtg")]
+layout_mode = 2
+text = "Continuar"
+
+[node name="Config" parent="MenuPageBox/Main/MarginContainer/VBoxContainer" unique_id=1277728039 instance=ExtResource("2_n5dtg")]
+layout_mode = 2
+text = "Configurar"
+alignment = 1
+
+[node name="Controls" parent="MenuPageBox/Main/MarginContainer/VBoxContainer" unique_id=1974054198 instance=ExtResource("2_n5dtg")]
+layout_mode = 2
+text = "Controles"
+alignment = 1
+
+[node name="Exit" parent="MenuPageBox/Main/MarginContainer/VBoxContainer" unique_id=471571292 instance=ExtResource("2_n5dtg")]
+layout_mode = 2
+text = "Sair"
+
+[node name="ConfigMenu" parent="MenuPageBox" unique_id=494852504 instance=ExtResource("7_5cdtd")]
+visible = false
+layout_mode = 1
+
+[node name="ControlsMenu" parent="MenuPageBox" unique_id=1110141516 instance=ExtResource("7_omid1")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="MenuPageBox/Main/MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MenuPageBox/Main/MarginContainer/VBoxContainer/Config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="MenuPageBox/Main/MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MenuPageBox/Main/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

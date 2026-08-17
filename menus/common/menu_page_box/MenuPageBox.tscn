@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bvfl3used4guu"]
+
+[ext_resource type="Script" uid="uid://bor6t12utwmi6" path="res://menus/common/menu_page_box/menu_page_box.gd" id="1_8dqgd"]
+
+[node name="MenuPageBox" type="Control" unique_id=1503394364]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8dqgd")
