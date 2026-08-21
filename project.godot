@@ -30,6 +30,10 @@ DialogManager="*uid://f8e1h2uh6h2j"
 Configuration="*uid://v710fv424kix"
 DialogueManager="*uid://c3rodes2l3gxb"
 
+[dialogue_manager]
+
+runtime/balloon_path="res://dialogues/scenes/balloon.tscn"
+
 [display]
 
 window/size/viewport_width=640

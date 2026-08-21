@@ -1,18 +1,30 @@
 ~ part_1
 Elius: Dris, é aqui.
 Elius: Lembre-se que foi você que conseguiu chegar até aqui por conta própria, você merece. Agora aproveite.
+do finalscene.hide_dialogue_balloon()
+do finalscene.hide_sprite("clouds")
+do finalscene.show_stars()
 
 ~ part_2
+do wait(0.8)
+do finalscene.change_sprites("stars_animation", "star_lamb")
+do finalscene.show_dialogue_balloon()
 Dris: Uaaaaau
 
 ~ part_3
+do finalscene.change_sprites("star_lamb", "star_mage")
 Elius: Pois é...
 
 ~ part_4
 Elius: Eu vim aqui pela primeira vez quando eu era uma criança.
 Elius: Eu me perdi e um espírito me guiou pra cá.
 Elius: Foi aqui que eu aprendi tudo de magia, aos poucos.
+do finalscene.change_sprites("star_mage", "star_lamb")
 Dris: É tão… magnífico. Parece que elas estão olhando diretamente pra mim.
+
+do finalscene.change_sprites("star_lamb", "clouds")
+do finalscene.change_sprites("", "stars_no_sky")
+
 Elius: Eu aprendi algo mais poderoso que a magia aqui.
 Elius: Sempre que você se sentir perdido, olhe pras estrelas e elas vão te guiar.
 Dris: Mas e se estiver de dia? Dói olhar pro Sol…
@@ -22,6 +34,9 @@ Elius: Como tintas numa tela, as memórias se misturam, as boas, as ruins, as qu
 Elius: As estrelas estão lá pra você, te olhando e prontas pra te guiar até que você entenda: vai ficar tudo bem.
 Elius: Minha jornada acaba aqui. Boa sorte, você consegue.
 Elius: Obrigado por ter sido meu aprendiz.
+do finalscene.hide_dialogue_balloon()
+do wait(2.0)
+do finalscene.show_credits()
 
 #Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
 #Nathan: Here are some choices.

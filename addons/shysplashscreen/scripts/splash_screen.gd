@@ -19,7 +19,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time += delta * spd
 	texture_rect.position.y = sin(time) * amp
-	if (Input.is_action_just_pressed("ui_accept")):
+	if (Input.is_action_just_pressed("dialog_interact")):
 		animation_player.stop()
 		on_end()
 
