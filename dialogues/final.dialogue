@@ -1,0 +1,35 @@
+~ part_1
+Elius: Dris, é aqui.
+Elius: Lembre-se que foi você que conseguiu chegar até aqui por conta própria, você merece. Agora aproveite.
+
+~ part_2
+Dris: Uaaaaau
+
+~ part_3
+Elius: Pois é...
+
+~ part_4
+Elius: Eu vim aqui pela primeira vez quando eu era uma criança.
+Elius: Eu me perdi e um espírito me guiou pra cá.
+Elius: Foi aqui que eu aprendi tudo de magia, aos poucos.
+Dris: É tão… magnífico. Parece que elas estão olhando diretamente pra mim.
+Elius: Eu aprendi algo mais poderoso que a magia aqui.
+Elius: Sempre que você se sentir perdido, olhe pras estrelas e elas vão te guiar.
+Dris: Mas e se estiver de dia? Dói olhar pro Sol…
+Elius: Não é pra olhar pro Sol, vai machucar! Mas mesmo quando é dia, as estrelas continuam lá.
+Elius: Não é fácil, Dris. A vida não é fácil. As coisas são complicadas e muitas vezes tudo vai estar tão confuso, tão dolorido.
+Elius: Como tintas numa tela, as memórias se misturam, as boas, as ruins, as que você queria esquecer e fingir que nunca aconteceram… quando tudo parece um caos, respire fundo, Dris.
+Elius: As estrelas estão lá pra você, te olhando e prontas pra te guiar até que você entenda: vai ficar tudo bem.
+Elius: Minha jornada acaba aqui. Boa sorte, você consegue.
+Elius: Obrigado por ter sido meu aprendiz.
+
+#Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+#Nathan: Here are some choices.
+#- First one
+#	Nathan: You picked the first one.
+#- Second one
+#	Nathan: You picked the second one.
+#- Start again => start
+#- End the conversation => END
+#Nathan: For more information see the online documentation.
+=> END

@@ -82,9 +82,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yof1"]
 size = Vector2(19, 32)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_g4v7s"]
-polygon = PackedVector2Array(-6, -27, 12, -25, 7, 2, 9, 4, 8, 6, 10, 9, 5, 12, 2, 7, -7, 12, -10, 12, -14, 9, -14, 6, -12, 5)
-
 [node name="Mirror" type="StaticBody2D" unique_id=1117091629 node_paths=PackedStringArray("move_audio", "reflect_point", "sprites")]
 z_as_relative = false
 script = ExtResource("1_6yof1")
@@ -107,11 +104,6 @@ autoplay = "default"
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1476832076]
 position = Vector2(1, -12)
 shape = SubResource("RectangleShape2D_6yof1")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1942422965]
-y_sort_enabled = true
-occluder = SubResource("OccluderPolygon2D_g4v7s")
-occluder_light_mask = 3
 
 [node name="ReflectionPoints" type="Node2D" parent="." unique_id=1853438872]
 

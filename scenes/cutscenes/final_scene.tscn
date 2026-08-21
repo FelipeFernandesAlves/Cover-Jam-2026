@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://clxo2lqd2h4xd"]
 
 [ext_resource type="Script" uid="uid://k1kyf1b4anio" path="res://scenes/cutscenes/final_scene.gd" id="1_71i4h"]
+[ext_resource type="Script" uid="uid://cd3222nx3y3k5" path="res://addons/dialogue_manager/nodes/context/dialogue_state_context.gd" id="2_t5phy"]
 [ext_resource type="PackedScene" uid="uid://b6cjbxpl85ner" path="res://entities/FadeTextScene.tscn" id="2_vj3s6"]
 [ext_resource type="Script" uid="uid://bamcw2fe0m25s" path="res://scripts/fade_text_content.gd" id="3_wyln5"]
 [ext_resource type="Texture2D" uid="uid://c73y8b1y6ybne" path="res://assets/cutscenes/star_mage.png" id="4_6yhv2"]
@@ -187,7 +188,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ybbyu")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 12.0
 }]
@@ -329,6 +330,12 @@ metadata/_custom_type_script = "uid://bamcw2fe0m25s"
 [node name="FinalScene" type="Node2D" unique_id=16831639]
 script = ExtResource("1_71i4h")
 
+[node name="DialogueStateContext" type="Node" parent="." unique_id=260006733 node_paths=PackedStringArray("target")]
+script = ExtResource("2_t5phy")
+alias = "finalscene"
+target = NodePath("..")
+metadata/_custom_type_script = "uid://cd3222nx3y3k5"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2010743173]
 
 [node name="bg" type="TextureRect" parent="CanvasLayer" unique_id=888242540]
@@ -357,8 +364,6 @@ position = Vector2(319, 186)
 scale = Vector2(3.6646705, 3.6)
 sprite_frames = SubResource("SpriteFrames_qnyly")
 autoplay = "default"
-frame = 23
-frame_progress = 1.0
 
 [node name="StarsNoSky" type="Sprite2D" parent="CanvasLayer" unique_id=1481607854]
 visible = false
@@ -367,19 +372,22 @@ scale = Vector2(3.2, 3.2)
 texture = ExtResource("7_8vje6")
 
 [node name="Cloudes" type="Sprite2D" parent="CanvasLayer" unique_id=325220468]
-visible = false
 position = Vector2(320, 159)
 scale = Vector2(3.2, 3.2)
 texture = ExtResource("8_05ofj")
 
 [node name="falas1" parent="CanvasLayer" unique_id=127967852 instance=ExtResource("2_vj3s6")]
+visible = false
 sequence = Array[ExtResource("3_wyln5")]([SubResource("Resource_jr7aq"), SubResource("Resource_rcveo")])
 
 [node name="falas2" parent="CanvasLayer" unique_id=498458909 instance=ExtResource("2_vj3s6")]
+visible = false
 sequence = Array[ExtResource("3_wyln5")]([SubResource("Resource_oyud0")])
 
 [node name="falas3" parent="CanvasLayer" unique_id=226887577 instance=ExtResource("2_vj3s6")]
+visible = false
 sequence = Array[ExtResource("3_wyln5")]([SubResource("Resource_3kuf0")])
 
 [node name="falas4" parent="CanvasLayer" unique_id=86023268 instance=ExtResource("2_vj3s6")]
+visible = false
 sequence = Array[ExtResource("3_wyln5")]([SubResource("Resource_sf6vg"), SubResource("Resource_quxu3"), SubResource("Resource_6yhv2"), SubResource("Resource_8vje6"), SubResource("Resource_t5phy"), SubResource("Resource_05ofj"), SubResource("Resource_skg62"), SubResource("Resource_5ia1h"), SubResource("Resource_5d07y"), SubResource("Resource_rtx8a"), SubResource("Resource_35m47"), SubResource("Resource_j6ikp"), SubResource("Resource_42epg"), SubResource("Resource_sxocl")])
