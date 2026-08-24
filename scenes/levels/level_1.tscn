@@ -1,13 +1,17 @@
 [gd_scene format=4 uid="uid://dkwc6dvtx084m"]
 
 [ext_resource type="PackedScene" uid="uid://1a6oomrx5srn" path="res://scenes/levels/template.tscn" id="1_ksju7"]
+[ext_resource type="Script" uid="uid://b0qxby68tx17r" path="res://scenes/levels/level_1.gd" id="2_iwr0g"]
 [ext_resource type="PackedScene" uid="uid://b6mbqf0yo73kj" path="res://entities/mirror.tscn" id="3_6761a"]
 [ext_resource type="PackedScene" uid="uid://dxq4biftakvx0" path="res://entities/light_emissor.tscn" id="3_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://6hfxkgkhecgv" path="res://entities/light_beam.tscn" id="4_x42e6"]
 [ext_resource type="PackedScene" uid="uid://c41gkkvu14v72" path="res://entities/player.tscn" id="5_s8va5"]
 [ext_resource type="PackedScene" uid="uid://brlmhu7hvvvsy" path="res://entities/door.tscn" id="6_sk5k4"]
+[ext_resource type="PackedScene" uid="uid://7nd57aqb6i2m" path="res://scenes/tutorial.tscn" id="8_s8va5"]
 
-[node name="Template" unique_id=1271090678 instance=ExtResource("1_ksju7")]
+[node name="Template" unique_id=1271090678 node_paths=PackedStringArray("tutorial") instance=ExtResource("1_ksju7")]
+script = ExtResource("2_iwr0g")
+tutorial = NodePath("CanvasLayer/Tutorial")
 
 [node name="LevelManager" parent="." index="1" unique_id=1137920702 node_paths=PackedStringArray("winning_door")]
 winning_door = NodePath("../Objects/Door")
@@ -41,3 +45,8 @@ impact_dir = Vector2(-1, 0)
 
 [node name="Door" parent="Objects" parent_id_path=PackedInt32Array(1263056560) index="3" unique_id=1687111465 instance=ExtResource("6_sk5k4")]
 position = Vector2(272, 80)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="8" unique_id=573736377]
+layer = 5
+
+[node name="Tutorial" parent="CanvasLayer" index="0" unique_id=506477927 instance=ExtResource("8_s8va5")]

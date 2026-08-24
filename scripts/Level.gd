@@ -4,6 +4,8 @@ extends Node2D
 signal scene_finished()
 
 func _ready() -> void:
+	return
+	
 	level_manager.level_won.connect(func():
 		scene_finished.emit()
 		)

@@ -6,10 +6,14 @@ extends Control
 @export var main_page: MenuPage
 @export var main_page_button_box: ButtonBox
 
+@export var tutorial: Tutorial
+
 func _ready() -> void:
 	main_page.page_entered.connect(func (): 
 		main_page_button_box.reset_focus()
 		)
+	
+	tutorial.tutorial_ended.connect(page_box.go_to_last_page)
 
 func _on_continue_pressed() -> void:
 	change_visibility(false)
@@ -31,3 +35,8 @@ func _on_controls_pressed() -> void:
 
 func _on_config_pressed() -> void:
 	page_box.change_page("config")
+
+func _on_tutorial_pressed() -> void:
+	page_box.change_page("tutorial")
+	tutorial.show_tutorial()
+	tutorial.change_page(0)

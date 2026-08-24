@@ -182,7 +182,7 @@ right_ui={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/final.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/final.dialogue", "res://dialogues/tutorial.dialogue")
 
 [physics]
 

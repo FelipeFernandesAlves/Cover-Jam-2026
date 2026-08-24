@@ -10,6 +10,8 @@ var is_debug: bool = false
 var scene_manager: SceneManager
 var is_gamepad_mode: bool = false
 
+var keys: Dictionary = {}
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	randomize()

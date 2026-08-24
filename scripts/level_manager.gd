@@ -29,6 +29,7 @@ var current_time: float
 # Sinais internos do level
 signal level_won()
 signal level_restart()
+signal level_started()
 
 # Sinais externos (Para o SceneManager ouvir)
 signal reload()
@@ -85,6 +86,7 @@ func _on_intro_finished():
 	AudioServer.set_bus_mute(bus_index, false)
 
 func _on_start_level_timer():
+	level_started.emit()
 	Game.game_paused = false
 
 func on_restart_level():

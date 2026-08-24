@@ -7,8 +7,9 @@
 [ext_resource type="Script" uid="uid://dxcjb7vt0ooib" path="res://menus/common/button_box/button_box.gd" id="3_vh0r7"]
 [ext_resource type="PackedScene" uid="uid://ko6jfyj85or3" path="res://menus/pause/components/config/config_menu.tscn" id="7_5cdtd"]
 [ext_resource type="PackedScene" uid="uid://ba82nlov0bp5v" path="res://menus/pause/components/controls/ControlsMenu.tscn" id="7_omid1"]
+[ext_resource type="PackedScene" uid="uid://7nd57aqb6i2m" path="res://scenes/tutorial.tscn" id="8_5cdtd"]
 
-[node name="PauseMenu" type="Control" unique_id=1877973 node_paths=PackedStringArray("continue_button", "page_box", "main_page", "main_page_button_box")]
+[node name="PauseMenu" type="Control" unique_id=1877973 node_paths=PackedStringArray("continue_button", "page_box", "main_page", "main_page_button_box", "tutorial")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -21,6 +22,7 @@ continue_button = NodePath("MenuPageBox/Main/MarginContainer/VBoxContainer/Conti
 page_box = NodePath("MenuPageBox")
 main_page = NodePath("MenuPageBox/Main")
 main_page_button_box = NodePath("MenuPageBox/Main/MarginContainer/VBoxContainer")
+tutorial = NodePath("MenuPageBox/MenuPage/Tutorial")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=850996927]
 layout_mode = 1
@@ -81,6 +83,11 @@ layout_mode = 2
 text = "Controles"
 alignment = 1
 
+[node name="Tutorial" parent="MenuPageBox/Main/MarginContainer/VBoxContainer" unique_id=372996762 instance=ExtResource("2_n5dtg")]
+layout_mode = 2
+text = "Tutorial"
+alignment = 1
+
 [node name="Exit" parent="MenuPageBox/Main/MarginContainer/VBoxContainer" unique_id=471571292 instance=ExtResource("2_n5dtg")]
 layout_mode = 2
 text = "Sair"
@@ -93,7 +100,24 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="MenuPage" type="Control" parent="MenuPageBox" unique_id=38873139]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_omid1")
+page_name = "tutorial"
+metadata/_custom_type_script = "uid://cofcggfjgs7ye"
+
+[node name="Tutorial" parent="MenuPageBox/MenuPage" unique_id=506477927 instance=ExtResource("8_5cdtd")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="MenuPageBox/Main/MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MenuPageBox/Main/MarginContainer/VBoxContainer/Config" to="." method="_on_config_pressed"]
 [connection signal="pressed" from="MenuPageBox/Main/MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MenuPageBox/Main/MarginContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MenuPageBox/Main/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

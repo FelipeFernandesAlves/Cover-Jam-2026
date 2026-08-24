@@ -11,6 +11,9 @@ extends Node2D
 
 var start_pressed: bool = false
 
+func _ready() -> void:
+	Game.keys.set("tutorial_viewed", false)
+
 func _on_start_pressed() -> void:
 	if (start_pressed):
 		return

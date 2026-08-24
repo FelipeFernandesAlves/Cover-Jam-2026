@@ -1,0 +1,279 @@
+[gd_scene format=3 uid="uid://7nd57aqb6i2m"]
+
+[ext_resource type="FontFile" uid="uid://dc6m117mswpe7" path="res://assets/fonts/DungeonFont.ttf" id="1_nlqja"]
+[ext_resource type="Texture2D" uid="uid://b02e2qlx3wu4n" path="res://assets/dialog/emote_box.png" id="2_0epgs"]
+[ext_resource type="FontFile" uid="uid://cuaxkqqwaxf02" path="res://assets/fonts/Silver.ttf" id="3_g2equ"]
+[ext_resource type="Script" uid="uid://dcdhe7wk1fbne" path="res://scripts/tutorial.gd" id="4_tbcdj"]
+[ext_resource type="VideoStream" uid="uid://dqcidgbyn4dr0" path="res://assets/tutorial/Tutorial_1_convertido.ogv" id="5_ej4tf"]
+[ext_resource type="VideoStream" uid="uid://c0dkpoc46u7dg" path="res://assets/tutorial/Tutorial_2_convertido.ogv" id="6_0hilk"]
+[ext_resource type="Texture2D" uid="uid://cw0i56pxtqp8p" path="res://assets/tutorial/Tutorial_3.png" id="7_0epgs"]
+[ext_resource type="Texture2D" uid="uid://b5q67mil70ui2" path="res://assets/tutorial/tutorial_arrow.png" id="7_wr8iv"]
+[ext_resource type="Texture2D" uid="uid://0c1rbacwo24i" path="res://assets/tutorial/tutorial_page.png" id="8_e13mp"]
+[ext_resource type="Texture2D" uid="uid://cxrtro2nnokwp" path="res://menus/pause/assets/Keyboard - Copia.png" id="9_vrdqu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4v7s"]
+texture = ExtResource("2_0epgs")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
+
+[sub_resource type="Theme" id="Theme_g4v7s"]
+Label/colors/font_color = Color(0.98039216, 0.69803923, 0.4117647, 1)
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_nlqja")
+MarginContainer/constants/margin_bottom = 30
+MarginContainer/constants/margin_left = 30
+MarginContainer/constants/margin_right = 30
+MarginContainer/constants/margin_top = 30
+Panel/styles/panel = SubResource("StyleBoxTexture_g4v7s")
+RichTextLabel/font_sizes/normal_font_size = 20
+RichTextLabel/fonts/normal_font = ExtResource("3_g2equ")
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_g4v7s")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iwr0g"]
+load_path = "res://.godot/imported/video_box.png-e2fc9a5f2e2296ffc144b1cb88a9ddbd.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mm8aj"]
+texture = SubResource("CompressedTexture2D_iwr0g")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+draw_center = false
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bahl2"]
+load_path = "res://.godot/imported/video_box.png-e2fc9a5f2e2296ffc144b1cb88a9ddbd.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_np2pn"]
+texture = SubResource("CompressedTexture2D_bahl2")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4v7s"]
+atlas = ExtResource("9_vrdqu")
+region = Rect2(217, 48, 31, 18)
+
+[node name="Tutorial" type="Control" unique_id=506477927 node_paths=PackedStringArray("background", "tutorial_box", "tab_container", "left_arrow", "right_arrow", "page_dots_parent", "keyboard_next_icon", "gamepad_next_icon")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_g4v7s")
+script = ExtResource("4_tbcdj")
+background = NodePath("ColorRect")
+tutorial_box = NodePath("MarginContainer")
+tab_container = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer")
+left_arrow = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/TextureRect")
+right_arrow = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/TextureRect2")
+page_dots_parent = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Pages")
+keyboard_next_icon = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/NextIcon")
+gamepad_next_icon = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/NextIcon")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=284555575]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.54901963)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1008749621]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+theme_override_constants/margin_left = 90
+theme_override_constants/margin_right = 90
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=604353684]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="MarginContainer/PanelContainer" unique_id=773884820]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/Panel" unique_id=1403952151]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer" unique_id=207105445]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=97585356]
+layout_mode = 2
+text = "Tutorial"
+horizontal_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=746047635]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 2
+clip_tabs = false
+tabs_visible = false
+switch_on_drag_hover = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer" unique_id=1856291563]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+metadata/_tab_index = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer" unique_id=1676794484]
+layout_mode = 2
+text = "Seu objetivo é enviar o raio de luz à porta"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer" unique_id=249000630]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/PanelContainer" unique_id=1753531494]
+custom_minimum_size = Vector2(160, 90)
+layout_mode = 2
+stream = ExtResource("5_ej4tf")
+autoplay = true
+expand = true
+loop = true
+buffering_msec = 1000
+
+[node name="Panel" type="Panel" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer/PanelContainer" unique_id=634412396]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mm8aj")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer" unique_id=1092584803]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+metadata/_tab_index = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer2" unique_id=268302559]
+layout_mode = 2
+text = "Para isso, empurre ou arraste os espelhos segurando \"\""
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer2" unique_id=1138320508]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer2/PanelContainer" unique_id=1176143815]
+custom_minimum_size = Vector2(160, 90)
+layout_mode = 2
+stream = ExtResource("6_0hilk")
+autoplay = true
+expand = true
+loop = true
+buffering_msec = 1000
+
+[node name="Panel" type="Panel" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer2/PanelContainer" unique_id=758509030]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_np2pn")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer" unique_id=1599638676]
+layout_mode = 2
+theme_override_constants/separation = 10
+metadata/_tab_index = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer3" unique_id=1929768869]
+layout_mode = 2
+text = "Cada andar possui um limite de passos indicado no canto superior esquerdo da tela, então pense bem antes de agir!"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer3" unique_id=303610325]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer3/PanelContainer" unique_id=1853799150]
+custom_minimum_size = Vector2(160, 90)
+layout_mode = 2
+texture = ExtResource("7_0epgs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer3/PanelContainer" unique_id=1622517855]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_np2pn")
+
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=869081820]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=1817502254]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=470923280]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("7_wr8iv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Pages" type="HBoxContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1815692217]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Pages" unique_id=1498903810]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_e13mp")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Pages" unique_id=1527208497]
+modulate = Color(1, 1, 1, 0.49019608)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_e13mp")
+stretch_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Pages" unique_id=1043231716]
+modulate = Color(1, 1, 1, 0.49019608)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_e13mp")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1816686950]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("7_wr8iv")
+expand_mode = 2
+stretch_mode = 5
+flip_h = true
+
+[node name="NextIcon" type="TextureRect" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=32826853]
+layout_mode = 2
+offset_transform_enabled = true
+texture = SubResource("AtlasTexture_g4v7s")
+stretch_mode = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1432547917]
+bus = &"SFX"
