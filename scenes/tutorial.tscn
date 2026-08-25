@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cw0i56pxtqp8p" path="res://assets/tutorial/Tutorial_3.png" id="7_0epgs"]
 [ext_resource type="Texture2D" uid="uid://b5q67mil70ui2" path="res://assets/tutorial/tutorial_arrow.png" id="7_wr8iv"]
 [ext_resource type="Texture2D" uid="uid://0c1rbacwo24i" path="res://assets/tutorial/tutorial_page.png" id="8_e13mp"]
-[ext_resource type="Texture2D" uid="uid://cxrtro2nnokwp" path="res://menus/pause/assets/Keyboard - Copia.png" id="9_vrdqu"]
+[ext_resource type="Texture2D" uid="uid://b2480rh2ocmum" path="res://assets/tutorial/keyboard_next_icon.png" id="10_ej4tf"]
+[ext_resource type="Texture2D" uid="uid://cpc5okagnaku5" path="res://assets/tutorial/gamepad_next_icon.png" id="11_ej4tf"]
 [ext_resource type="AudioStream" uid="uid://bxcw1ydrqfhno" path="res://assets/sfx/menu_audio.tres" id="11_g2equ"]
 [ext_resource type="AudioStream" uid="uid://bmsvg4n4pc5iy" path="res://assets/sfx/tutorial_open.wav" id="12_tbcdj"]
 
@@ -56,10 +57,6 @@ texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g4v7s"]
-atlas = ExtResource("9_vrdqu")
-region = Rect2(217, 48, 31, 18)
-
 [node name="Tutorial" type="Control" unique_id=506477927 node_paths=PackedStringArray("background", "tutorial_box", "tab_container", "controls_label", "left_arrow", "right_arrow", "page_dots_parent", "keyboard_next_icon", "gamepad_next_icon", "menu_audio", "show_audio")]
 process_mode = 3
 layout_mode = 3
@@ -77,8 +74,8 @@ controls_label = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/
 left_arrow = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/TextureRect")
 right_arrow = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/TextureRect2")
 page_dots_parent = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Pages")
-keyboard_next_icon = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/NextIcon")
-gamepad_next_icon = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/NextIcon")
+keyboard_next_icon = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/KeyboardNextIcon")
+gamepad_next_icon = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/GamepadNextIcon")
 menu_audio = NodePath("AudioStreamPlayer")
 show_audio = NodePath("TutorialOpen")
 keyboard_push_icon = "res://assets/tutorial/spacebar.png"
@@ -277,10 +274,17 @@ expand_mode = 2
 stretch_mode = 5
 flip_h = true
 
-[node name="NextIcon" type="TextureRect" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=32826853]
+[node name="KeyboardNextIcon" type="TextureRect" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=32826853]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
-texture = SubResource("AtlasTexture_g4v7s")
+texture = ExtResource("10_ej4tf")
+stretch_mode = 3
+
+[node name="GamepadNextIcon" type="TextureRect" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=383077991]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("11_ej4tf")
 stretch_mode = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1432547917]

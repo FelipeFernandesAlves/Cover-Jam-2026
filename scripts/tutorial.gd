@@ -131,7 +131,7 @@ func _input(event: InputEvent) -> void:
 func _animate_next_icon():
 	const scale_target := 1.1
 	const scale_ratio := 0.4
-	var current_icon = keyboard_next_icon
+	var current_icon = gamepad_next_icon if Game.is_gamepad_mode else keyboard_next_icon
 
 	var icon_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	icon_tween.tween_property(current_icon, "offset_transform_scale:x", scale_target, 0.2)
@@ -156,6 +156,11 @@ func _format_control_icon():
 
 	if (Game.is_gamepad_mode):
 		push_icon = gamepad_push_icon
+		gamepad_next_icon.show()
+		keyboard_next_icon.hide()
+	else:
+		gamepad_next_icon.hide()
+		keyboard_next_icon.show()
 
 	var formated_text = controls_original_text.format({
 		"push": push_icon

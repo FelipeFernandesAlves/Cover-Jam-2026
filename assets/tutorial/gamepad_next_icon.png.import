@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxrtro2nnokwp"
-path="res://.godot/imported/Keyboard - Copia.png-b1024af9c82e73997547cf55b6eb3d7f.ctex"
+uid="uid://cpc5okagnaku5"
+path="res://.godot/imported/gamepad_next_icon.png-79b80f6f2044a128519366076fe7cd10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/pause/assets/Keyboard - Copia.png"
-dest_files=["res://.godot/imported/Keyboard - Copia.png-b1024af9c82e73997547cf55b6eb3d7f.ctex"]
+source_file="res://assets/tutorial/gamepad_next_icon.png"
+dest_files=["res://.godot/imported/gamepad_next_icon.png-79b80f6f2044a128519366076fe7cd10.ctex"]
 
 [params]
 
