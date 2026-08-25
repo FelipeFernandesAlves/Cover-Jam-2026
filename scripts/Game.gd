@@ -12,6 +12,8 @@ var is_gamepad_mode: bool = false
 
 var keys: Dictionary = {}
 
+signal gamepad_mode_changed()
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	randomize()
@@ -30,12 +32,15 @@ func _input(event: InputEvent) -> void:
 		DisplayServer.window_set_mode(mode)
 
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	is_gamepad_mode = false
 
+	var last_is_gamepad_mode = is_gamepad_mode
+	is_gamepad_mode = false
 	if (event is InputEventJoypadButton || event is InputEventJoypadMotion):
 		is_gamepad_mode = true
-		return
-	
+
+	if (is_gamepad_mode != last_is_gamepad_mode):
+		gamepad_mode_changed.emit()
+
 	if (event is InputEventMouse):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		return

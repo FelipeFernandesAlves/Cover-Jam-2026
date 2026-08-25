@@ -13,6 +13,7 @@ func _ready() -> void:
 		main_page_button_box.reset_focus()
 		)
 	
+	page_box.active = false
 	tutorial.tutorial_ended.connect(page_box.go_to_last_page)
 
 func _on_continue_pressed() -> void:

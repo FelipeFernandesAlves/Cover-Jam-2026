@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://douplj320q7vh" path="res://assets/textures/light.png" id="4_ketcr"]
 [ext_resource type="Texture2D" uid="uid://dk22abi05j52n" path="res://assets/characters/dris/dris_walking_side.tres" id="5_1o3ol"]
 [ext_resource type="Texture2D" uid="uid://1r47ve5jsn43" path="res://menus/main/assets/titulo.png" id="5_7481o"]
+[ext_resource type="AudioStream" uid="uid://bxcw1ydrqfhno" path="res://assets/sfx/menu_audio.tres" id="6_p24gd"]
 [ext_resource type="Texture2D" uid="uid://idj7tojq8bcv" path="res://assets/characters/elius/walking.tres" id="8_ketcr"]
 [ext_resource type="Script" uid="uid://dxcjb7vt0ooib" path="res://menus/common/button_box/button_box.gd" id="9_c1ld8"]
 
@@ -208,7 +209,7 @@ characters_parent = NodePath("Characters/Characters")
 start_button = NodePath("UI/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox/Start")
 exit_button = NodePath("UI/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox/Exit")
 transition_rect = NodePath("UI/TransitionRect")
-game_start_sound = NodePath("AudioStreamPlayer")
+game_start_sound = NodePath("GameStartAudio")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1904613429]
 light_mask = 3
@@ -255,8 +256,18 @@ texture_scale = 2.4
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1493816908]
 environment = SubResource("Environment_t8k4h")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1619251957]
+[node name="GameStartAudio" type="AudioStreamPlayer" parent="." unique_id=1619251957]
 stream = ExtResource("3_1o3ol")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="MenuAudio" type="AudioStreamPlayer" parent="." unique_id=456140409]
+stream = ExtResource("6_p24gd")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="SelectAudio" type="AudioStreamPlayer" parent="." unique_id=1013556928]
+stream = ExtResource("6_p24gd")
 volume_db = -6.0
 bus = &"SFX"
 
@@ -331,10 +342,11 @@ stretch_mode = 4
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
-[node name="ButtonBox" type="VBoxContainer" parent="UI/Control/Buttons/MarginContainer/VBoxContainer" unique_id=906499207]
+[node name="ButtonBox" type="VBoxContainer" parent="UI/Control/Buttons/MarginContainer/VBoxContainer" unique_id=906499207 node_paths=PackedStringArray("menu_audio")]
 layout_mode = 2
 script = ExtResource("9_c1ld8")
 button_icon = ExtResource("2_b5ymf")
+menu_audio = NodePath("../../../../../../MenuAudio")
 metadata/_custom_type_script = "uid://dxcjb7vt0ooib"
 
 [node name="Start" parent="UI/Control/Buttons/MarginContainer/VBoxContainer/ButtonBox" unique_id=604741072 instance=ExtResource("1_dkf2c")]

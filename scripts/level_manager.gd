@@ -20,7 +20,7 @@ extends Node
 		
 		winning_door.light_beam_touched.connect(_on_door_light_beam)
 
-@export var title: String
+@export_multiline var title: String
 @export var max_moves: int = 4
 @export var camera: Camera
 var current_moves: int = 0

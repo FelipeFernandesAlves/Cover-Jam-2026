@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ko6jfyj85or3" path="res://menus/pause/components/config/config_menu.tscn" id="7_5cdtd"]
 [ext_resource type="PackedScene" uid="uid://ba82nlov0bp5v" path="res://menus/pause/components/controls/ControlsMenu.tscn" id="7_omid1"]
 [ext_resource type="PackedScene" uid="uid://7nd57aqb6i2m" path="res://scenes/tutorial.tscn" id="8_5cdtd"]
+[ext_resource type="AudioStream" uid="uid://bxcw1ydrqfhno" path="res://assets/sfx/menu_audio.tres" id="9_rya0o"]
+[ext_resource type="AudioStream" uid="uid://bincdojp1l27v" path="res://assets/sfx/select_audio.tres" id="10_omlss"]
 
 [node name="PauseMenu" type="Control" unique_id=1877973 node_paths=PackedStringArray("continue_button", "page_box", "main_page", "main_page_button_box", "tutorial")]
 process_mode = 3
@@ -63,10 +65,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuPageBox/Main/MarginContainer" unique_id=1500289299]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPageBox/Main/MarginContainer" unique_id=1500289299 node_paths=PackedStringArray("menu_audio", "select_audio")]
 layout_mode = 2
 alignment = 1
 script = ExtResource("3_vh0r7")
+menu_audio = NodePath("../../../../MenuAudio")
+select_audio = NodePath("../../../../SelectAudio")
 metadata/_custom_type_script = "uid://dxcjb7vt0ooib"
 
 [node name="Continue" parent="MenuPageBox/Main/MarginContainer/VBoxContainer" unique_id=604741072 instance=ExtResource("2_n5dtg")]
@@ -115,6 +119,18 @@ metadata/_custom_type_script = "uid://cofcggfjgs7ye"
 [node name="Tutorial" parent="MenuPageBox/MenuPage" unique_id=506477927 instance=ExtResource("8_5cdtd")]
 visible = false
 layout_mode = 1
+keyboard_push_icon = ""
+gamepad_push_icon = ""
+
+[node name="MenuAudio" type="AudioStreamPlayer" parent="." unique_id=1999850654]
+stream = ExtResource("9_rya0o")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="SelectAudio" type="AudioStreamPlayer" parent="." unique_id=1702599460]
+stream = ExtResource("10_omlss")
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="pressed" from="MenuPageBox/Main/MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MenuPageBox/Main/MarginContainer/VBoxContainer/Config" to="." method="_on_config_pressed"]

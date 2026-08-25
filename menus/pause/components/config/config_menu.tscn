@@ -67,7 +67,6 @@ layout_mode = 2
 
 [node name="BackButton" parent="MarginContainer/VBoxContainer" unique_id=604741072 instance=ExtResource("3_pvmai")]
 layout_mode = 2
-size_flags_horizontal = 4
 text = "Voltar"
 alignment = 1
 

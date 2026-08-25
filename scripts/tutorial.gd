@@ -4,6 +4,7 @@ extends Control
 @export var background: ColorRect
 @export var tutorial_box: Container
 @export var tab_container: TabContainer
+@export var controls_label: RichTextLabel
 
 @export var left_arrow: TextureRect
 @export var right_arrow: TextureRect
@@ -11,9 +12,15 @@ extends Control
 
 @export var keyboard_next_icon: TextureRect
 @export var gamepad_next_icon: TextureRect
+@export var menu_audio: AudioStreamPlayer
+@export var show_audio: AudioStreamPlayer
+
+@export_file_path() var keyboard_push_icon: String
+@export_file_path() var gamepad_push_icon: String
 
 const ANIMATION_TIME := 0.75
 
+var controls_original_text: String
 var tween: Tween
 var active: bool = false
 var page_dots: Array[TextureRect] = []
@@ -27,7 +34,11 @@ signal tutorial_started()
 func _ready() -> void:
 	for child in page_dots_parent.get_children():
 		if (child is TextureRect):
-			page_dots.append(child) 
+			page_dots.append(child)
+	
+	controls_original_text = controls_label.text
+	_format_control_icon()
+	Game.gamepad_mode_changed.connect(_format_control_icon)
 
 func show_tutorial():
 	if (active):
@@ -40,7 +51,10 @@ func show_tutorial():
 	background.modulate.a = 0.0
 	tutorial_box.offset_transform_position.y = 400
 	visible = true
-	
+
+	if (show_audio):
+		show_audio.play()
+
 	tween = create_tween()
 	tween.tween_property(background, "modulate:a", 1.0, ANIMATION_TIME).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.set_parallel(true)
@@ -72,8 +86,12 @@ func hide_tutorial():
 		)
 
 func change_page(page_number: int):
+	if (page_number == tab_container.current_tab):
+		return
+		
 	tween = create_tween()
 	tab_container.current_tab = page_number
+	menu_audio.play()
 
 	for i in range(page_dots.size()):
 		var page_dot = page_dots[i]
@@ -92,6 +110,7 @@ func _input(event: InputEvent) -> void:
 	var current_tab = tab_container.current_tab
 	if (event.is_action_pressed("right_ui") || event.is_action_pressed("dialog_interact")):
 		if (tab_container.current_tab >= max_pages-1):
+			menu_audio.play()
 			hide_tutorial()
 			return
 		else:
@@ -131,6 +150,18 @@ func _animate_arrow(arrow: TextureRect):
 	icon_tween.parallel().tween_property(arrow, "offset_transform_scale", Vector2(1.0, 1.0), 0.1).set_delay(0.35)
 	icon_tween.parallel().tween_property(arrow, "rotation_degrees", 2.0 * scale_ratio * [-1.0, 1.0].pick_random(), 0.1)
 	icon_tween.parallel().tween_property(arrow, "rotation_degrees", 0.0, 0.1).set_delay(0.1)
+
+func _format_control_icon():
+	var push_icon: String = keyboard_push_icon
+
+	if (Game.is_gamepad_mode):
+		push_icon = gamepad_push_icon
+
+	var formated_text = controls_original_text.format({
+		"push": push_icon
+	})
+
+	controls_label.text = formated_text
 
 func _process(_delta: float) -> void:
 	if (active):

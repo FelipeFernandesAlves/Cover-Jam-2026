@@ -2,6 +2,8 @@ class_name ButtonBox
 extends VBoxContainer
 
 @export var button_icon: Texture2D
+@export var menu_audio: AudioStreamPlayer
+@export var select_audio: AudioStreamPlayer
 var current_focus_index: int = 0
 var buttons: Array[Button] = []
 
@@ -12,6 +14,7 @@ func _ready() -> void:
 			button.focus_entered.connect(_on_button_focus_entered.bind(button))
 			button.focus_exited.connect(_on_button_focus_exited.bind(button))
 			button.mouse_entered.connect(_on_mouse_entered.bind(button))
+			button.pressed.connect(_on_button_pressed)
 			button.focus_mode = Control.FOCUS_ALL
 
 	if (buttons.size() > 0):
@@ -49,6 +52,9 @@ func _update_focus():
 func _on_button_focus_entered(button: Button):
 	if (button_icon):
 		button.icon = button_icon
+	
+	if (menu_audio && visible):
+		menu_audio.play()
 
 func _on_button_focus_exited(button: Button):
 	if (button_icon):
@@ -61,6 +67,10 @@ func _on_mouse_entered(button: Button):
 	button.grab_focus()
 	current_focus_index = buttons.find(button)
 	_update_focus()
+
+func _on_button_pressed():
+	if (select_audio && visible):
+		select_audio.play()
 
 func reset_focus():
 	hide()

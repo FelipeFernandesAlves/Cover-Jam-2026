@@ -15,7 +15,8 @@ tutorial = NodePath("CanvasLayer/Tutorial")
 
 [node name="LevelManager" parent="." index="1" unique_id=1137920702 node_paths=PackedStringArray("winning_door")]
 winning_door = NodePath("../Objects/Door")
-title = "Primeiro Andar"
+title = "Primeiro Andar
+(1/4)"
 max_moves = 13
 
 [node name="TileMap" parent="." index="3" unique_id=1641060911]

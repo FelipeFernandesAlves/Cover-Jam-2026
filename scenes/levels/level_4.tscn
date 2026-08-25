@@ -12,7 +12,8 @@
 
 [node name="LevelManager" parent="." index="1" unique_id=1137920702 node_paths=PackedStringArray("winning_door")]
 winning_door = NodePath("../Objects/Door")
-title = "Quarto Andar"
+title = "Quarto Andar
+(4/4)"
 max_moves = 24
 
 [node name="TileMap" parent="." index="3" unique_id=1641060911]

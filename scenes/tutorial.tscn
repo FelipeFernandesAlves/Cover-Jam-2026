@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b5q67mil70ui2" path="res://assets/tutorial/tutorial_arrow.png" id="7_wr8iv"]
 [ext_resource type="Texture2D" uid="uid://0c1rbacwo24i" path="res://assets/tutorial/tutorial_page.png" id="8_e13mp"]
 [ext_resource type="Texture2D" uid="uid://cxrtro2nnokwp" path="res://menus/pause/assets/Keyboard - Copia.png" id="9_vrdqu"]
+[ext_resource type="AudioStream" uid="uid://bxcw1ydrqfhno" path="res://assets/sfx/menu_audio.tres" id="11_g2equ"]
+[ext_resource type="AudioStream" uid="uid://bmsvg4n4pc5iy" path="res://assets/sfx/tutorial_open.wav" id="12_tbcdj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4v7s"]
 texture = ExtResource("2_0epgs")
@@ -58,7 +60,7 @@ texture_margin_bottom = 16.0
 atlas = ExtResource("9_vrdqu")
 region = Rect2(217, 48, 31, 18)
 
-[node name="Tutorial" type="Control" unique_id=506477927 node_paths=PackedStringArray("background", "tutorial_box", "tab_container", "left_arrow", "right_arrow", "page_dots_parent", "keyboard_next_icon", "gamepad_next_icon")]
+[node name="Tutorial" type="Control" unique_id=506477927 node_paths=PackedStringArray("background", "tutorial_box", "tab_container", "controls_label", "left_arrow", "right_arrow", "page_dots_parent", "keyboard_next_icon", "gamepad_next_icon", "menu_audio", "show_audio")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -71,11 +73,16 @@ script = ExtResource("4_tbcdj")
 background = NodePath("ColorRect")
 tutorial_box = NodePath("MarginContainer")
 tab_container = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer")
+controls_label = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer2/RichTextLabel")
 left_arrow = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/TextureRect")
 right_arrow = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/TextureRect2")
 page_dots_parent = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Pages")
 keyboard_next_icon = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/NextIcon")
 gamepad_next_icon = NodePath("MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/NextIcon")
+menu_audio = NodePath("AudioStreamPlayer")
+show_audio = NodePath("TutorialOpen")
+keyboard_push_icon = "res://assets/tutorial/spacebar.png"
+gamepad_push_icon = "res://assets/tutorial/x_button.png"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=284555575]
 layout_mode = 1
@@ -126,13 +133,12 @@ horizontal_alignment = 1
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer" unique_id=746047635]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 2
+current_tab = 0
 clip_tabs = false
 tabs_visible = false
 switch_on_drag_hover = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer" unique_id=1856291563]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 10
 metadata/_tab_index = 0
@@ -169,7 +175,8 @@ metadata/_tab_index = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer/VBoxContainer2" unique_id=268302559]
 layout_mode = 2
-text = "Para isso, empurre ou arraste os espelhos segurando \"\""
+bbcode_enabled = true
+text = "Para isso, empurre ou arraste os espelhos segurando [img]{push}[/img]"
 fit_content = true
 horizontal_alignment = 1
 
@@ -192,6 +199,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_np2pn")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/PanelContainer/Panel/MarginContainer/VBoxContainer/TabContainer" unique_id=1599638676]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 10
 metadata/_tab_index = 2
@@ -276,4 +284,9 @@ texture = SubResource("AtlasTexture_g4v7s")
 stretch_mode = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1432547917]
+stream = ExtResource("11_g2equ")
+bus = &"SFX"
+
+[node name="TutorialOpen" type="AudioStreamPlayer" parent="." unique_id=2144889957]
+stream = ExtResource("12_tbcdj")
 bus = &"SFX"
