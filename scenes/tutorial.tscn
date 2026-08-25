@@ -289,8 +289,10 @@ stretch_mode = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1432547917]
 stream = ExtResource("11_g2equ")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="TutorialOpen" type="AudioStreamPlayer" parent="." unique_id=2144889957]
 stream = ExtResource("12_tbcdj")
+volume_db = -10.0
 bus = &"SFX"

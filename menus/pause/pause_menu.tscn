@@ -119,8 +119,6 @@ metadata/_custom_type_script = "uid://cofcggfjgs7ye"
 [node name="Tutorial" parent="MenuPageBox/MenuPage" unique_id=506477927 instance=ExtResource("8_5cdtd")]
 visible = false
 layout_mode = 1
-keyboard_push_icon = ""
-gamepad_push_icon = ""
 
 [node name="MenuAudio" type="AudioStreamPlayer" parent="." unique_id=1999850654]
 stream = ExtResource("9_rya0o")
